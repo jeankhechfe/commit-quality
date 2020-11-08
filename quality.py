@@ -35,7 +35,7 @@ def get_commit_message(commit):
 
 # "Separate subject from body with a blank line"
 def rule_1(message_array):
-    if len(message_array) > 1 and message_array[1] != '':
+    if len(message_array) > 1 and textwrap.dedent(message_array[1]) != '':
         return False
     return True
 
