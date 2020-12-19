@@ -4,7 +4,7 @@ file = open("commits_logs/libdc-for-dirk.txt", "r")
 commits = file.read().split("\ncommit ")
 
 total_score = 0
-count = 1
+count = 0
 good = 0
 acceptable = 0
 bad = 0
