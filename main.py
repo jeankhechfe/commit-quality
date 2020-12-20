@@ -6,6 +6,20 @@ file = open("commits_logs/libdc-for-dirk-no-merges.txt", "r")
 commits = file.read().split("\n")
 
 
+# convert log file to be separated with double dash (--)
+# file = ['None'] * 13657
+# j = 1
+# for i in range(1, len(commits)):
+#     file[j] = commits[i]
+#     j += 1
+#     if 'Date: ' in commits[i]:
+#         file[j] = '--'
+#         j -= 1
+# with open("commits_logs/--.txt", "w") as txt_file:
+#     for line in file:
+#         txt_file.write(line + '\n')
+
+
 def export_to_csv():
     try:
         with open('commits.csv', 'w', newline='') as csvfile:
