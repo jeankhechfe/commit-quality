@@ -3,7 +3,7 @@ import csv
 import textwrap
 
 file = open("commits_logs/libdc-for-dirk-no-merges.txt", "r")
-commits = file.read().split("\n")
+commits = file.read().split("\ncommit")
 
 
 # convert log file to be separated with double dash (--)
@@ -18,18 +18,20 @@ commits = file.read().split("\n")
 # with open("commits_logs/--.txt", "w") as txt_file:
 #     for line in file:
 #         txt_file.write(line + '\n')
-
+file = open("commits_logs/--.txt", "r")
+commits_dashed = file.read().split("--\n")
 
 def export_to_csv():
     try:
         with open('commits.csv', 'w', newline='') as csvfile:
             spam_writer = csv.writer(csvfile)
             spam_writer.writerow(['number', 'Subject Line', 'Blank Line', 'character count'])
-            for j in range(1, len(commits)):
-                subject_line = textwrap.dedent(commits[j].split("\n")[4])
-                separated_with_blank = 1 if textwrap.dedent(commits[j].split("\n")[5]) == '' else 0
+            for j in range(1, len(commits_dashed)):
+                subject_line = textwrap.dedent(commits_dashed[j].split("\n")[2])
+                # separated_with_blank = 1 if textwrap.dedent(commits_dashed[j].split("\n")[2]) == '' else 0
 
-                spam_writer.writerow([j, subject_line, separated_with_blank, len(subject_line)])
+                # spam_writer.writerow([j, subject_line, separated_with_blank, len(subject_line)])
+                spam_writer.writerow([j, subject_line, len(subject_line)])
 
     except PermissionError:
         print('\x1b[0;30;41m', 'Make sure CSV file is not open', '\x1b[0m')
