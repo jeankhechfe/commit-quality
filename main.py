@@ -1,7 +1,27 @@
 import quality
+import csv
+import textwrap
 
-file = open("commits_logs/libdc-for-dirk.txt", "r")
-commits = file.read().split("\ncommit ")
+file = open("commits_logs/libdc-for-dirk-no-merges.txt", "r")
+commits = file.read().split("\n")
+
+
+def export_to_csv():
+    try:
+        with open('commits.csv', 'w', newline='') as csvfile:
+            spam_writer = csv.writer(csvfile)
+            spam_writer.writerow(['number', 'Subject Line', 'Blank Line', 'character count'])
+            for j in range(1, len(commits)):
+                subject_line = textwrap.dedent(commits[j].split("\n")[4])
+                separated_with_blank = 1 if textwrap.dedent(commits[j].split("\n")[5]) == '' else 0
+
+                spam_writer.writerow([j, subject_line, separated_with_blank, len(subject_line)])
+
+    except PermissionError:
+        print('\x1b[0;30;41m', 'Make sure CSV file is not open', '\x1b[0m')
+
+export_to_csv()
+
 
 total_score = 0
 count = 0
