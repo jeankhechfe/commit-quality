@@ -1,8 +1,5 @@
 
-commit d02f1c3cdcc6a04d085538578d872ec6e3282382
-Author: Linus Torvalds <torvalds@linux-foundation.org>
-Date:   Sun Apr 1 09:56:47 2018 -0700
-
+--
     Suunto EON Steel: set date too when doing device timesync
     
     I'd never noticed this before, since my date had always been already set
@@ -14,18 +11,14 @@ Date:   Sun Apr 1 09:56:47 2018 -0700
     
     Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>
 
-commit 0e0ee16ea69ae5d9eaf246f39e4c420a102d7046
-Author: Dirk Hohndel <dirk@hohndel.org>
-Date:   Sat Mar 31 11:42:46 2018 -0700
+--
 
     Correctly fix build without HID support
     
     Suggested by: Linus Torvalds <torvalds@linux-foundation.org>
     Signed-off-by: Dirk Hohndel <dirk@hohndel.org>
 
-commit 156cac65b6abed6835ba6fe1f0abf05abb3eb04c
-Author: Dirk Hohndel <dirk@hohndel.org>
-Date:   Sat Mar 31 11:35:31 2018 -0700
+--
 
     Revert "Allow compilation on platforms without USBHID support"
     
@@ -37,9 +30,7 @@ Date:   Sat Mar 31 11:35:31 2018 -0700
     Reported-by: Linus Torvalds <torvalds@linux-foundation.org>
     Signed-off-by: Dirk Hohndel <dirk@hohndel.org>
 
-commit 5b54386dbdf1e23300b2f3b57f369abcaa1b2714
-Author: Linus Torvalds <torvalds@linux-foundation.org>
-Date:   Sun Mar 11 12:14:37 2018 -0700
+--
 
     remove the transfer type comments from the descriptor array
     
@@ -63,9 +54,7 @@ Date:   Sun Mar 11 12:14:37 2018 -0700
     
     Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>
 
-commit f4e43afad9f113a4e83e7d9f507ffe3648842fc0
-Author: Linus Torvalds <torvalds@linux-foundation.org>
-Date:   Sun Mar 11 11:59:40 2018 -0700
+--
 
     remove 'serial' number from descriptor array
     
@@ -82,9 +71,7 @@ Date:   Sun Mar 11 11:59:40 2018 -0700
     
     Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>
 
-commit f5e10ff9bcb1963f8b1d1b2971244b39287d46e5
-Author: Linus Torvalds <torvalds@linux-foundation.org>
-Date:   Sun Mar 11 12:08:13 2018 -0700
+--
 
     get rid of annoying compile warnings
     
@@ -109,18 +96,14 @@ Date:   Sun Mar 11 12:08:13 2018 -0700
     
     Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>
 
-commit 38ff1f75dd32f24a37bc4486c4850eb15a73a46c
-Author: Jef Driesen <jefdriesen@users.sourceforge.net>
-Date:   Sat Feb 24 09:48:17 2018 +0100
+--
 
     Remove the half-duplex emulation from the I/O api
     
     Now that the half-duplex emulation code isn't used anymore, it can be
     removed from the I/O stream api.
 
-commit 4897a8351bb5142c3fa13c97d41a5832b75205ab
-Author: Jef Driesen <jefdriesen@users.sourceforge.net>
-Date:   Sat Feb 24 09:16:23 2018 +0100
+--
 
     Handle the half-duplex emulation in the vyper2 backend
     
@@ -129,17 +112,13 @@ Date:   Sat Feb 24 09:16:23 2018 +0100
     needs this feature, it makes no sense to support this at the I/O layer.
     It can be implemented directly in the vyper2 backend instead.
 
-commit ee31f24cfb20c76dd0ba1d11ba087aaa51330ae1
-Author: Jef Driesen <jefdriesen@users.sourceforge.net>
-Date:   Fri Feb 23 20:43:45 2018 +0100
+--
 
     Use the new timer for the timestamps in the logging
     
     Replace the platform specific code with the new timers.
 
-commit eb4c150024edd7476aa5268b325be0091416e1ca
-Author: Jef Driesen <jefdriesen@users.sourceforge.net>
-Date:   Fri Feb 23 20:20:34 2018 +0100
+--
 
     Use the new timer for the timeout calculations
     
@@ -147,9 +126,7 @@ Date:   Fri Feb 23 20:20:34 2018 +0100
     timers. This makes the implementation more robust against unexpected
     adjustments of the clock.
 
-commit a8adb16c0d4a5cb0cda4a0671822e7078dd502cf
-Author: Jef Driesen <jefdriesen@users.sourceforge.net>
-Date:   Fri Feb 23 20:03:13 2018 +0100
+--
 
     Add a high resolution timer module
     
@@ -160,9 +137,7 @@ Date:   Fri Feb 23 20:03:13 2018 +0100
     The timers can be used for logging, measuring elapsed time and
     implementing timeouts.
 
-commit becaf02ab63a67d584fcaa64fe649b69bb7a931f
-Author: Jef Driesen <jefdriesen@users.sourceforge.net>
-Date:   Thu Feb 15 08:25:28 2018 +0100
+--
 
     Add functions for converting bluetooth addresses
 
@@ -15234,9 +15209,7 @@ Date:   Mon Oct 29 09:52:28 2007 +0000
 
     Attempt to read/write before waiting, instead of the other way around.
 
-commit a3ae610b2e6c814be72ae995e81a51d82ce2669e
-Author: Jef Driesen <jefdriesen@users.sourceforge.net>
-Date:   Mon Oct 29 09:37:26 2007 +0000
+--
 
     Replace termios VMIN=0 and VTIME=0 with O_NONBLOCK.
     
@@ -15244,8 +15217,6 @@ Date:   Mon Oct 29 09:37:26 2007 +0000
     and a modem disconnect (EOF). With this change, it's also possible to
     implement write timeouts.
 
-commit 3f33f82bc28000aab08d54a1c260afd9d3490e78
-Author: Jef Driesen <jefdriesen@users.sourceforge.net>
-Date:   Mon Oct 29 09:22:19 2007 +0000
+--
 
     Initial import.
