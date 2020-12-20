@@ -7,19 +7,23 @@ commits = file.read().split("\ncommit")
 
 
 # convert log file to be separated with double dash (--)
-# file = ['None'] * 13657
-# j = 1
+# file = [''] * 12092
+# j = 0
 # for i in range(1, len(commits)):
-#     file[j] = commits[i]
 #     j += 1
 #     if 'Date: ' in commits[i]:
-#         file[j] = '--'
-#         j -= 1
+#         file[j-2] = '--'
+#         j -= 2
+#     else:
+#         file[j] = commits[i]
 # with open("commits_logs/--.txt", "w") as txt_file:
 #     for line in file:
 #         txt_file.write(line + '\n')
+
+
 file = open("commits_logs/--.txt", "r")
-commits_dashed = file.read().split("--\n")
+commits_dashed = file.read().split('--')
+print(commits_dashed)
 
 def export_to_csv():
     try:
@@ -27,7 +31,7 @@ def export_to_csv():
             spam_writer = csv.writer(csvfile)
             spam_writer.writerow(['number', 'Subject Line', 'Blank Line', 'character count'])
             for j in range(1, len(commits_dashed)):
-                subject_line = textwrap.dedent(commits_dashed[j].split("\n")[2])
+                subject_line = textwrap.dedent(commits_dashed[j].split("\n")[1])
                 # separated_with_blank = 1 if textwrap.dedent(commits_dashed[j].split("\n")[2]) == '' else 0
 
                 # spam_writer.writerow([j, subject_line, separated_with_blank, len(subject_line)])
