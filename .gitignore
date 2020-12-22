@@ -2,3 +2,4 @@
 __pycache__/
 venv/
 *.csv
+commits_logs/--temp.txt
