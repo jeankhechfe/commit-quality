@@ -1,0 +1,1185 @@
+Suunto EON Steel: set date too when doing device timesync
+
+I'd never noticed this before, since my date had always been already set
+correctly, but the timesync with the EON Steel only set the time, not
+the date.
+
+The fix is trivial, since the code already filled in the datetime data,
+it just didn't do the SET_DATE command.
+
+Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>
+----
+Correctly fix build without HID support
+
+Suggested by: Linus Torvalds <torvalds@linux-foundation.org>
+Signed-off-by: Dirk Hohndel <dirk@hohndel.org>
+----
+Revert "Allow compilation on platforms without USBHID support"
+
+This reverts commit 7444cca876cf1637fd7c3d4ad1e48145b215aed8.
+
+The commit does what it advertises - but also breaks HID support everywhere
+else. Oops.
+
+Reported-by: Linus Torvalds <torvalds@linux-foundation.org>
+Signed-off-by: Dirk Hohndel <dirk@hohndel.org>
+----
+Merge pull request #14 from torvalds/Subsurface-branch
+
+Merge with upstream libdivecomputer
+----
+Remove the half-duplex emulation from the I/O api
+
+Now that the half-duplex emulation code isn't used anymore, it can be
+removed from the I/O stream api.
+----
+Handle the half-duplex emulation in the vyper2 backend
+
+The half-duplex emulation is basically a workaround for a timing problem
+in the vyper2 backend. Since no other dive computer backend uses or
+needs this feature, it makes no sense to support this at the I/O layer.
+It can be implemented directly in the vyper2 backend instead.
+----
+Use the new timer for the timestamps in the logging
+
+Replace the platform specific code with the new timers.
+----
+Use the new timer for the timeout calculations
+
+Replace the gettimeofday() based implementation with the new monotonic
+timers. This makes the implementation more robust against unexpected
+adjustments of the clock.
+----
+Add a high resolution timer module
+
+The new timer module provides an cross-platform interface for a high
+resolution monotonic clock. The timestamps are always relative to the
+creation of the timer and their unit is one microseconds.
+
+The timers can be used for logging, measuring elapsed time and
+implementing timeouts.
+----
+Add functions for converting bluetooth addresses
+----
+Add support for the OSTC 2 TR
+
+The OSTC 2 TR add supports for one or more tank pressure transmitters,
+and the active transmitter is linked to the active gas mix.
+----
+Allow compilation on platforms without USBHID support
+
+E.g. iOS.
+
+Signed-off-by: Dirk Hohndel <dirk@hohndel.org>
+----
+Revert "Shearwater: correctly handle the different models"
+
+This reverts commit 8ea8cebb4e6c3d86b9ceb2291caa077dabd2a3f7.
+
+Well intended, but as Jef points out it breaks download from older Shearwater
+dive computers in certain situations.
+
+Signed-off-by: Dirk Hohndel <dirk@hohndel.org>
+----
+Let the ringbuffer function handle a full ringbuffer
+
+The ringbuffer_distance() function has a parameter to specify whether a
+ringbuffer with identical begin/end pointers should be considered an
+empty or a full ringbuffer. Hence there is no need to handle the case of
+a full ringbuffer manually.
+----
+Suppress the warning if no O2 sensors are present
+
+The warning about disabling the O2 sensors due to factory default
+calibration values, applies only if there is at least one calibrated O2
+sensor present.
+
+This has no effect on the calibration bits, because those are already
+zero if there are no calibrated O2 sensors present.
+----
+Integrate the connect step into the open function
+
+There is no need to expose the two step connection setup of the
+underlying socket interface in the public api. Doing so may complicate
+the implementation on platforms where the native api is not based on the
+socket interface (e.g. Mac OS X).
+
+Note that the function to connect based on the IrDA service name is
+removed. It's not used anywhere in libdivecomputer and since IrDA is an
+outdated technology nowadays, it's unlikely we'll need it in the future.
+----
+Merge branch 'discovery'
+----
+Implement some filter functions
+----
+Add suport for applying a filter function
+
+The device descriptors are extended with a filter function. During the
+device discovery, this filter function is used to return only devices
+that match a known dive computer.
+
+The filtering is optional, and can be disabled by passing a NULL pointer
+for the device descriptor when creating the iterator with one of the
+dc_xxx_iterator_new() functions.
+----
+Re-write the device discovery using the iterator api
+
+Replacing the callback based interface with an iterator based interface,
+results in a more extensible abstraction with a common interface for
+each of the built-in I/O implementations (serial, usbhid, irda and
+bluetooth).
+----
+Merge git://github.com/libdivecomputer/libdivecomputer into Subsurface-branch
+----
+Cleanup the iterator internals
+----
+Simplify the conditional compilation
+
+Move the global variables inside an existing conditionally compiled
+block, to remove some of the #ifdef's.
+----
+Disable some Windows specific compiler warnings
+
+The -Wno-pedantic-ms-format option is only needed for the MinGW target.
+But for some reason, the AX_APPEND_COMPILE_FLAGS macro enables the
+option for all other GCC targets too. But during compilation GCC outputs
+the warning "unrecognized command line option".
+----
+Use SDP to auto-detect the rfcomm port number
+
+When the port number is set to zero (which is an invalid value), detect
+the port number automatically. On Windows, we can simply supply the UUID
+of the serial port service, and the Windows api will take care of the
+discovery. On Linux (bluez), the SDP discovery needs to be performed
+manually to retrieve the port number.
+----
+Merge pull request #2549 from github/fixes/2547-pr-preview-broken
+
+Update Octokit.GraphQL schema
+----
+Update Octokit.GraphQL schema
+----
+Merge pull request #2512 from davidwengier/FixDiffCaptions
+
+Prevent error when filenames have braces in them
+----
+Merge branch 'master' into FixDiffCaptions
+----
+Merge pull request #2515 from github/useCreateRepositoryDialog
+
+Change GitHub.TeamFoundation.16 version of TeamExplorerServices
+----
+Changes based on PR feedback
+----
+Add compiler conditions within ShowPublishSection to only use IGitActionsExt2 under 16.0
+----
+Change GitHub.TeamFoundation.16 version of TeamExplorerServices to use IGitActionsExt2.InitializeOrPushRepositoryToGitService()
+----
+Merge branch 'master' into FixDiffCaptions
+----
+Merge pull request #2514 from github/devops/no-sign-pr-builds
+
+Don't sign VSIX on Azure Pipelines PR builds
+----
+Don't sign PR builds
+----
+Prevent error when filenames have braces in them
+----
+Merge pull request #2460 from github/azure-pipelines/certificate-sha1
+
+Sign the VSIX
+----
+Only sign master branch builds
+----
+Sign the VSIX
+----
+Add link to GitHub Actiions workflow
+----
+Add encrypted DigiCert certificate
+----
+Add vsixsigntool
+----
+Merge branch 'master' into azure-pipelines/certificate-sha1
+----
+Cert Hash(sha1) from certificate.pfx
+
+Found using: certutil -p PASSWORD -dump .\certificate.pfx
+----
+Merge pull request #2482 from github/fixes/2481-PullRequest.timelineItems
+
+Use PullRequest.timelineItems instead of PullRequest.timeline
+----
+Only fetch IssueComment and PullRequestCommit items
+----
+Use PullRequest.timelineItems instead of timeline
+----
+Merge pull request #2408 from github/fixes/remove-experimental-PR-file-margin
+
+Remove the experimental PR file margin
+----
+Merge branch 'master' into fixes/remove-experimental-PR-file-margin
+----
+Merge pull request #2473 from github/fixes/tool-window-discoverability
+
+Make pull request functionality more discoverable outside of Team Explorer
+----
+Merge branch 'master' into fixes/tool-window-discoverability
+----
+Merge pull request #2479 from github/fixes/2478-default-github-login
+
+Always default to GitHub login
+----
+Merge branch 'master' into fixes/2478-default-github-login
+----
+Fix typos
+----
+Merge pull request #527 from adam-p/fix-tbird-intl
+
+Fix #524 and #526: Broken in non-English Thunderbird
+----
+Bump version, add CHANGES note
+----
+Fix #524 and #526: Broken in non-English Thunderbird
+
+A string added in the Firefox 60 fix wasn't copied to the non-English `messages.json` files, which meant that it wasn't in the non-English `strings.properties` and `string.dtd` files. This caused Thunderbird to not load the overlay in Thunderbird, which prevented it from being present in the message window.
+
+To help mitigate this in the future, to some degree, the `i18n.js` script makes sure that all English strings are present in the other languages when creating the the .properties and .dtd files. But I still have to remember to run that script.
+----
+Merge pull request #520 from adam-p/tbird-fix
+
+Fix #495: Stopped working in Thunderbird 60
+----
+Fix some problems blocking Tbird extension submission
+----
+Bump version in manifests
+
+And copy over some linting stuff from the defunct xul branch.
+----
+Fix #495. Add changelist item.
+----
+Add prompt to help old-Thunderbird users find open-options menu item
+----
+Add ability for Thunderbird <= v59 to open options
+----
+Refactor Thunderbird prefs getting/setting
+----
+Merge pull request #518 from dugite-code/TB60
+
+Thunderbird 60 Fixes
+----
+Sign CLA
+----
+fix last-version key name
+----
+Thunderbird 60 Fixes
+
+- CSS for the preference dialogs has moved
+- NsISupportsString in setComplexValue() has been dropped in favour of setStringPref()
+- Thunderbird 60 refusing explicit decliration of option type 1 in install.rdf
+----
+Remove WebExtensions notes
+----
+Merge pull request #318 from michaelstepner/master
+
+Forgot-to-Render check for Fastmail
+----
+Fix CLA
+
+I had messed up the generation of it, then didn't read it carefully -- there were values missing from it.
+----
+Fix #427: After rendering, text would be selected
+
+This seemed to occur in Chrome on all pages, and in Firefox on some pages (Gmail, but not the contenteditable test page).
+----
+Fixed #435: console errors on cross-origin iframes-with-iframes
+
+This is related to #173, but the fix for that didn't check deeply enough.
+----
+Merge pull request #433 from adam-p/firefox-webextensions
+
+Merge WebExtensions changes
+----
+Upgade jQuery, as required by Mozilla review
+----
+Exclude Thumbs.db from build zips
+----
+At glob to local node deps, as required by npm bug
+----
+Bump version number
+----
+Add WebExtensions change item
+----
+Bump max Tbird and Postbox version
+----
+Update the default chrome.storage.sync quota value
+----
+Add icon sizes to setIcon to match manifest browserAction
+----
+Remove "Low" webext item
+----
+Merge master
+----
+Merge pull request #765 from Mutated1994/patch-9
+
+Update linux-timers-2.md
+----
+Update linux-timers-2.md
+----
+Merge pull request #762 from Mutated1994/patch-8
+
+feat: Get a memory dump in real mode
+----
+Update linux-bootstrap-1.md
+----
+Update linux-bootstrap-1.md
+----
+Merge pull request #761 from Mutated1994/patch-7
+
+feat: Add some code snippets
+----
+Merge pull request #760 from uchin0704/master
+
+linux-datastuctures-2.md:correct some descriptions
+----
+Merge pull request #746 from h4child/patch-1
+
+Update linux-bootstrap-4.md
+----
+Update linux-bootstrap-3.md
+----
+linux-datastuctures-2.md:correct some descriptions
+
+GFP_NOIO: "NOIO" is the point rather than "can't sleep"
+__GFP_HIGHMEM: allocation can happens at either ZONE_NORMAL or ZONE_HIGHMEM
+GFP_ATOMIC: allocation don't have to be in a "process"(e.g. in an interupt handler)
+
+Signed-off-by: qinyu <chinyu0704@outlook.com>
+----
+Merge pull request #759 from uchin0704/master
+
+linux-datastructures-2.md: fix minor typo
+----
+linux-datastructures-2.md: fix minor typo
+
+fix minor typo in linux-datastructures-2.md
+Signed-off-by: qinyu <chinyu0704@outlook.com>
+----
+Merge pull request #757 from Mutated1994/patch-6
+
+fix: Adjust a sentence
+----
+Merge pull request #755 from Mutated1994/patch-4
+
+feat: Diving a little deeper about the PAGE_OFFSET
+----
+Update linux-initialization-2.md
+----
+Merge pull request #756 from Mutated1994/patch-5
+
+feat: Add a important word
+----
+Update linux-bootstrap-1.md
+----
+Update linux-bootstrap-1.md
+----
+Update linux-initialization-2.md
+----
+Update linux-initialization-2.md
+----
+Merge pull request #754 from Mutated1994/patch-3
+
+feat: Fill in the details of __PAGE_OFFSET
+----
+Update linux-initialization-2.md
+----
+Update linux-initialization-2.md
+----
+Update linux-initialization-2.md
+----
+Merge pull request #753 from Mutated1994/patch-2
+
+feat: Add some comments
+----
+Update linux-initialization-2.md
+----
+Merge pull request #752 from chaffz/master
+
+fix: The segment selector of  IDT
+----
+Update linux-initialization-2.md
+----
+Update contributors.md
+----
+Update linux-initialization-2.md
+----
+too many licenses!
+----
+update badges; disable PHP 8.0 prefer-lowest tests
+----
+last try
+----
+maybe?
+----
+bump again
+----
+bump phpunit
+----
+php 8.0 support
+----
+Clean up some code, add test for #115
+----
+tweak docs
+----
+Laravel 8.0 support tweaks
+----
+Merge pull request #113 from tectiv3/8.x
+
+Support for Laravel 8
+----
+Support for Laravel 8
+----
+Laravel 7.0 support
+----
+Merge pull request #108 from jasonmccreary/patch-1
+
+Support for Laravel 7
+----
+Support for Laravel 7
+----
+update tests
+----
+Various improvements to migrations and custom table names
+----
+fix for semantic versioning
+----
+fix for semantic versioning
+----
+update CHANGELOG
+----
+tweaks to docs
+----
+drop PHP 7.1 support
+----
+Prep for 6.0 release
+----
+Test for counting all tags
+----
+tweak and bump
+----
+Merge pull request #97 from devguar/master
+
+Create a new alias to use on scopes to be able to combine many scopes
+----
+revert version number to follow pattern (minor bumps are for Laravel minor bumps)
+----
+Fix BUG when try to combine scopes like withAllTags and WithoutAnyTags.
+----
+Create a new alias to use on scopes to be able to combine many scopes
+Create a new alias to use on scopes to be able to combine many scopes
+Create a new alias to use on scopes to be able to combine many scopes
+----
+version bump
+----
+Update CHANGELOG.md
+----
+Merge pull request #58 from faustbrian/patch-1
+
+use `Arr::first` instead of `array_first` helper
+----
+use `Arr::first` instead of `array_first` helper
+----
+Update CHANGELOG.md
+----
+Merge pull request #57 from samuelhgf/master
+
+Implements a method that returns only the built link of the social network
+----
+Typo fix
+----
+Typo fix
+----
+Rework getRawLinks method & docs
+----
+Add the instructions of the implemetation in the README file
+----
+Implements a method that returns only the built link of the social network
+----
+Update changelog
+----
+Merge pull request #50 from jorenvh/title-support
+
+Add title support (improves PR #48)
+----
+Add title support
+
+Improves PR #48
+----
+Update changelog
+----
+Update readme
+----
+Merge pull request #44 from sandervankasteel/feature/Telegram
+
+Added Telegram as service to share to
+----
+Updated README.md
+----
+Added combined tests to also include Telegram
+----
+Added tests for Telegram
+----
+Added function for building URL for Telegram and added forgotten comment for the Reddit function
+----
+Added Telegram
+----
+Added configuration for Telegram
+----
+Merge pull request #43 from sandervankasteel/feature/TestAllPHPVersions
+
+Test with all PHP Versions
+----
+Remove support for php 7.0
+----
+Merge pull request #42 from sandervankasteel/feature/AddRedditAsService
+
+Added Reddit as service to be able to share to
+----
+Updated orchestra/testbench to 3.5 (ie. Laravel 5.5)
+----
+Upgraded phpunit to 6.5
+----
+Dropped PHP 5.6 testing
+----
+Added PHP 7.0, 7.1, 7.2 and 7.3
+----
+Updated to README.md to include Reddit
+----
+Fix composer.json syntax
+----
+Update composer config
+----
+Add php8 to test matrix
+----
+Fix invalid return type on shorthand setter trait
+----
+Update composer dependencies
+----
+Fix styling
+----
+Add fallback value on shorthand setters if config does not contain index
+----
+Update string concatenation
+----
+Update meta structs property prefix string concatenation
+----
+Add csrf token shorthand method docs
+----
+Add missing escape parameters to title & description shorthand setter
+----
+Update docs
+----
+Hide shorthand method description in spoilers
+----
+Refactor docs
+----
+Remove scrutinizer badge
+----
+Update php cs fixer config
+----
+Fix styling
+----
+Delete .php_cs
+----
+Fix styling
+----
+Add php cs fixer
+----
+Add new structs to docs
+----
+Clean up phpdocs
+----
+Moving setUnique to Struct
+----
+Allow to switch unique-flag for `Article`
+----
+Image support
+----
+Canonical
+----
+Adding "Article" namespace
+----
+Update github actions to run execute pull request
+----
+Remove defaults method from script struct
+----
+Adding attributes to script struct
+----
+Update tests badge
+----
+Support PHP 8 (#42)
+
+* Make every closure static
+----
+Switch to GitHub Actions and allow Carbon 3 (#41)
+----
+Fix #39 Keep local hours for diff calculation (#40)
+----
+Fix #37 Get hours option for each class
+----
+Simplify the set of meta-data
+----
+Fix code style
+----
+Add unit tests for open time range start and end
+----
+Merge pull request #36 from kylekatarnls/feature/getCurrentOpenTimePeriod
+
+Add getCurrentOpenTimePeriod() method
+----
+Add getCurrentOpenTimePeriod() test
+----
+Add getCurrentOpenTimePeriod() method
+----
+Merge pull request #35 from kylekatarnls/feature/issue-34-isOpenOn-holidays
+
+Fix #34 holidays detection via static methods like isOpenOn
+----
+Fix indent
+----
+Split long lines
+----
+Split long lines
+----
+Fix closure default value
+----
+Update spatie/opening-hours
+----
+Add default holiday callback to avoid breaking change
+----
+Fix #34 holidays detection via static methods like isOpenOn
+----
+Update isOpenOn() documentation
+----
+Merge pull request #32 from kylekatarnls/feature/issue-31-fix-local-mode
+
+Fix add/sub time with local mode
+----
+Check only local mode for openingHours copy
+----
+Fix add/sub time with local mode
+----
+Merge pull request #30 from kylekatarnls/fix-laravel-config
+
+Fix laravel config
+----
+Preserve settings for BusinessDay
+----
+Merge pull request #29 from Ken-vdE/patch-1
+
+Update README.md
+----
+Update README.md
+
+There were some errors in the readme file.
+
+1. The enable should be for 'Time' not 'Day'.
+
+2. The example laravel carbon.php was in the wrong format and caused "Spatie\OpeningHours\Exceptions\InvalidDayName: Day `opening-hours` isn't a valid day name. Valid day names are lowercase english words, e.g. `monday`, `thursday`."
+----
+Merge pull request #27 from kylekatarnls/feature/issue-25-diff
+
+Implement #25 diff methods
+----
+Merge pull request #28 from kylekatarnls/analysis-QMpyvw
+
+Apply fixes from StyleCI
+----
+Apply fixes from StyleCI
+----
+Bump aws/aws-sdk-php from 3.171.1 to 3.171.2
+
+Bumps [aws/aws-sdk-php](https://github.com/aws/aws-sdk-php) from 3.171.1 to 3.171.2.
+- [Release notes](https://github.com/aws/aws-sdk-php/releases)
+- [Changelog](https://github.com/aws/aws-sdk-php/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/aws/aws-sdk-php/compare/3.171.1...3.171.2)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump twilio/sdk from 6.15.0 to 6.15.1
+
+Bumps [twilio/sdk](https://github.com/twilio/twilio-php) from 6.15.0 to 6.15.1.
+- [Release notes](https://github.com/twilio/twilio-php/releases)
+- [Changelog](https://github.com/twilio/twilio-php/blob/main/CHANGES.md)
+- [Commits](https://github.com/twilio/twilio-php/compare/6.15.0...6.15.1)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump friendsofphp/php-cs-fixer from 2.17.1 to 2.17.2
+
+Bumps [friendsofphp/php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) from 2.17.1 to 2.17.2.
+- [Release notes](https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases)
+- [Changelog](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/2.17/CHANGELOG.md)
+- [Commits](https://github.com/FriendsOfPHP/PHP-CS-Fixer/compare/v2.17.1...v2.17.2)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump aws/aws-sdk-php from 3.170.0 to 3.171.1
+
+Bumps [aws/aws-sdk-php](https://github.com/aws/aws-sdk-php) from 3.170.0 to 3.171.1.
+- [Release notes](https://github.com/aws/aws-sdk-php/releases)
+- [Changelog](https://github.com/aws/aws-sdk-php/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/aws/aws-sdk-php/compare/3.170.0...3.171.1)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump aws/aws-sdk-php from 3.169.0 to 3.170.0
+
+Bumps [aws/aws-sdk-php](https://github.com/aws/aws-sdk-php) from 3.169.0 to 3.170.0.
+- [Release notes](https://github.com/aws/aws-sdk-php/releases)
+- [Changelog](https://github.com/aws/aws-sdk-php/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/aws/aws-sdk-php/compare/3.169.0...3.170.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump orchestra/testbench from 6.6.0 to 6.7.0
+
+Bumps [orchestra/testbench](https://github.com/orchestral/testbench) from 6.6.0 to 6.7.0.
+- [Release notes](https://github.com/orchestral/testbench/releases)
+- [Changelog](https://github.com/orchestral/testbench/blob/6.x/CHANGELOG-6.x.md)
+- [Commits](https://github.com/orchestral/testbench/compare/v6.6.0...v6.7.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump aws/aws-sdk-php from 3.168.3 to 3.169.0
+
+Bumps [aws/aws-sdk-php](https://github.com/aws/aws-sdk-php) from 3.168.3 to 3.169.0.
+- [Release notes](https://github.com/aws/aws-sdk-php/releases)
+- [Changelog](https://github.com/aws/aws-sdk-php/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/aws/aws-sdk-php/compare/3.168.3...3.169.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump orchestra/testbench from 6.5.0 to 6.6.0
+
+Bumps [orchestra/testbench](https://github.com/orchestral/testbench) from 6.5.0 to 6.6.0.
+- [Release notes](https://github.com/orchestral/testbench/releases)
+- [Changelog](https://github.com/orchestral/testbench/blob/6.x/CHANGELOG-6.x.md)
+- [Commits](https://github.com/orchestral/testbench/compare/v6.5.0...v6.6.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump aws/aws-sdk-php from 3.168.0 to 3.168.3
+
+Bumps [aws/aws-sdk-php](https://github.com/aws/aws-sdk-php) from 3.168.0 to 3.168.3.
+- [Release notes](https://github.com/aws/aws-sdk-php/releases)
+- [Changelog](https://github.com/aws/aws-sdk-php/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/aws/aws-sdk-php/compare/3.168.0...3.168.3)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump aws/aws-sdk-php from 3.167.0 to 3.168.0
+
+Bumps [aws/aws-sdk-php](https://github.com/aws/aws-sdk-php) from 3.167.0 to 3.168.0.
+- [Release notes](https://github.com/aws/aws-sdk-php/releases)
+- [Changelog](https://github.com/aws/aws-sdk-php/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/aws/aws-sdk-php/compare/3.167.0...3.168.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump twilio/sdk from 6.14.0 to 6.15.0
+
+Bumps [twilio/sdk](https://github.com/twilio/twilio-php) from 6.14.0 to 6.15.0.
+- [Release notes](https://github.com/twilio/twilio-php/releases)
+- [Changelog](https://github.com/twilio/twilio-php/blob/main/CHANGES.md)
+- [Commits](https://github.com/twilio/twilio-php/compare/6.14.0...6.15.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump friendsofphp/php-cs-fixer from 2.17.0 to 2.17.1
+
+Bumps [friendsofphp/php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) from 2.17.0 to 2.17.1.
+- [Release notes](https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases)
+- [Changelog](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/2.17/CHANGELOG.md)
+- [Commits](https://github.com/FriendsOfPHP/PHP-CS-Fixer/compare/v2.17.0...v2.17.1)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump friendsofphp/php-cs-fixer from 2.16.7 to 2.17.0
+
+Bumps [friendsofphp/php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) from 2.16.7 to 2.17.0.
+- [Release notes](https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases)
+- [Changelog](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/2.17/CHANGELOG.md)
+- [Commits](https://github.com/FriendsOfPHP/PHP-CS-Fixer/compare/v2.16.7...v2.17.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump aws/aws-sdk-php from 3.166.2 to 3.167.0
+
+Bumps [aws/aws-sdk-php](https://github.com/aws/aws-sdk-php) from 3.166.2 to 3.167.0.
+- [Release notes](https://github.com/aws/aws-sdk-php/releases)
+- [Changelog](https://github.com/aws/aws-sdk-php/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/aws/aws-sdk-php/compare/3.166.2...3.167.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump twilio/sdk from 6.13.0 to 6.14.0
+
+Bumps [twilio/sdk](https://github.com/twilio/twilio-php) from 6.13.0 to 6.14.0.
+- [Release notes](https://github.com/twilio/twilio-php/releases)
+- [Changelog](https://github.com/twilio/twilio-php/blob/main/CHANGES.md)
+- [Commits](https://github.com/twilio/twilio-php/compare/6.13.0...6.14.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump vimeo/psalm from 4.2.1 to 4.3.1
+
+Bumps [vimeo/psalm](https://github.com/vimeo/psalm) from 4.2.1 to 4.3.1.
+- [Release notes](https://github.com/vimeo/psalm/releases)
+- [Commits](https://github.com/vimeo/psalm/compare/4.2.1...4.3.1)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump aws/aws-sdk-php from 3.165.0 to 3.166.2
+
+Bumps [aws/aws-sdk-php](https://github.com/aws/aws-sdk-php) from 3.165.0 to 3.166.2.
+- [Release notes](https://github.com/aws/aws-sdk-php/releases)
+- [Changelog](https://github.com/aws/aws-sdk-php/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/aws/aws-sdk-php/compare/3.165.0...3.166.2)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump phpunit/phpunit from 9.4.4 to 9.5.0
+
+Bumps [phpunit/phpunit](https://github.com/sebastianbergmann/phpunit) from 9.4.4 to 9.5.0.
+- [Release notes](https://github.com/sebastianbergmann/phpunit/releases)
+- [Changelog](https://github.com/sebastianbergmann/phpunit/blob/master/ChangeLog-9.5.md)
+- [Commits](https://github.com/sebastianbergmann/phpunit/compare/9.4.4...9.5.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump orchestra/testbench from 6.4.0 to 6.5.0
+
+Bumps [orchestra/testbench](https://github.com/orchestral/testbench) from 6.4.0 to 6.5.0.
+- [Release notes](https://github.com/orchestral/testbench/releases)
+- [Changelog](https://github.com/orchestral/testbench/blob/6.x/CHANGELOG-6.x.md)
+- [Commits](https://github.com/orchestral/testbench/compare/v6.4.0...v6.5.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump aws/aws-sdk-php from 3.164.0 to 3.165.0
+
+Bumps [aws/aws-sdk-php](https://github.com/aws/aws-sdk-php) from 3.164.0 to 3.165.0.
+- [Release notes](https://github.com/aws/aws-sdk-php/releases)
+- [Changelog](https://github.com/aws/aws-sdk-php/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/aws/aws-sdk-php/compare/3.164.0...3.165.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump phpunit/phpunit from 9.4.3 to 9.4.4
+
+Bumps [phpunit/phpunit](https://github.com/sebastianbergmann/phpunit) from 9.4.3 to 9.4.4.
+- [Release notes](https://github.com/sebastianbergmann/phpunit/releases)
+- [Changelog](https://github.com/sebastianbergmann/phpunit/blob/master/ChangeLog-9.4.md)
+- [Commits](https://github.com/sebastianbergmann/phpunit/compare/9.4.3...9.4.4)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+----
+Bump aws/aws-sdk-php from 3.163.2 to 3.164.0 (#247)
+
+Bumps [aws/aws-sdk-php](https://github.com/aws/aws-sdk-php) from 3.163.2 to 3.164.0.
+
+- [Release notes](https://github.com/aws/aws-sdk-php/releases)
+
+- [Changelog](https://github.com/aws/aws-sdk-php/blob/master/CHANGELOG.md)
+
+- [Commits](https://github.com/aws/aws-sdk-php/compare/3.163.2...3.164.0)
+
+
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+
+
+
+Co-authored-by: dependabot-preview[bot] <27856297+dependabot-preview[bot]@users.noreply.github.com>
+----
+Bump twilio/sdk from 6.12.0 to 6.13.0 (#243)
+
+Bumps [twilio/sdk](https://github.com/twilio/twilio-php) from 6.12.0 to 6.13.0.
+
+- [Release notes](https://github.com/twilio/twilio-php/releases)
+
+- [Changelog](https://github.com/twilio/twilio-php/blob/main/CHANGES.md)
+
+- [Commits](https://github.com/twilio/twilio-php/compare/6.12.0...6.13.0)
+
+
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+
+
+
+Co-authored-by: dependabot-preview[bot] <27856297+dependabot-preview[bot]@users.noreply.github.com>
+
+Co-authored-by: Kazi Ahmed <mailtokmahmed@gmail.com>
+----
+Bump aws/aws-sdk-php from 3.161.1 to 3.163.2 (#244)
+
+Bumps [aws/aws-sdk-php](https://github.com/aws/aws-sdk-php) from 3.161.1 to 3.163.2.
+
+- [Release notes](https://github.com/aws/aws-sdk-php/releases)
+
+- [Changelog](https://github.com/aws/aws-sdk-php/blob/master/CHANGELOG.md)
+
+- [Commits](https://github.com/aws/aws-sdk-php/compare/3.161.1...3.163.2)
+
+
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+
+
+
+Co-authored-by: dependabot-preview[bot] <27856297+dependabot-preview[bot]@users.noreply.github.com>
+
+Co-authored-by: Kazi Ahmed <mailtokmahmed@gmail.com>
+----
+Bump vimeo/psalm from 4.1.1 to 4.2.1 (#245)
+
+Bumps [vimeo/psalm](https://github.com/vimeo/psalm) from 4.1.1 to 4.2.1.
+
+- [Release notes](https://github.com/vimeo/psalm/releases)
+
+- [Commits](https://github.com/vimeo/psalm/compare/4.1.1...4.2.1)
+
+
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+
+
+
+Co-authored-by: dependabot-preview[bot] <27856297+dependabot-preview[bot]@users.noreply.github.com>
+----
+Bump aws/aws-sdk-php from 3.159.1 to 3.161.1 (#238)
+
+Bumps [aws/aws-sdk-php](https://github.com/aws/aws-sdk-php) from 3.159.1 to 3.161.1.
+
+- [Release notes](https://github.com/aws/aws-sdk-php/releases)
+
+- [Changelog](https://github.com/aws/aws-sdk-php/blob/master/CHANGELOG.md)
+
+- [Commits](https://github.com/aws/aws-sdk-php/compare/3.159.1...3.161.1)
+
+
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+
+
+
+Co-authored-by: dependabot-preview[bot] <27856297+dependabot-preview[bot]@users.noreply.github.com>
+----
+Bump orchestra/testbench from 6.3.0 to 6.4.0 (#232)
+
+Bumps [orchestra/testbench](https://github.com/orchestral/testbench) from 6.3.0 to 6.4.0.
+
+- [Release notes](https://github.com/orchestral/testbench/releases)
+
+- [Changelog](https://github.com/orchestral/testbench/blob/6.x/CHANGELOG-6.x.md)
+
+- [Commits](https://github.com/orchestral/testbench/compare/v6.3.0...v6.4.0)
+
+
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+
+
+
+Co-authored-by: dependabot-preview[bot] <27856297+dependabot-preview[bot]@users.noreply.github.com>
+
+Co-authored-by: Kazi Ahmed <mailtokmahmed@gmail.com>
+----
+Bump aws/aws-sdk-php from 3.158.22 to 3.159.1 (#234)
+
+Bumps [aws/aws-sdk-php](https://github.com/aws/aws-sdk-php) from 3.158.22 to 3.159.1.
+
+- [Release notes](https://github.com/aws/aws-sdk-php/releases)
+
+- [Changelog](https://github.com/aws/aws-sdk-php/blob/master/CHANGELOG.md)
+
+- [Commits](https://github.com/aws/aws-sdk-php/compare/3.158.22...3.159.1)
+
+
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+
+
+
+Co-authored-by: dependabot-preview[bot] <27856297+dependabot-preview[bot]@users.noreply.github.com>
+
+Co-authored-by: Kazi Ahmed <mailtokmahmed@gmail.com>
+----
+Bump phpunit/phpunit from 9.4.2 to 9.4.3 (#235)
+
+Bumps [phpunit/phpunit](https://github.com/sebastianbergmann/phpunit) from 9.4.2 to 9.4.3.
+
+- [Release notes](https://github.com/sebastianbergmann/phpunit/releases)
+
+- [Changelog](https://github.com/sebastianbergmann/phpunit/blob/master/ChangeLog-9.4.md)
+
+- [Commits](https://github.com/sebastianbergmann/phpunit/compare/9.4.2...9.4.3)
+
+
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+
+
+
+Co-authored-by: dependabot-preview[bot] <27856297+dependabot-preview[bot]@users.noreply.github.com>
+----
+Bump twilio/sdk from 6.11.0 to 6.12.0 (#229)
+
+Bumps [twilio/sdk](https://github.com/twilio/twilio-php) from 6.11.0 to 6.12.0.
+
+- [Release notes](https://github.com/twilio/twilio-php/releases)
+
+- [Changelog](https://github.com/twilio/twilio-php/blob/main/CHANGES.md)
+
+- [Commits](https://github.com/twilio/twilio-php/compare/6.11.0...6.12.0)
+
+
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+
+
+
+Co-authored-by: dependabot-preview[bot] <27856297+dependabot-preview[bot]@users.noreply.github.com>
+
+Co-authored-by: Kazi Ahmed <mailtokmahmed@gmail.com>
+----
+Merge pull request #113 from RazerMoon/more-photos
+
+Show how many more photos there are
+----
+show if more, opacity
+
+Only show the indicator if there is more than one image, inactive bubbles have less opacity, only active bubbles have border
+----
+fix #119
+----
+fix #130
+----
+ignore hello reports
+----
+bump
+----
+bio limit
+----
+fix #137
+----
+fix #138
+----
+inc
+----
+chore(release): 1.2.18
+----
+remove location for now
+----
+fix #126
+----
+removed old styling
+----
+changed to be less obtrusive
+----
+uncheck all should return no users
+----
+bump
+----
+chore(release): 1.2.17
+----
+changed photo to img
+----
+more photos display
+----
+Merge branch 'master' of https://github.com/benawad/vsinder
+----
+fix #103, #110
+----
+report a bug
+----
+chore(release): 1.2.16
+----
+android login just works now
+----
+fix #104
+----
+Merge pull request #102 from asheliahut/patch-1
+
+Add PHP to flair list
+----
+move to bottom
+----
+move to bottom
+----
+Move to bottom
+----
+Merge pull request #4 from sirluky/patch-1
+
+allow credentials in graphql playground
+----
+allow credentials in graphql playground
+----
+Update README.md
+----
+Merge branch 'master' of https://github.com/benawad/create-graphql-api
+----
+fix node_modules going into package
+----
+add --auth flag
+----
+not using type-graphql validation
+----
+auth template works
+----
+in the middle of adding auth tempalte
+----
+Update README.md
+----
+Update README.md
+----
+Update README.md
+----
+Update README.md
+----
+Update README.md
+----
+Update README.md
+----
+Update README.md
+----
+log port and catch undefined NODE_ENV
+----
+Merge branch 'master' of https://github.com/benawad/create-graphql-api
+----
+make it easy for template to be deployed
+----
+Create SECURITY.md
+----
+Merge pull request #2 from benawad/add-license-1
+
+Create LICENSE
+----
+Create LICENSE
+----
+Update README.md
+----
+remove old var
+----
+typeorm will create sqlite db for us
+----
+write .gitginore
+----
+gitignore
+----
+logging true
+----
+use sqlite
+----
+meta.
