@@ -1,13 +1,14 @@
-import quality
+# import quality
 import csv
 import textwrap
-import requests
+# import requests
+import imperative
 
+file = open("commits_logs/--new.txt", "r")
+commits = file.read().split("\n----")
+print(len(commits))
 
-file = open("commits_logs/libdc-for-dirk-no-merges.txt", "r")
-commits = file.read().split("\ncommit")
-
-
+########################################################
 # convert log file to be separated with double dash (--)
 # file = [''] * 12092
 # j = 0
@@ -22,28 +23,54 @@ commits = file.read().split("\ncommit")
 #     for line in file:
 #         txt_file.write(line + '\n')
 
+#########################################################
+file = open("commits_logs/--new.txt", "r")
+commits_dashed = file.read().split('\n----\n')
 
-# file = open("commits_logs/--.txt", "r")
-# commits_dashed = file.read().split('\n--')
-#
-# def export_to_csv():
-#     try:
-#         with open('commits.csv', 'w', newline='') as csvfile:
-#             spam_writer = csv.writer(csvfile)
-#             spam_writer.writerow(['number', 'Subject Line', 'Blank Line', 'character count'])
-#             for j in range(1, len(commits_dashed)):
-#                 subject_line = textwrap.dedent(commits_dashed[j].split("\n")[2])
-#                 # separated_with_blank = 1 if textwrap.dedent(commits_dashed[j].split("\n")[2]) == '' else 0
-#
-#                 # spam_writer.writerow([j, subject_line, separated_with_blank, len(subject_line)])
-#                 spam_writer.writerow([j, commits_dashed[j], subject_line, len(subject_line)])
-#
-#     except PermissionError:
-#         print('\x1b[0;30;41m', 'Make sure CSV file is not open', '\x1b[0m')
-#
-# export_to_csv()
-#
-#
+
+def separated_with_blank(commit_message):
+    message_array = commit_message.split('\n')
+    if len(message_array) > 1 and textwrap.dedent(message_array[1]) != '':
+        return 0
+    return 1
+
+
+def wrap(commit_message):
+    message_array = commit_message.split('\n')
+    for line in message_array:
+        if len(line) > 72:
+            return False
+    return True
+
+
+def export_to_csv():
+    try:
+        with open('commits.csv', 'w', newline='') as csvfile:
+            spam_writer = csv.writer(csvfile)
+            spam_writer.writerow(
+                ['number', 'Commit', 'Subject Line', 'character count', 'subject_15_50', 'Blank Line', 'Capital', 'dot',
+                 'imperative', 'wrap'])
+            for j in range(1, len(commits_dashed)):
+                subject_line = textwrap.dedent(commits_dashed[j].split("\n")[0])
+
+                subject_15_50 = 1 if 10 < len(subject_line) < 51 else 0
+                blank_line = separated_with_blank(commits_dashed[j])
+                capital = 1 if str.isupper(subject_line[0]) else 0
+                dot = 1 if subject_line[-1] != "." else 0
+                imperative_mode = 1 if subject_line.split(" ")[0].lower() in imperative.words else 0
+                wrap_72 = 1 if wrap(commits_dashed[j]) else 0
+
+                spam_writer.writerow(
+                    [j, commits_dashed[j], subject_line, len(subject_line), subject_15_50, blank_line, capital, dot,
+                     imperative_mode, wrap_72])
+
+    except PermissionError:
+        print('\x1b[0;30;41m', 'Make sure CSV file is not open', '\x1b[0m')
+
+
+export_to_csv()
+
+#########################################################
 # total_score = 0
 # count = 0
 # good = 0
@@ -67,9 +94,11 @@ commits = file.read().split("\ncommit")
 # print("Acceptable quality:", "{:.2f}".format(acceptable * 100 / count), "%")
 # print("Bad quality:", "{:.2f}".format(bad * 100 / count), "%")
 
-with open("commits_logs/--new.txt", "w") as txt_file:
-    response = requests.get('https://api.github.com/repos/torvalds/libdc-for-dirk/commits')
-    print(response.json()[0]['commit'])
-    for res in response.json():
-        txt_file.write(res['commit']['message'])
-        txt_file.write('\n----\n')
+
+##########################################################
+# with open("commits_logs/--temp.txt", "w") as txt_file:
+#     response = requests.get('https://api.github.com/repos/benawad/create-graphql-api/commits')
+#     print(len(response.json()))
+#     for res in response.json():
+#         txt_file.write(res['commit']['message'])
+#         txt_file.write('\n----\n')
