@@ -54,7 +54,7 @@ def subject_length(subject_line):
 
 def export_to_csv():
     try:
-        with open('commits.csv', 'w', newline='') as csvfile:
+        with open('data/commits.csv', 'w', newline='') as csvfile:
             spam_writer = csv.writer(csvfile)
             spam_writer.writerow(
                 ['number', 'Commit', 'Subject Line', 'character count', 'subject_len', 'and_or_count', 'Blank Line',

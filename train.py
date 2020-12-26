@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import joblib
 
-data = pd.read_csv('model/data.csv')
+data = pd.read_csv('data/data.csv')
 x = data.drop(columns=['result'])
 y = data['result']
 
