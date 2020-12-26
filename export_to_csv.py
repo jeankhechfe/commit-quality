@@ -4,7 +4,7 @@ import imperative
 
 
 file = open("commits_logs/--new.txt", "r")
-commits_dashed = file.read().split('\n----\n')
+commits = file.read().split('\n----\n')
 
 
 def separated_with_blank(commit_message):
@@ -39,19 +39,19 @@ def export_to_csv():
                 ['number', 'Commit', 'Subject Line', 'character count', 'subject_len', 'and_or_count', 'Blank Line',
                  'Capital', 'dot',
                  'imperative', 'wrap'])
-            for j in range(1, len(commits_dashed)):
-                subject_line = textwrap.dedent(commits_dashed[j].split("\n")[0])
+            for j in range(1, len(commits)):
+                subject_line = textwrap.dedent(commits[j].split("\n")[0])
 
                 subject_len = subject_length(subject_line)
                 and_or_count = 0 if ' and ' in subject_line or ' or ' in subject_line else 1
-                blank_line = separated_with_blank(commits_dashed[j])
+                blank_line = separated_with_blank(commits[j])
                 capital = 1 if str.isupper(subject_line[0]) else 0
                 dot = 1 if subject_line[-1] != "." else 0
                 imperative_mode = 1 if subject_line.split(" ")[0].lower() in imperative.words else 0
-                wrap_72 = 1 if wrap(commits_dashed[j]) else 0
+                wrap_72 = 1 if wrap(commits[j]) else 0
 
                 spam_writer.writerow(
-                    [j, commits_dashed[j], subject_line, len(subject_line), subject_len, and_or_count, blank_line,
+                    [j, commits[j], subject_line, len(subject_line), subject_len, and_or_count, blank_line,
                      capital, dot,
                      imperative_mode, wrap_72])
 
