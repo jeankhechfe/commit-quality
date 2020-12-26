@@ -55,6 +55,8 @@ def export_to_csv():
                      capital, dot,
                      imperative_mode, wrap_72])
 
+            print('\x1b[6;30;42m', len(commits), 'commit messages exported', '\x1b[0m')
+
     except PermissionError:
         print('\x1b[0;30;41m', 'Make sure CSV file is not open', '\x1b[0m')
 
