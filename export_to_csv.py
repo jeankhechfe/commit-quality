@@ -1,7 +1,10 @@
 import csv
 import textwrap
 import imperative
+import spacy
 
+
+nlp = spacy.load("en_core_web_lg")
 
 file = open("commits_logs/--new.txt", "r")
 commits = file.read().split('\n----\n')
@@ -31,6 +34,23 @@ def subject_length(subject_line):
         return 0
 
 
+def check_direct_obj(subject_line):
+    subject_line = subject_line.replace(' .', ' ')
+    subject_line = subject_line.replace('\'', '')
+    subject_line = subject_line[0].lower() + subject_line[1:]
+    doc = nlp(subject_line)
+    for t1 in doc:
+        if t1.dep_ == 'ROOT':
+            for t2 in doc:
+                if t2 in t1.children and t2.dep_ == 'dobj':
+                    return 1
+        if t1.pos_ == 'VERB':
+            for t2 in doc:
+                if t2 in t1.children and t2.dep_ == 'dobj':
+                    return 1
+    return 0
+
+
 def export_to_csv():
     try:
         with open('data/commits.csv', 'w', newline='') as csvfile:
@@ -38,7 +58,7 @@ def export_to_csv():
             spam_writer.writerow(
                 ['number', 'Commit', 'Subject Line', 'character count', 'subject_len', 'and_or_count', 'Blank Line',
                  'Capital', 'dot',
-                 'imperative', 'wrap'])
+                 'imperative', 'wrap', 'verb_direct_obj'])
             for j in range(1, len(commits)):
                 subject_line = textwrap.dedent(commits[j].split("\n")[0])
 
@@ -49,11 +69,12 @@ def export_to_csv():
                 dot = 1 if subject_line[-1] != "." else 0
                 imperative_mode = 1 if subject_line.split(" ")[0].lower() in imperative.words else 0
                 wrap_72 = 1 if wrap(commits[j]) else 0
+                verb_direct_obj = check_direct_obj(subject_line)
 
                 spam_writer.writerow(
                     [j, commits[j], subject_line, len(subject_line), subject_len, and_or_count, blank_line,
                      capital, dot,
-                     imperative_mode, wrap_72])
+                     imperative_mode, wrap_72, verb_direct_obj])
 
             print('\x1b[6;30;42m', len(commits), 'commit messages exported', '\x1b[0m')
 
