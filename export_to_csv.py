@@ -2,7 +2,7 @@ import csv
 import textwrap
 import imperative
 import spacy
-
+from spacy.symbols import ORTH
 
 nlp = spacy.load("en_core_web_lg")
 
@@ -38,6 +38,7 @@ def check_direct_obj(subject_line):
     subject_line = subject_line.replace(' .', ' ')
     subject_line = subject_line.replace('\'', '')
     subject_line = subject_line[0].lower() + subject_line[1:]
+    nlp.tokenizer.add_special_case('fix', [{ORTH: 'fixing'}])  # treat fix as verb
     doc = nlp(subject_line)
     for t1 in doc:
         if t1.dep_ == 'ROOT':
