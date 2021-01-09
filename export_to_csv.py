@@ -4,7 +4,7 @@ import imperative
 import spacy
 from spacy.symbols import ORTH
 
-nlp = spacy.load("en_core_web_lg")
+nlp = spacy.load("en_core_web_lg", disable=['ner'])
 
 file = open("commits_logs/--new.txt", "r")
 commits = file.read().split('\n----\n')
