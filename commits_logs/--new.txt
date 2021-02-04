@@ -1,13 +1,6 @@
-Suunto EON Steel: set date too when doing device timesync
 
-I'd never noticed this before, since my date had always been already set
-correctly, but the timesync with the EON Steel only set the time, not
-the date.
-
-The fix is trivial, since the code already filled in the datetime data,
-it just didn't do the SET_DATE command.
-
-Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>
+----
+Fix typo
 ----
 Correctly fix build without HID support
 
