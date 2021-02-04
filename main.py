@@ -1,18 +1,27 @@
-# convert log file to be separated with double dash (--)
-file = open("commits_logs/libdc-for-dirk-no-merges.txt", "r")
-commits = file.read().split("\ncommit ")
-file = [''] * 12092  # this depends on the number of lines
-j = 0
-for i in range(1, len(commits)):
-    j += 1
-    if 'Date: ' in commits[i]:
-        file[j - 2] = '--'
-        j -= 2
-    else:
-        file[j] = commits[i]
-with open("commits_logs/--.txt", "w") as txt_file:
-    for line in file:
-        txt_file.write(line + '\n')
+import spacy
+
+
+nlp = spacy.load("en_core_web_lg")
+
+doc13 = nlp("zzzzz")
+print([(token.text, token.dep_, token.pos_) for token in doc13])
+
+# file = open("commits_logs/--new.txt", "r")
+# commits = file.read().split('\n----\n')[0]
+# doc = nlp(commits)
+# doc_text, doc_sent = [d.text for d in doc], [d.sent for d in doc]
+
+
+
+
+
+# print([sent.root for sent in doc.sents])
+
+# print(spacy.explain('ADJ'))
+# print(doc1.similarity(doc3))
+
+
+
 
 # --------------------------STATISTICS--------------------------
 # print("Commits Count :", count)
