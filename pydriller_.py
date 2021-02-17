@@ -36,12 +36,16 @@ with open("commits_logs/--temp.txt", "w") as txt_file:
                         for method in m.changed_methods:
                             txt_file.write('\n')
                             txt_file.write(method.name)
-
-                # print(commit.dmm_unit_size, '|', commit.dmm_unit_complexity, '|', commit.dmm_unit_interfacing, '\n')
-                # if commit.dmm_unit_size is not None:
-                #     txt_file.write('\n---dmm---\n')
-                #     dmm = (commit.dmm_unit_size + commit.dmm_unit_complexity + commit.dmm_unit_interfacing) / 3
-                #     txt_file.write(str(dmm))
+                txt_file.write('\n---dmm---\n')
+                methods_long = commit.dmm_unit_size if commit.dmm_unit_size else "N/A"
+                txt_file.write(str(methods_long))
+                txt_file.write('\n----\n')
+                methods_complexity = commit.dmm_unit_complexity if commit.dmm_unit_complexity else "N/A"
+                txt_file.write(str(methods_complexity))
+                txt_file.write('\n----\n')
+                methods_parameters = commit.dmm_unit_interfacing if commit.dmm_unit_interfacing else "N/A"
+                txt_file.write(str(methods_parameters))
+                txt_file.write('\n----\n')
 
 
 

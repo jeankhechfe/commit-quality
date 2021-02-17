@@ -79,7 +79,8 @@ def export_to_csv():
             spam_writer.writerow(
                 ['number', 'link', 'Message', 'Subject Line', 'character count', 'subject_len', 'and_or_count',
                  'Blank Line', 'Capital', 'dot', 'imperative', 'wrap', 'verb_direct_obj', 'changed_files_count',
-                 'changes_methods_count', 'files_to_body_ratio', 'methods_to_body_ratio'])
+                 'changes_methods_count', 'files_to_body_ratio', 'methods_to_body_ratio', 'methods_long',
+                 'methods_complexity', 'methods_parameters'])
 
             file = open("commits_logs/all_commits.txt", "r")
             projects = file.read().split('\n---project---\n')
@@ -104,7 +105,7 @@ def export_to_csv():
                     wrap_72 = 1 if wrap_to_72(message) else 0
                     verb_direct_obj = check_direct_obj(subject_line)
 
-                    files = commit.split('\n---files---\n')[1].split('\n----\n')
+                    files = commit.split('\n---files---\n')[1].split('\n---dmm---\n')[0].split('\n----\n')
                     changed_files_count = files.pop(0)
                     files_tokens = []
                     methods_tokens = []
@@ -123,10 +124,16 @@ def export_to_csv():
                     files_to_body_ratio = get_ratio(files_tokens, message) if files_tokens else 'N/A'
                     methods_to_body_ratio = get_ratio(methods_tokens, message) if methods_tokens else 'N/A'
 
+                    dmm = commit.split('\n---dmm---\n')[1].split('\n----\n')
+                    methods_long = dmm[0]
+                    methods_parameters = dmm[1]
+                    methods_complexity = dmm[2]
+
                     spam_writer.writerow(
                         [total_count, link, message, subject_line, len(subject_line), subject_len,
                          and_or_count, blank_line, capital, dot, imperative_mode, wrap_72, verb_direct_obj,
-                         changed_files_count, changes_methods_count, files_to_body_ratio, methods_to_body_ratio])
+                         changed_files_count, changes_methods_count, files_to_body_ratio, methods_to_body_ratio,
+                         methods_long, methods_complexity, methods_parameters])
 
             print('\x1b[6;30;42m', 'commits messages has been exported', '\x1b[0m')
 
