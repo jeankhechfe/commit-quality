@@ -49,6 +49,7 @@ def check_direct_obj(subject_line):
     subject_line = subject_line.replace('\'', '')
     subject_line = subject_line[0].lower() + subject_line[1:]
     nlp.tokenizer.add_special_case('fix', [{ORTH: 'fixing'}])  # treat fix as verb
+    nlp.tokenizer.add_special_case('show', [{ORTH: 'showing'}])  # fix 'show' not being recognized
     doc = nlp(subject_line)
     for t1 in doc:
         if t1.dep_ == 'ROOT':

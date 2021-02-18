@@ -523,7 +523,7 @@ Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>",Generate 'waterte
 If it exists, it really does help identify the dive.  At least it does
 for me: ""local or Maui""?
 
-Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>",Show temperature in the info summary,36,2,1,1,1,1,1,1,0,1,2,0.0,0.0,N/A,1.0,1.0
+Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>",Show temperature in the info summary,36,2,1,1,1,1,1,1,1,1,2,0.0,0.0,N/A,1.0,1.0
 66,https://github.com/torvalds/subsurface-for-dirk/commit/d9106995d39138dbce5f3306a391361f68ce0a07,"Hack up some very rudimentary support for the Uemis xml format
 
 I think I'll need to re-organize the handling of per-format code, but
