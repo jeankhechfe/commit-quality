@@ -13,13 +13,13 @@ repos = ["https://github.com/torvalds/subsurface-for-dirk",
 
 with open("commits_logs/--temp.txt", "w") as txt_file:
     for repo in repos:
-        i = 0
+        i = -1  # skip first commit
         commits = RepositoryMining([repo], only_no_merge=True).traverse_commits()
         txt_file.write('\n---project---\n')
         txt_file.write(repo)
         for commit in commits:
-            if i < 100:  # only first 100 commit (implemented this way cuz pydriller raises exception otherwise)
-                i += 1
+            i += 1
+            if 0 < i < 101:  # only first 100 commit (implemented this way cuz pydriller raises exception otherwise)
                 txt_file.write('\n---commit---\n')
                 txt_file.write(commit.hash)
                 txt_file.write('\n---message---\n')
