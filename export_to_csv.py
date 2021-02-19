@@ -62,6 +62,7 @@ def check_direct_object_connection(subject_line):
     subject_line = subject_line.replace('\'', '')
     lower_subject_line = subject_line[0].lower() + subject_line[1:]
     nlp.tokenizer.add_special_case('fix', [{ORTH: 'fixing'}])  # treat fix as verb
+    nlp.tokenizer.add_special_case('fixed', [{ORTH: 'fixing'}])  # treat fixed as verb
     nlp.tokenizer.add_special_case('update', [{ORTH: 'updating'}])  # treat update as verb
     nlp.tokenizer.add_special_case('show', [{ORTH: 'showing'}])  # fix 'show' not being recognized
     doc1 = nlp(subject_line)
