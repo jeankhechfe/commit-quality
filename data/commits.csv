@@ -851,8 +851,8 @@ Backward compatibility has been maintained though.",Made pooling objects directl
 123,https://github.com/bitronix/btm/commit/a3141bda4fc7ed32538b2cfb5628b91df8ffd691,Refactored Recoverer so that it queries ResourceRegistrar instead of expecting resources to be registered. This required updating some code in the ResourceLoader as well.,Refactored Recoverer so that it queries ResourceRegistrar instead of expecting resources to be registered. This required updating some code in the ResourceLoader as well.,170,0,1,1,1,0,0,0,1,12,31,0.0,0.0,N/A,N/A,1.0
 124,https://github.com/bitronix/btm/commit/94b8bc7fc5dbeaa53722e1340945eb1f8387babc,Refactored Recoverer so that it queries ResourceRegistrar instead of expecting resources to be registered. This required updating some code in the ResourceLoader as well.,Refactored Recoverer so that it queries ResourceRegistrar instead of expecting resources to be registered. This required updating some code in the ResourceLoader as well.,170,0,1,1,1,0,0,0,1,1,0,0.0,N/A,N/A,N/A,N/A
 125,https://github.com/bitronix/btm/commit/7a783bda39cefbfd1260dd226eb51740e30369a9,More cleanup + updated test,More cleanup + updated test,27,2,1,1,1,1,0,1,0,3,2,0.0,0.0,N/A,N/A,N/A
-126,https://github.com/bitronix/btm/commit/997ba7ddc5cecd3407016e6d354f3cd8e90a3f35,Updated javadoc,Updated javadoc,15,1,1,1,1,1,0,1,0,1,0,0.0,N/A,N/A,N/A,N/A
-127,https://github.com/bitronix/btm/commit/9d6bce7d483d6ced06d3845095fc74a6505db731,Updated javadoc,Updated javadoc,15,1,1,1,1,1,0,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+126,https://github.com/bitronix/btm/commit/997ba7ddc5cecd3407016e6d354f3cd8e90a3f35,Updated javadoc,Updated javadoc,15,1,1,1,1,1,0,1,1,1,0,0.0,N/A,N/A,N/A,N/A
+127,https://github.com/bitronix/btm/commit/9d6bce7d483d6ced06d3845095fc74a6505db731,Updated javadoc,Updated javadoc,15,1,1,1,1,1,0,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 128,https://github.com/bitronix/btm/commit/851c459409b41bba89faf2f91d2e2967c7f2b267,minor code cleanup,minor code cleanup,18,1,1,1,0,1,1,1,0,1,2,0.0,0.0,N/A,N/A,N/A
 129,https://github.com/bitronix/btm/commit/e576bbbae5541b85e66a7869bae978482898c267,javadoc improvements,javadoc improvements,20,1,1,1,0,1,0,1,0,4,0,0.0,N/A,N/A,N/A,N/A
 130,https://github.com/bitronix/btm/commit/44280f307bbbf9e109b6bb7a6ac5c5e80cae7ae6,reafactored test to get rid of deprecated classes usage,reafactored test to get rid of deprecated classes usage,55,1,1,1,0,1,0,1,0,2,4,0.0,0.0,1.0,1.0,1.0
@@ -879,7 +879,7 @@ Backward compatibility has been maintained though.",Made pooling objects directl
 151,https://github.com/bitronix/btm/commit/26c5a29d8552faac5255d31f6980eec50f2f5b64,improved test target to build HTML reports,improved test target to build HTML reports,42,2,1,1,0,1,0,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 152,https://github.com/bitronix/btm/commit/d06ed91e0e3a7d7e7c76b276a1614b8399c32db9,implemented resizable pooling,implemented resizable pooling,29,2,1,1,0,1,0,1,1,13,46,0.0,0.0,0.6030150753768844,0.9899497487437185,0.5778894472361809
 153,https://github.com/bitronix/btm/commit/0831bdc37b148566628efd18bccd36a998626653,Implemented keepConnectionOpenUntilAfter2Pc; required to support IBM DB2,Implemented keepConnectionOpenUntilAfter2Pc; required to support IBM DB2,72,1,1,1,1,1,0,1,1,8,18,0.0,0.0,0.9285714285714286,0.25,1.0
-154,https://github.com/bitronix/btm/commit/f219e2e48ad09ac80174e84e83d0a970e4ddfd4b,updated javadoc,updated javadoc,15,1,1,1,0,1,0,1,0,1,2,0.0,0.0,N/A,N/A,N/A
+154,https://github.com/bitronix/btm/commit/f219e2e48ad09ac80174e84e83d0a970e4ddfd4b,updated javadoc,updated javadoc,15,1,1,1,0,1,0,1,1,1,2,0.0,0.0,N/A,N/A,N/A
 155,https://github.com/bitronix/btm/commit/84332940d0cfefc48c26526fcab77d9a9660308e,fixed typo in setMaxIdleTime property,fixed typo in setMaxIdleTime property,37,2,1,1,0,1,0,1,1,1,2,0.0,0.0,N/A,N/A,N/A
 156,https://github.com/bitronix/btm/commit/ccaafc5c99486cf78a57f0968f8367b514a8c29e,fixed deferred release synchronization cleanup when a connection gets recycled,fixed deferred release synchronization cleanup when a connection gets recycled,78,0,1,1,0,1,0,0,1,3,5,0.0,0.0,N/A,0.9722222222222222,0.9722222222222222
 157,https://github.com/bitronix/btm/commit/eee570a82c99169636bef389380153c35fcf1149,fixed missing stateChanging event propagation,fixed missing stateChanging event propagation,45,2,1,1,0,1,0,1,1,1,4,0.0,0.0,1.0,1.0,1.0
@@ -1181,7 +1181,7 @@ git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@72 c
 272,https://github.com/EdwardRaff/JSAT/commit/88f7eaf569507720bd443e1caf710cb9079fb3c8,"Updated ARFF loader to load integer attributes as real
 Added an IndeTable designed for values  >= 0
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@73 c8979423-a768-6f17-17f2-fb57d64bf5d2",Updated ARFF loader to load integer attributes as real,54,1,1,0,1,1,0,0,0,5,3,0.0,0.0,0.42857142857142855,0.4444444444444444,0.4444444444444444
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@73 c8979423-a768-6f17-17f2-fb57d64bf5d2",Updated ARFF loader to load integer attributes as real,54,1,1,0,1,1,0,0,1,5,3,0.0,0.0,0.42857142857142855,0.4444444444444444,0.4444444444444444
 273,https://github.com/EdwardRaff/JSAT/commit/205d2e895b60dbc49f4796385fd06760de2bcc1a,"Added OneVsAll classifier so that SVM and other future binary classifiers can be used on datasets predicting more than one category
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@74 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added OneVsAll classifier so that SVM and other future binary classifiers can be used on datasets predicting more than one category,131,0,0,1,1,1,0,0,1,6,5,0.0,0.0,0.6265060240963856,1.0,0.6506024096385542
@@ -1211,7 +1211,7 @@ Added implementation of ID3 decision tree
 	Still need to add pruning
 Added a Modifable Count Down Latch that is VERY usefull for multithreading when the number of tasks that will be created is not known apriori
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@81 c8979423-a768-6f17-17f2-fb57d64bf5d2","Updated ARFFLoader to load in ""numeric"" as real",47,2,1,0,1,1,0,0,0,5,3,0.0,0.0,0.723404255319149,0.723404255319149,0.6436170212765957
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@81 c8979423-a768-6f17-17f2-fb57d64bf5d2","Updated ARFFLoader to load in ""numeric"" as real",47,2,1,0,1,1,0,0,1,5,3,0.0,0.0,0.723404255319149,0.723404255319149,0.6436170212765957
 281,https://github.com/EdwardRaff/JSAT/commit/b1022ee7b0f487313108be593b8e6772f53812a3,"Moved the distribution search out from naive bayes into its own class
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@82 c8979423-a768-6f17-17f2-fb57d64bf5d2",Moved the distribution search out from naive bayes into its own class,69,1,1,1,1,1,0,0,1,2,1,0.0,0.0,N/A,N/A,N/A
@@ -1545,9 +1545,9 @@ git status",removed println() from SnappyCompressionBenchmark,49,2,1,0,0,1,0,1,0
 465,https://github.com/jtablesaw/tablesaw/commit/5af2d0e83112b0d86321a7bf71153f166094fdcb,added int column filters,added int column filters,24,2,1,1,0,1,0,1,1,1,6,0.0,0.0,1.0,1.0,1.0
 466,https://github.com/jtablesaw/tablesaw/commit/393558cee630bfe7adb0b4c083ee75747e5e3dbc,AGPL license added,AGPL license added,18,1,1,1,1,1,0,1,0,1,0,0.0,N/A,N/A,N/A,N/A
 467,https://github.com/jtablesaw/tablesaw/commit/ec6c45464d966cbecdeb7677dc1dd3b7b90c6d02,cleaned up unused imports,cleaned up unused imports,25,2,1,1,0,1,0,1,1,1,11,0.0,0.0,1.0,1.0,1.0
-468,https://github.com/jtablesaw/tablesaw/commit/7c761cbb1a5fb1f22be0048e168e61e5f8957ca3,updated readme,updated readme,14,1,1,1,0,1,0,1,0,1,0,0.0,N/A,N/A,N/A,N/A
-469,https://github.com/jtablesaw/tablesaw/commit/0dcf7525bbb931076b036a981e3ed8c769c3be1d,updated readme,updated readme,14,1,1,1,0,1,0,1,0,1,0,0.0,N/A,N/A,N/A,N/A
-470,https://github.com/jtablesaw/tablesaw/commit/803445b399fd7c1d330e26aca1b9c9ba113ea0aa,updated readme,updated readme,14,1,1,1,0,1,0,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+468,https://github.com/jtablesaw/tablesaw/commit/7c761cbb1a5fb1f22be0048e168e61e5f8957ca3,updated readme,updated readme,14,1,1,1,0,1,0,1,1,1,0,0.0,N/A,N/A,N/A,N/A
+469,https://github.com/jtablesaw/tablesaw/commit/0dcf7525bbb931076b036a981e3ed8c769c3be1d,updated readme,updated readme,14,1,1,1,0,1,0,1,1,1,0,0.0,N/A,N/A,N/A,N/A
+470,https://github.com/jtablesaw/tablesaw/commit/803445b399fd7c1d330e26aca1b9c9ba113ea0aa,updated readme,updated readme,14,1,1,1,0,1,0,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 471,https://github.com/jtablesaw/tablesaw/commit/754c7805dd05a7db3fe36b5b4ea4fc84016ad531,more work in filters,more work in filters,20,1,1,1,0,1,0,1,0,8,3,0.0,0.0,1.0,1.0,1.0
 472,https://github.com/jtablesaw/tablesaw/commit/ebab5a2405a648fd460280fbdff8628b9f86885d,more work on filters,more work on filters,20,1,1,1,0,1,0,1,0,5,41,0.0,0.0,1.0,0.9893617021276596,1.0
 473,https://github.com/jtablesaw/tablesaw/commit/f0daf0d4db2114b6fda6f48d2b97e7aaedc8856c,Adding more filter functions,Adding more filter functions,28,2,1,1,1,1,0,1,1,16,20,0.0,0.0,1.0,1.0,1.0
@@ -1566,7 +1566,7 @@ git status",removed println() from SnappyCompressionBenchmark,49,2,1,0,0,1,0,1,0
 486,https://github.com/jtablesaw/tablesaw/commit/5ac8287622f45e8032dea7e8b607d2456c09b913,Added todos for improving on disk compression,Added todos for improving on disk compression,45,2,1,1,1,1,0,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 487,https://github.com/jtablesaw/tablesaw/commit/6244a430ccb07c1254fd2495c16afaee21f54caf,"refactored columnMetaData and tableMetaData, moving them to storage package","refactored columnMetaData and tableMetaData, moving them to storage package",75,0,0,1,0,1,0,0,1,6,0,0.0,N/A,N/A,N/A,N/A
 488,https://github.com/jtablesaw/tablesaw/commit/5ef46065a8f31ef9e31f8e98aa60c4f784ff9b4d,"removed all language-related code, for smalltalk-like analysis language. May re-add later after core is finished.","removed all language-related code, for smalltalk-like analysis language. May re-add later after core is finished.",113,0,1,1,0,0,0,0,1,74,0,0.0,N/A,0.6099913867355727,0.0005167958656330749,0.22670111972437554
-489,https://github.com/jtablesaw/tablesaw/commit/09da9b728135070231212a40377fffa62ba98833,updated guava library to version 19,updated guava library to version 19,35,2,1,1,0,1,0,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+489,https://github.com/jtablesaw/tablesaw/commit/09da9b728135070231212a40377fffa62ba98833,updated guava library to version 19,updated guava library to version 19,35,2,1,1,0,1,0,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 490,https://github.com/jtablesaw/tablesaw/commit/1d3ec4624acc14573d1b111c563a51565514de00,whitespace fix and readme update,whitespace fix and readme update,32,2,0,1,0,1,0,1,0,2,0,0.0,N/A,N/A,N/A,N/A
 491,https://github.com/jtablesaw/tablesaw/commit/41a0b98a4c6f710f3a3e8b5830cc2b4092858c3d,bug fixes in column io,bug fixes in column io,22,2,1,1,0,1,1,1,0,7,45,0.0,0.0,0.78125,1.0,1.0
 492,https://github.com/jtablesaw/tablesaw/commit/be1572509c8d3a085726b48dbca02abec3188ca9,readme update,readme update,13,1,1,1,0,1,0,1,0,1,0,0.0,N/A,N/A,N/A,N/A
