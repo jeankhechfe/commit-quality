@@ -140,8 +140,8 @@ def export_to_csv():
                             changes_methods_count += len(methods_list)
                             methods_tokens.extend(methods_list)
 
-                    files_to_body_ratio = get_ratio(files_tokens, message) if files_tokens else 'N/A'
-                    methods_to_body_ratio = get_ratio(methods_tokens, message) if methods_tokens else 'N/A'
+                    files_to_body_ratio = get_ratio(files_tokens, message) if files_tokens else 1
+                    methods_to_body_ratio = get_ratio(methods_tokens, message) if methods_tokens else 1
 
                     dmm = commit.split('\n---dmm---\n')[1].split('\n----\n')
                     methods_long = dmm[0]
