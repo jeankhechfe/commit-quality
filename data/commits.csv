@@ -858,7 +858,7 @@ Backward compatibility has been maintained though.",Made pooling objects directl
 130,https://github.com/bitronix/btm/commit/44280f307bbbf9e109b6bb7a6ac5c5e80cae7ae6,reafactored test to get rid of deprecated classes usage,reafactored test to get rid of deprecated classes usage,55,1,1,1,0,1,0,1,0,2,4,0.0,0.0,1.0,1.0,1.0
 131,https://github.com/bitronix/btm/commit/2f1caa1a465bfebd3afdaced2f866b99b27d7d6d,improved recovery test; it now works with a mock resource,improved recovery test; it now works with a mock resource,57,1,1,1,0,1,0,1,0,6,22,0.0,0.0,1.0,1.0,1.0
 132,https://github.com/bitronix/btm/commit/52d6f92d33785ea1d6ef81c0d61f509f7c1575a0,fixed some tests + moved manual ones to new source folder,fixed some tests + moved manual ones to new source folder,57,1,1,1,0,1,0,1,1,21,5,0.0,0.0,1.0,1.0,1.0
-133,https://github.com/bitronix/btm/commit/e2b6e0c73898456ca1229c325dccef44fe9848c3,added useful error check,added useful error check,24,2,1,1,0,1,0,1,0,2,2,0.0,0.0,1.0,1.0,1.0
+133,https://github.com/bitronix/btm/commit/e2b6e0c73898456ca1229c325dccef44fe9848c3,added useful error check,added useful error check,24,2,1,1,0,1,0,1,1,2,2,0.0,0.0,1.0,1.0,1.0
 134,https://github.com/bitronix/btm/commit/3d9e060e17d0ad81071ad98a7bbd368f8341247c,improved exception type,improved exception type,23,2,1,1,0,1,0,1,0,1,1,0.0,0.0,N/A,N/A,N/A
 135,https://github.com/bitronix/btm/commit/25e80c96e8c7eb58a6bf2f0c5c2a95cbaeaa83b8,fixed serialization + small cleanups,fixed serialization + small cleanups,36,2,1,1,0,1,0,1,1,2,5,0.0,0.0,N/A,N/A,N/A
 136,https://github.com/bitronix/btm/commit/8cdd43c62ed2fd13e3cc766f4666012db1a8b4c7,improved javadoc,improved javadoc,16,1,1,1,0,1,0,1,1,2,1,0.0,0.0,N/A,N/A,N/A
@@ -871,7 +871,7 @@ Backward compatibility has been maintained though.",Made pooling objects directl
 143,https://github.com/bitronix/btm/commit/cb502fd8d17916cd1d80c3afbb6f5d9254d05806,fixed typos,fixed typos,11,1,1,1,0,1,0,1,1,2,0,0.0,N/A,N/A,N/A,N/A
 144,https://github.com/bitronix/btm/commit/a46659d2cb990f278fe055897fa34b605436e3df,fixed more tests,fixed more tests,16,1,1,1,0,1,0,1,1,4,9,0.0,0.0,0.16,0.72,1.0
 145,https://github.com/bitronix/btm/commit/c2e9a0572640d780e0e2a885daa63ff4b348b369,fixed multi-enlisted connection veto on close; now connection handle is left untouched when veto happens,fixed multi-enlisted connection veto on close; now connection handle is left untouched when veto happens,104,0,1,1,0,1,0,0,1,6,11,0.0,0.0,1.0,0.5454545454545454,0.6363636363636364
-146,https://github.com/bitronix/btm/commit/afab4a250c0bd669c6522821f0e3a6e3e8abd121,added apache license for JTA and JMS libs,added apache license for JTA and JMS libs,41,2,0,1,0,1,0,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+146,https://github.com/bitronix/btm/commit/afab4a250c0bd669c6522821f0e3a6e3e8abd121,added apache license for JTA and JMS libs,added apache license for JTA and JMS libs,41,2,0,1,0,1,0,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 147,https://github.com/bitronix/btm/commit/aca6cb822a2880df6954856a2641294bcb4e4913,added 1.0 release notes,added 1.0 release notes,23,2,1,1,0,1,0,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 148,https://github.com/bitronix/btm/commit/18aa3dd9f7ebe77a752e9dbf8e610319bef4ec4d,latest version of Intellij project files,latest version of Intellij project files,40,2,1,1,0,1,0,1,0,2,0,0.0,N/A,N/A,N/A,N/A
 149,https://github.com/bitronix/btm/commit/1387d7d56e15de4b653fee09ec15f16a731638e1,made serverId reconfigurable after a shutdown,made serverId reconfigurable after a shutdown,45,2,1,1,0,1,0,1,0,2,4,0.0,0.0,0.375,1.0,1.0
@@ -884,12 +884,12 @@ Backward compatibility has been maintained though.",Made pooling objects directl
 156,https://github.com/bitronix/btm/commit/ccaafc5c99486cf78a57f0968f8367b514a8c29e,fixed deferred release synchronization cleanup when a connection gets recycled,fixed deferred release synchronization cleanup when a connection gets recycled,78,0,1,1,0,1,0,0,1,3,5,0.0,0.0,N/A,0.9722222222222222,0.9722222222222222
 157,https://github.com/bitronix/btm/commit/eee570a82c99169636bef389380153c35fcf1149,fixed missing stateChanging event propagation,fixed missing stateChanging event propagation,45,2,1,1,0,1,0,1,1,1,4,0.0,0.0,1.0,1.0,1.0
 158,https://github.com/bitronix/btm/commit/1e0ce629bf9254b1cf762dd5a1cf89a2155d127f,improved getProperties so that it only returns properties that have both a getter and a setter,improved getProperties so that it only returns properties that have both a getter and a setter,94,0,0,1,0,1,0,0,1,1,2,0.0,0.0,N/A,1.0,1.0
-159,https://github.com/bitronix/btm/commit/9af01bf851202b41b524033f53ed8ad31552c093,added resource password encryption capability,added resource password encryption capability,45,2,1,1,0,1,0,1,0,4,7,0.0,0.0,0.22297297297297297,0.5900900900900901,0.40315315315315314
+159,https://github.com/bitronix/btm/commit/9af01bf851202b41b524033f53ed8ad31552c093,added resource password encryption capability,added resource password encryption capability,45,2,1,1,0,1,0,1,1,4,7,0.0,0.0,0.22297297297297297,0.5900900900900901,0.40315315315315314
 160,https://github.com/bitronix/btm/commit/ad54c4360f705c38c29f56f9bcd02b3fc0d61aed,fixed test,fixed test,10,0,1,1,0,1,0,1,1,1,1,0.0,0.0,N/A,N/A,N/A
 161,https://github.com/bitronix/btm/commit/1e954455a80ffd7ed7f8f72dded22bc8fc1acaa6,"refactored task scheduler, it is now more robust and more testable","refactored task scheduler, it is now more robust and more testable",66,1,0,1,0,1,0,1,0,7,30,0.0,0.0,1.0,0.7272727272727273,1.0
 162,https://github.com/bitronix/btm/commit/1588a3abba15ba176855463950ed812b39d6028c,improved XAResource.recover() calls error handling and reporting,improved XAResource.recover() calls error handling and reporting,64,1,0,1,0,1,0,1,0,2,3,0.0,0.0,N/A,1.0,N/A
 163,https://github.com/bitronix/btm/commit/8309ff28e7607873910dbb613b33d2a673141f5c,fixed bug related to properties access using isXXX() getters,fixed bug related to properties access using isXXX() getters,60,1,1,1,0,1,0,1,1,1,2,0.0,0.0,0.14285714285714285,1.0,N/A
-164,https://github.com/bitronix/btm/commit/4b34e9990be8548d1a5091caf48b46c8d15f24a9,added test for isXXX() getter,added test for isXXX() getter,29,2,1,1,0,1,0,1,0,1,5,0.0,0.0,0.8571428571428571,1.0,1.0
+164,https://github.com/bitronix/btm/commit/4b34e9990be8548d1a5091caf48b46c8d15f24a9,added test for isXXX() getter,added test for isXXX() getter,29,2,1,1,0,1,0,1,1,1,5,0.0,0.0,0.8571428571428571,1.0,1.0
 165,https://github.com/bitronix/btm/commit/c20d6c7d691d45dffc3500da45ef2f23da0608c2,improved javadoc,improved javadoc,16,1,1,1,0,1,0,1,1,1,2,0.0,0.0,N/A,N/A,N/A
 166,https://github.com/bitronix/btm/commit/d9a09efafd8c95a7de829d385bc2b48859a45029,code cleanup & refactorings,code cleanup & refactorings,27,2,1,1,0,1,1,1,0,1,4,0.0,0.0,1.0,N/A,1.0
 167,https://github.com/bitronix/btm/commit/8893e729a565eba026d8f4a11bb77229e2bf79de,removed PooledConnection implementation,removed PooledConnection implementation,39,2,1,1,0,1,0,1,1,1,6,0.0,0.0,0.8888888888888888,0.05555555555555555,0.05555555555555555
@@ -910,8 +910,8 @@ Backward compatibility has been maintained though.",Made pooling objects directl
 182,https://github.com/bitronix/btm/commit/bde24b1f97f2be7b395aee20371ddf17b9baee17,disallowed savepoint related methods in Global TX mode as per JDBC3 spec,disallowed savepoint related methods in Global TX mode as per JDBC3 spec,72,1,1,1,0,1,0,1,1,1,6,0.0,0.0,1.0,1.0,1.0
 183,https://github.com/bitronix/btm/commit/79aa4a5aa857abe40b015b0ce35e799fbaaba4ce,improved javadoc,improved javadoc,16,1,1,1,0,1,0,1,1,7,0,0.0,N/A,N/A,N/A,N/A
 184,https://github.com/bitronix/btm/commit/98b5e7a53e64fc31b2684c14523007d0c5acd514,fixed bug that connection could still be used after being closed,fixed bug that connection could still be used after being closed,64,1,1,1,0,1,0,1,1,1,40,0.0,0.0,1.0,1.0,1.0
-185,https://github.com/bitronix/btm/commit/a549d99d100fca7d1131db53f60e60ce02c5e6a9,added autocommit reset code,added autocommit reset code,27,2,1,1,0,1,0,1,0,1,1,0.0,0.0,N/A,N/A,N/A
-186,https://github.com/bitronix/btm/commit/acc8ddb7d6a03a101678406f20e34354b6623a9e,added public method to get wrapped connection,added public method to get wrapped connection,45,2,1,1,0,1,0,1,0,1,39,0.0,0.0,1.0,1.0,1.0
+185,https://github.com/bitronix/btm/commit/a549d99d100fca7d1131db53f60e60ce02c5e6a9,added autocommit reset code,added autocommit reset code,27,2,1,1,0,1,0,1,1,1,1,0.0,0.0,N/A,N/A,N/A
+186,https://github.com/bitronix/btm/commit/acc8ddb7d6a03a101678406f20e34354b6623a9e,added public method to get wrapped connection,added public method to get wrapped connection,45,2,1,1,0,1,0,1,1,1,39,0.0,0.0,1.0,1.0,1.0
 187,https://github.com/bitronix/btm/commit/645b8a4b4df05ba31dfae0256646d2369e2949ef,fix for BTM-6: Support for JMS credentials,fix for BTM-6: Support for JMS credentials,42,2,1,1,0,1,1,1,0,2,6,0.0,0.0,1.0,1.0,0.2857142857142857
 188,https://github.com/bitronix/btm/commit/a034958f6d75a082c29f811cda23040ded2d2fea,upgraded slf4j to latest version,upgraded slf4j to latest version,32,2,1,1,0,1,0,1,1,5,0,0.0,N/A,N/A,N/A,N/A
 189,https://github.com/bitronix/btm/commit/2e23e580b4643f2f9f8dd43faa18c74c4226b722,Fixed BTM-5: implemented pooling of prepared statements / statement cache,Fixed BTM-5: implemented pooling of prepared statements / statement cache,73,0,1,1,1,1,0,0,1,10,44,0.0,0.0,1.0,0.9265734265734266,1.0
@@ -938,10 +938,10 @@ git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@3 c8
 Added setPadding for Graph2D
 	Graph2D wont draw axies if the padding is zero
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@4 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Scatter Plot Matrix,25,2,1,0,1,1,0,0,0,4,4,0.0,0.0,0.2,0.4,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@4 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Scatter Plot Matrix,25,2,1,0,1,1,0,0,1,4,4,0.0,0.0,0.2,0.4,1.0
 204,https://github.com/EdwardRaff/JSAT/commit/4b94d6a1a6f9b54dbf0c154326a9e8d051f1c5ce,"Added Histogram
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@5 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Histogram,15,1,1,1,1,1,0,0,0,3,3,0.0,0.0,0.5384615384615384,1.0,0.6615384615384615
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@5 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Histogram,15,1,1,1,1,1,0,0,1,3,3,0.0,0.0,0.5384615384615384,1.0,0.6615384615384615
 205,https://github.com/EdwardRaff/JSAT/commit/9615a97370d02d81425f27ba3dfc0979b0fc4e27,"Created better Single Variable statistics window
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@6 c8979423-a768-6f17-17f2-fb57d64bf5d2",Created better Single Variable statistics window,48,2,1,1,1,1,0,0,1,3,2,0.0,0.0,N/A,1.0,1.0
@@ -953,29 +953,29 @@ git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@7 c8
 207,https://github.com/EdwardRaff/JSAT/commit/43c2950ea74078e564250af0b62ddf82cfee7bfc,"Added grey out of menu items (when no data set made)
 Also made a quit drop down (Ctrl+q)
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@8 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added grey out of menu items (when no data set made),52,1,1,0,1,1,0,0,0,2,4,0.0,0.0,N/A,1.0,0.38461538461538464
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@8 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added grey out of menu items (when no data set made),52,1,1,0,1,1,0,0,1,2,4,0.0,0.0,N/A,1.0,0.38461538461538464
 208,https://github.com/EdwardRaff/JSAT/commit/51ae483f75606e59d0c5b03b5139e9252c287cbd,"Added example data files that can be used to test against
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@9 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added example data files that can be used to test against,57,1,1,1,1,1,0,0,0,0,0,N/A,N/A,N/A,N/A,N/A
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@9 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added example data files that can be used to test against,57,1,1,1,1,1,0,0,1,0,0,N/A,N/A,N/A,N/A,N/A
 209,https://github.com/EdwardRaff/JSAT/commit/bb338e579f351e015fe0b8f4a99c46aa3fcd442d,"made file parsing slightly faster
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@10 c8979423-a768-6f17-17f2-fb57d64bf5d2",made file parsing slightly faster,33,2,1,1,0,1,0,0,0,1,1,0.0,0.0,N/A,N/A,N/A
 210,https://github.com/EdwardRaff/JSAT/commit/08a589751a54e8c68d5283160c136c65f8f346b5,"Added ability to maximize by switching from JDialog to JFrame
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@11 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added ability to maximize by switching from JDialog to JFrame,61,1,1,1,1,1,0,0,0,1,1,0.0,0.0,N/A,N/A,N/A
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@11 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added ability to maximize by switching from JDialog to JFrame,61,1,1,1,1,1,0,0,1,1,1,0.0,0.0,N/A,N/A,N/A
 211,https://github.com/EdwardRaff/JSAT/commit/a26e636968738e90cf4a4a6cb4ec003b6f769c52,"Added Linear Regression (implementatino & GUI )
 	Modified Scatter Plot to support drawing a regression function
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@12 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Linear Regression (implementatino & GUI ),47,2,1,0,1,1,0,0,0,6,6,0.0,0.0,0.4696969696969697,1.0,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@12 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Linear Regression (implementatino & GUI ),47,2,1,0,1,1,0,0,1,6,6,0.0,0.0,0.4696969696969697,1.0,1.0
 212,https://github.com/EdwardRaff/JSAT/commit/3d4268ebe17aff6bb084da5322c834bfc6cc0d70,"Added the Beta function to SpecialMath
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@13 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added the Beta function to SpecialMath,38,2,1,1,1,1,0,0,1,1,1,0.0,0.0,1.0,1.0,1.0
 213,https://github.com/EdwardRaff/JSAT/commit/7026e2beca147f6ad6766480fb2325f530acf9f5,"Created integration methods, added trapezoidal and romberg integration.
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@14 c8979423-a768-6f17-17f2-fb57d64bf5d2","Created integration methods, added trapezoidal and romberg integration.",71,1,0,1,1,0,0,0,0,2,0,0.0,N/A,0.2222222222222222,N/A,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@14 c8979423-a768-6f17-17f2-fb57d64bf5d2","Created integration methods, added trapezoidal and romberg integration.",71,1,0,1,1,0,0,0,1,2,0,0.0,N/A,0.2222222222222222,N/A,1.0
 214,https://github.com/EdwardRaff/JSAT/commit/fbc9db02734003d362cad0f5ebcea264a2314ba7,"added default max iterations method for romberg
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@15 c8979423-a768-6f17-17f2-fb57d64bf5d2",added default max iterations method for romberg,47,2,1,1,0,1,0,0,0,1,1,0.0,0.0,1.0,N/A,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@15 c8979423-a768-6f17-17f2-fb57d64bf5d2",added default max iterations method for romberg,47,2,1,1,0,1,0,0,1,1,1,0.0,0.0,1.0,N/A,1.0
 215,https://github.com/EdwardRaff/JSAT/commit/d27680134d25df76779803bbd58292ab150e452f,"Intial work with incomplete and regularized gamma functions
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@16 c8979423-a768-6f17-17f2-fb57d64bf5d2",Intial work with incomplete and regularized gamma functions,59,1,0,1,1,1,0,0,0,5,5,0.0,0.0,0.17073170731707318,1.0,1.0
@@ -993,10 +993,10 @@ small changes to DenseVector & Vector to simple do a little more that should hav
 
 Added inverse function for GammaP
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@19 c8979423-a768-6f17-17f2-fb57d64bf5d2","Added Gamma and Chi Squared (other than inverPdf, which may not be possible for all distirbutions...)",101,0,0,0,1,1,0,0,0,7,5,0.0,0.0,0.805668016194332,0.9757085020242915,0.805668016194332
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@19 c8979423-a768-6f17-17f2-fb57d64bf5d2","Added Gamma and Chi Squared (other than inverPdf, which may not be possible for all distirbutions...)",101,0,0,0,1,1,0,0,1,7,5,0.0,0.0,0.805668016194332,0.9757085020242915,0.805668016194332
 219,https://github.com/EdwardRaff/JSAT/commit/849c9987abd23ec147e58f4214739772de5ad21a,"Added regularized incomplete beta function
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@20 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added regularized incomplete beta function,42,2,1,1,1,1,0,0,0,2,5,0.0,0.0,0.5,0.6176470588235294,0.6176470588235294
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@20 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added regularized incomplete beta function,42,2,1,1,1,1,0,0,1,2,5,0.0,0.0,0.5,0.6176470588235294,0.6176470588235294
 220,https://github.com/EdwardRaff/JSAT/commit/1451dd4083924f9db12a2b4bc6a03eb3da8be12f,"Added root finding methods so that accurate (but slower) methods of obtaining an inverse function can be quickly made.
 	added Bisection
 	added Secant
@@ -1025,7 +1025,7 @@ Exposed lnBeta to the public
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@26 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added F distribtution,21,2,1,0,1,1,0,0,1,3,2,0.0,0.0,0.7790697674418605,1.0,1.0
 226,https://github.com/EdwardRaff/JSAT/commit/e00f6b98f172cb409f32994ba6f7b2d4579602ff,"added inver x log x method to special math
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@27 c8979423-a768-6f17-17f2-fb57d64bf5d2",added inver x log x method to special math,42,2,1,1,0,1,0,0,0,1,1,0.0,0.0,N/A,1.0,N/A
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@27 c8979423-a768-6f17-17f2-fb57d64bf5d2",added inver x log x method to special math,42,2,1,1,0,1,0,0,1,1,1,0.0,0.0,N/A,1.0,N/A
 227,https://github.com/EdwardRaff/JSAT/commit/1e6e475a19073b8b84b67b3a2657d66476a180f2,"Added Kolmogorov distribution, but only CDF. PDF is not really used, and InvCDF is confusing....
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@28 c8979423-a768-6f17-17f2-fb57d64bf5d2","Added Kolmogorov distribution, but only CDF. PDF is not really used, and InvCDF is confusing....",96,0,0,1,1,0,0,0,1,1,0,0.0,N/A,0.7014925373134329,1.0,0.7014925373134329
@@ -1045,16 +1045,16 @@ git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@31 c
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@32 c8979423-a768-6f17-17f2-fb57d64bf5d2","Clean up in Kolmogorov, removing some of the Unsupported Operation exceptions",77,0,1,1,1,1,1,0,1,1,6,0.0,0.0,N/A,N/A,N/A
 232,https://github.com/EdwardRaff/JSAT/commit/2d571e59d51c6e9eba2269c1e09ce6e62dd8e8d6,"Added Text package & Stemming
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@33 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Text package & Stemming,29,2,1,1,1,1,0,0,0,2,0,0.0,N/A,0.09652509652509653,0.9034749034749034,0.09652509652509653
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@33 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Text package & Stemming,29,2,1,1,1,1,0,0,1,2,0,0.0,N/A,0.09652509652509653,0.9034749034749034,0.09652509652509653
 233,https://github.com/EdwardRaff/JSAT/commit/35f9e6c5749d0f6ebc2205aea1b975e9a70dde5c,"Added void stemmer
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@34 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added void stemmer,18,1,1,1,1,1,0,0,0,1,0,0.0,N/A,1.0,1.0,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@34 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added void stemmer,18,1,1,1,1,1,0,0,1,1,0,0.0,N/A,1.0,1.0,1.0
 234,https://github.com/EdwardRaff/JSAT/commit/306e5bd757fa1c894231904fe7f18f56bde48255,"Added an Online statistics object (mean, variance, skew, kurtois)
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@35 c8979423-a768-6f17-17f2-fb57d64bf5d2","Added an Online statistics object (mean, variance, skew, kurtois)",65,1,1,1,1,1,0,0,1,1,0,0.0,N/A,1.0,0.74,1.0
 235,https://github.com/EdwardRaff/JSAT/commit/dc83d840f49bdda1f2ca6b853e9ab5eb2c639732,"added Skewness and Kurtois to Vector
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@36 c8979423-a768-6f17-17f2-fb57d64bf5d2",added Skewness and Kurtois to Vector,36,2,0,1,0,1,0,0,0,3,4,0.0,0.0,1.0,1.0,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@36 c8979423-a768-6f17-17f2-fb57d64bf5d2",added Skewness and Kurtois to Vector,36,2,0,1,0,1,0,0,1,3,4,0.0,0.0,1.0,1.0,1.0
 236,https://github.com/EdwardRaff/JSAT/commit/f12019efceef0f5b4881f69e91fe48dd7b060710,"Updated skewness calculations to use an unbiased estimate when the sample is large enough (>2)
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@37 c8979423-a768-6f17-17f2-fb57d64bf5d2",Updated skewness calculations to use an unbiased estimate when the sample is large enough (>2),94,0,1,1,1,1,0,0,1,2,2,0.0,0.0,1.0,1.0,1.0
@@ -1068,26 +1068,26 @@ git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@39 c
 239,https://github.com/EdwardRaff/JSAT/commit/6879942691ff3cdd6f6d1249b6e088630cc1aa49,"Added parameter approximation for the Weilbull distribution.
 Also commiting some files that had to be changed b/c of method changes - they forgot to be added.
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@40 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added parameter approximation for the Weilbull distribution.,60,1,1,0,1,0,0,0,0,4,7,0.0,0.0,N/A,1.0,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@40 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added parameter approximation for the Weilbull distribution.,60,1,1,0,1,0,0,0,1,4,7,0.0,0.0,N/A,1.0,1.0
 240,https://github.com/EdwardRaff/JSAT/commit/58b6f5f3260d9c7c14fea75e2e32028d84d026b9,"Added Skewness to ContinousDistribution
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@41 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Skewness to ContinousDistribution,39,2,1,1,1,1,0,0,1,9,8,0.0,0.0,1.0,1.0,1.0
 241,https://github.com/EdwardRaff/JSAT/commit/abdbb46dbaf26eccba90fa7fd4c0a29fc7fc810f,"Updated skewness for student T and added documentation for skewness and variance.
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@42 c8979423-a768-6f17-17f2-fb57d64bf5d2",Updated skewness for student T and added documentation for skewness and variance.,81,0,0,1,1,0,0,0,0,2,1,0.0,0.0,1.0,1.0,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@42 c8979423-a768-6f17-17f2-fb57d64bf5d2",Updated skewness for student T and added documentation for skewness and variance.,81,0,0,1,1,0,0,0,1,2,1,0.0,0.0,1.0,1.0,1.0
 242,https://github.com/EdwardRaff/JSAT/commit/c3edff0c6c9079f4afbeee2c069c26f2e1c2b8c9,"Improved ridder's method to keep it out of infinit loops
 Used root finding to implement an inverse CDF for Kolmogorov
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@43 c8979423-a768-6f17-17f2-fb57d64bf5d2",Improved ridder's method to keep it out of infinit loops,56,1,1,0,1,1,0,0,1,3,5,0.0,0.0,0.35294117647058826,0.5882352941176471,0.47058823529411764
 243,https://github.com/EdwardRaff/JSAT/commit/e589776dc84e509a5bd999ad12d6717eaadec115,"Added KS goodness of fit testing.
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@44 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added KS goodness of fit testing.,33,2,1,1,1,0,0,0,0,1,0,0.0,N/A,1.0,1.0,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@44 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added KS goodness of fit testing.,33,2,1,1,1,0,0,0,1,1,0,0.0,N/A,1.0,1.0,1.0
 244,https://github.com/EdwardRaff/JSAT/commit/4cf10079da302e3c184293d01e1064c3e9629627,"Added KS goodness of fit search to MainGUI.
 Fixed bug in Weibull setUsingData, the parameters were set in the wrong order
 Fixed bug in KSTest where it would not respect the minimum value of the CDF for distributions
 
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@45 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added KS goodness of fit search to MainGUI.,43,2,1,0,1,0,0,0,0,5,24,0.0,0.0,0.875,1.0,0.25
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@45 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added KS goodness of fit search to MainGUI.,43,2,1,0,1,0,0,0,1,5,24,0.0,0.0,0.875,1.0,0.25
 245,https://github.com/EdwardRaff/JSAT/commit/08c5bbe057bac302124e80639efb222d5a1bd5a1,"Removed a debug print out
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@46 c8979423-a768-6f17-17f2-fb57d64bf5d2",Removed a debug print out,25,2,1,1,1,1,0,0,1,1,1,0.0,0.0,1.0,N/A,1.0
@@ -1102,10 +1102,10 @@ git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@48 c
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@49 c8979423-a768-6f17-17f2-fb57d64bf5d2",Updated KS test to display a message when no distribution is found to be a suitable match,89,0,1,1,1,1,0,0,1,1,1,0.0,0.0,N/A,1.0,N/A
 249,https://github.com/EdwardRaff/JSAT/commit/c84e7f65e01fc9d7dbbc689b7bf9567faff0868d,"Added Uniform distribution (Continuos)
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@50 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Uniform distribution (Continuos),38,2,1,1,1,1,0,0,0,1,0,0.0,N/A,1.0,1.0,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@50 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Uniform distribution (Continuos),38,2,1,1,1,1,0,0,1,1,0,0.0,N/A,1.0,1.0,1.0
 250,https://github.com/EdwardRaff/JSAT/commit/1939c0684f5b25763dc6db2a4ed94a729ec899ac,"Added failure rate and reliability function to Weibull
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@51 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added failure rate and reliability function to Weibull,54,1,0,1,1,1,0,0,0,8,2,0.0,0.0,0.7292069632495164,0.1528046421663443,0.172147001934236
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@51 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added failure rate and reliability function to Weibull,54,1,0,1,1,1,0,0,1,8,2,0.0,0.0,0.7292069632495164,0.1528046421663443,0.172147001934236
 251,https://github.com/EdwardRaff/JSAT/commit/324e51a4eeb9ff1f3263604c5e1a784915a6d212,"Missed a folder on the last commit
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@52 c8979423-a768-6f17-17f2-fb57d64bf5d2",Missed a folder on the last commit,34,2,1,1,1,1,0,0,1,7,0,0.0,N/A,0.2819047619047619,0.8495238095238096,0.8304761904761905
@@ -1114,7 +1114,7 @@ git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@52 c
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@53 c8979423-a768-6f17-17f2-fb57d64bf5d2","+- 2 for the range makes scatter plot useless for small valued data sets, so it has been removed",96,0,1,1,0,1,0,0,1,1,1,0.0,0.0,N/A,N/A,N/A
 253,https://github.com/EdwardRaff/JSAT/commit/83a60e8d624bbe0dea6ba870cb560e8a4cb9b992,"Added LogNormal Distribution
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@54 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added LogNormal Distribution,28,2,1,1,1,1,0,0,0,2,0,0.0,N/A,1.0,1.0,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@54 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added LogNormal Distribution,28,2,1,1,1,1,0,0,1,2,0,0.0,N/A,1.0,1.0,1.0
 254,https://github.com/EdwardRaff/JSAT/commit/559502c6f2db03daae4f3299f1f817e7ac92fc60,"Added One Sample test class
 Added one sample Z test
 Implemented dynamic GUI for One Sample tests (It still needs some cleaning up)
@@ -1157,13 +1157,13 @@ git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@64 c
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@65 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added mutable methods to the vector interface and implemented it,64,1,0,1,1,1,0,0,1,3,14,0.0,0.0,0.49230769230769234,1.0,0.49230769230769234
 265,https://github.com/EdwardRaff/JSAT/commit/925b68034e4996012ef7c4356c655fcbf22a5608,"Added p-norm distance to vectors. Implementation can easily be improved for cases of SparceVector input
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@66 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added p-norm distance to vectors. Implementation can easily be improved for cases of SparceVector input,103,0,1,1,1,1,0,0,0,3,2,0.0,0.0,1.0,1.0,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@66 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added p-norm distance to vectors. Implementation can easily be improved for cases of SparceVector input,103,0,1,1,1,1,0,0,1,3,2,0.0,0.0,1.0,1.0,1.0
 266,https://github.com/EdwardRaff/JSAT/commit/5a2480ac58e78e89f5e4d97165ca84944de558f9,"Added normalization to Vector and implemenations
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@67 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added normalization to Vector and implemenations,48,2,0,1,1,1,0,0,0,3,7,0.0,0.0,1.0,1.0,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@67 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added normalization to Vector and implemenations,48,2,0,1,1,1,0,0,1,3,7,0.0,0.0,1.0,1.0,1.0
 267,https://github.com/EdwardRaff/JSAT/commit/c0a848da33fdc1aa65066f2ef5447d56173071b4,"Added Kernel Functions
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@68 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Kernel Functions,22,2,1,1,1,1,0,0,0,4,0,0.0,N/A,1.0,1.0,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@68 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Kernel Functions,22,2,1,1,1,1,0,0,1,4,0,0.0,N/A,1.0,1.0,1.0
 268,https://github.com/EdwardRaff/JSAT/commit/208135f596b44fb3c4dc09c988ea6398746ced61,"Nearest Neighbor and some supporting classes.
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@69 c8979423-a768-6f17-17f2-fb57d64bf5d2",Nearest Neighbor and some supporting classes.,45,2,0,1,1,0,0,0,0,7,2,0.0,0.0,0.6521739130434783,0.9347826086956522,0.6521739130434783
@@ -1174,7 +1174,7 @@ git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@70 c
 Added and updated the Kernel Functions
 Fixed a bug in Naive Bayes that made it fail when a numerical variable had no variance
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@71 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added SVM SMO,13,1,1,0,1,1,0,0,0,11,24,0.0,0.0,0.48120300751879697,0.9849624060150376,0.44360902255639095
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@71 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added SVM SMO,13,1,1,0,1,1,0,0,1,11,24,0.0,0.0,0.48120300751879697,0.9849624060150376,0.44360902255639095
 271,https://github.com/EdwardRaff/JSAT/commit/b5e073b443636adbdfe49d4ba2fa9d95708226f3,"Updated Stemming into its own folder and added another implementation and some renaiming.
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@72 c8979423-a768-6f17-17f2-fb57d64bf5d2",Updated Stemming into its own folder and added another implementation and some renaiming.,89,0,0,1,1,0,0,0,1,4,0,0.0,N/A,0.1540880503144654,1.0,0.5691823899371069
@@ -1195,7 +1195,7 @@ git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@76 c
 maid main file distinguish between the time taken for training and the time it takes for classification
 Added cosine distance metric
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@77 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added pNorm to vectors,22,2,1,0,1,1,0,0,0,5,3,0.0,0.0,0.75,1.0,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@77 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added pNorm to vectors,22,2,1,0,1,1,0,0,1,5,3,0.0,0.0,0.75,1.0,1.0
 277,https://github.com/EdwardRaff/JSAT/commit/61672130880dbfcd923a6134055a71c94c78d1b9,"Added 2 new continous distributions: Laplace and Rayleigh
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@78 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added 2 new continous distributions: Laplace and Rayleigh,57,1,0,1,1,1,0,0,1,2,0,0.0,N/A,1.0,1.0,1.0
@@ -1204,7 +1204,7 @@ git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@78 c
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@79 c8979423-a768-6f17-17f2-fb57d64bf5d2",Renamed KernelFuction to KernelTrick since there is something else that actualy has the name of being a Kernel Fuction,118,0,1,1,1,1,0,0,1,9,9,0.0,0.0,N/A,N/A,N/A
 279,https://github.com/EdwardRaff/JSAT/commit/b6c860ddbd7ead14bb62d9a5ae112f49950d2335,"Added underlying code for Weighted training
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@80 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added underlying code for Weighted training,43,2,1,1,1,1,0,0,0,6,8,0.0,0.0,1.0,0.8275862068965517,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@80 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added underlying code for Weighted training,43,2,1,1,1,1,0,0,1,6,8,0.0,0.0,1.0,0.8275862068965517,1.0
 280,https://github.com/EdwardRaff/JSAT/commit/9bdaaa8fbc8729eacf865c8ff1ba02bcf36d2e52,"Updated ARFFLoader to load in ""numeric"" as real
 Added convinence method in ClassificationDataSet
 Added implementation of ID3 decision tree
@@ -1224,10 +1224,10 @@ git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@83 c
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@84 c8979423-a768-6f17-17f2-fb57d64bf5d2",Renamed incorrectly named function,34,2,1,1,1,1,0,0,1,3,5,0.0,0.0,N/A,N/A,N/A
 284,https://github.com/EdwardRaff/JSAT/commit/d7f1ce5698fd5071787d56ea69bb4dfee39877e1,"added NumericalToHistogram categorization of numerical attributes.
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@85 c8979423-a768-6f17-17f2-fb57d64bf5d2",added NumericalToHistogram categorization of numerical attributes.,66,1,1,1,0,0,0,0,0,2,1,0.0,0.0,0.07692307692307693,1.0,0.38461538461538464
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@85 c8979423-a768-6f17-17f2-fb57d64bf5d2",added NumericalToHistogram categorization of numerical attributes.,66,1,1,1,0,0,0,0,1,2,1,0.0,0.0,0.07692307692307693,1.0,0.38461538461538464
 285,https://github.com/EdwardRaff/JSAT/commit/415fc2a8cb2ce2f0651dbe0598e6305741ac06c9,"Added Logistic distribution and the trig functions lacking in Java.Math
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@86 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Logistic distribution and the trig functions lacking in Java.Math,71,1,0,1,1,1,0,0,0,2,0,0.0,N/A,1.0,1.0,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@86 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Logistic distribution and the trig functions lacking in Java.Math,71,1,0,1,1,1,0,0,1,2,0,0.0,N/A,1.0,1.0,1.0
 286,https://github.com/EdwardRaff/JSAT/commit/5cb2df7c0b231ca2643a2f92d230272ffecda9b6,"added Cauchy distribution
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@87 c8979423-a768-6f17-17f2-fb57d64bf5d2",added Cauchy distribution,25,2,1,1,0,1,0,0,1,1,0,0.0,N/A,1.0,1.0,1.0
@@ -1237,7 +1237,7 @@ git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@88 c
 288,https://github.com/EdwardRaff/JSAT/commit/8aee8972801b821983f66ae2cb98368611199eb2,"Added Rocchio classifier
 Made ClassificationDataSet return a new array list so that the user can not alter the data set so easily (they cans till alter the vectors, but when they remove a data point from their list it wont effect others)
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@89 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Rocchio classifier,24,2,1,0,1,1,0,0,0,2,1,0.0,0.0,0.7317073170731707,0.9146341463414634,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@89 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Rocchio classifier,24,2,1,0,1,1,0,0,1,2,1,0.0,0.0,0.7317073170731707,0.9146341463414634,1.0
 289,https://github.com/EdwardRaff/JSAT/commit/28b4cd03566150ffbbd0248b52a56a68af204335,"Updated OnlineStatistics to keep track of the min and max observed value
 
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@90 c8979423-a768-6f17-17f2-fb57d64bf5d2",Updated OnlineStatistics to keep track of the min and max observed value,72,1,0,1,1,1,0,0,1,1,4,0.0,0.0,N/A,0.9375,1.0
@@ -1252,7 +1252,7 @@ git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@92 c
 git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@93 c8979423-a768-6f17-17f2-fb57d64bf5d2","Accidently messed up the constructors, fixed",44,2,1,1,1,1,0,0,1,1,4,0.0,0.0,N/A,N/A,N/A
 293,https://github.com/EdwardRaff/JSAT/commit/e90e3b982aa68505c66241b2053d46ab6350b3ac,"Added convinence method to Categorical Results
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@94 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added convinence method to Categorical Results,46,2,1,1,1,1,0,0,0,1,1,0.0,0.0,1.0,1.0,1.0
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@94 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added convinence method to Categorical Results,46,2,1,1,1,1,0,0,1,1,1,0.0,0.0,1.0,1.0,1.0
 294,https://github.com/EdwardRaff/JSAT/commit/b154ebf6f6c3f4447dc191e86eb13d04726eabee,"The begining of Matrix abilities.
 
 Added an Abstract Matric class and a Dense matrix implementation
@@ -1269,7 +1269,7 @@ git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@96 c
 Added Vec Vec constroctor to the DenseMatrix implemenation, a parallel one needs to be added.
 Added single and multi threaded block multiplication methods to dense matrix. They are slightly more efficently, but require the exact cache size to be known before hand. So they are not used by default, and the block size for a 256KB cache size is hard coded.
 
-git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@97 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Transpose to the Matrix class,35,2,1,0,1,1,0,0,0,3,20,0.0,0.0,0.29591836734693877,0.9693877551020408,0.30612244897959184
+git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@97 c8979423-a768-6f17-17f2-fb57d64bf5d2",Added Transpose to the Matrix class,35,2,1,0,1,1,0,0,1,3,20,0.0,0.0,0.29591836734693877,0.9693877551020408,0.30612244897959184
 297,https://github.com/EdwardRaff/JSAT/commit/cd3e7b37f0b15498aa86c8f172f0fbcbcc26c479,"Added a shortcut getVector function to DataPointPair for convinence
 Added a Summary stats function to CLassificationDataSet for convinence
 
@@ -1505,8 +1505,8 @@ git status",removed println() from SnappyCompressionBenchmark,49,2,1,0,0,1,0,1,0
 425,https://github.com/jtablesaw/tablesaw/commit/0c9e8b781e1d55b2205be8db8390e0841bdf7b6b,"implementation of basic functionality for 'Getting Started' example, partial","implementation of basic functionality for 'Getting Started' example, partial",76,0,1,1,0,1,0,0,0,5,16,0.0,0.0,0.29927007299270075,1.0,0.656934306569343
 426,https://github.com/jtablesaw/tablesaw/commit/b426f74e0e81b0c9af6ec4b3c4d3729682c15e04,implemented basic BooleanMapUtils,implemented basic BooleanMapUtils,33,2,1,1,0,1,0,1,1,3,2,0.0,0.0,0.12244897959183673,1.0,1.0
 427,https://github.com/jtablesaw/tablesaw/commit/ad5941e752307e52b9749ec3b9fa75d59ff743d9,"added readme, and made the most basic example code in it work","added readme, and made the most basic example code in it work",61,1,0,1,0,1,0,1,1,6,14,0.0,0.0,1.0,1.0,1.0
-428,https://github.com/jtablesaw/tablesaw/commit/bf655a7bb05755a7e98ba135783748a3b9e865bd,"added, integrated StringMapUtils","added, integrated StringMapUtils",32,2,1,1,0,1,0,1,0,4,2,0.0,0.0,1.0,1.0,1.0
-429,https://github.com/jtablesaw/tablesaw/commit/bb37299f475f3726ad4aaa7535753a5d1dc6412a,"added, integrated StringMapUtils","added, integrated StringMapUtils",32,2,1,1,0,1,0,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+428,https://github.com/jtablesaw/tablesaw/commit/bf655a7bb05755a7e98ba135783748a3b9e865bd,"added, integrated StringMapUtils","added, integrated StringMapUtils",32,2,1,1,0,1,0,1,1,4,2,0.0,0.0,1.0,1.0,1.0
+429,https://github.com/jtablesaw/tablesaw/commit/bb37299f475f3726ad4aaa7535753a5d1dc6412a,"added, integrated StringMapUtils","added, integrated StringMapUtils",32,2,1,1,0,1,0,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 430,https://github.com/jtablesaw/tablesaw/commit/2798ff7cf1cb7809043a441dda9ede18db68990b,implementing README.md example functionality,implementing README.md example functionality,44,2,1,1,0,1,0,1,1,14,28,0.07142857142857142,0.0,0.7911111111111111,1.0,1.0
 431,https://github.com/jtablesaw/tablesaw/commit/1d67187658fe004d12f12be22982305d08af436d,parsing smalltalk variant for interactive language,parsing smalltalk variant for interactive language,50,2,1,1,0,1,0,1,1,75,2,0.0,0.0,0.39011367550809506,0.9994832931450224,0.7733379262831553
 432,https://github.com/jtablesaw/tablesaw/commit/f7a29433fe8a595a568a72814bce3289d89d12a2,Initial UI work with JavaFX,Initial UI work with JavaFX,27,2,1,1,1,1,1,1,0,70,2,0.0,0.0,0.34868421052631576,0.8782894736842105,1.0
@@ -1518,7 +1518,7 @@ git status",removed println() from SnappyCompressionBenchmark,49,2,1,0,0,1,0,1,0
 438,https://github.com/jtablesaw/tablesaw/commit/64fa4332b6443069000e1a4983e861325930d9ed,Added event framework for handling application changes,Added event framework for handling application changes,54,1,1,1,1,1,0,1,1,14,6,0.0,0.0,0.9767441860465116,1.0,1.0
 439,https://github.com/jtablesaw/tablesaw/commit/4c695629058ace8bfc8f838a904601b285b4c49b,fixed broken notification test,fixed broken notification test,30,2,1,1,0,1,0,1,1,2,3,0.0,0.0,1.0,1.0,1.0
 440,https://github.com/jtablesaw/tablesaw/commit/e56bc2a9ba5600bc8aafdffd41bd98dc3295167e,"Additional UI work, including partially working drag & drop on table view","Additional UI work, including partially working drag & drop on table view",73,0,1,1,1,1,0,0,0,13,11,0.0,0.0,0.14689265536723164,1.0,0.4971751412429379
-441,https://github.com/jtablesaw/tablesaw/commit/14f9cad562258eba97593436480ea38d76f8b081,"added command processor framework, with undo, redo","added command processor framework, with undo, redo",50,2,1,1,0,1,0,1,0,4,0,0.0,N/A,1.0,1.0,1.0
+441,https://github.com/jtablesaw/tablesaw/commit/14f9cad562258eba97593436480ea38d76f8b081,"added command processor framework, with undo, redo","added command processor framework, with undo, redo",50,2,1,1,0,1,0,1,1,4,0,0.0,N/A,1.0,1.0,1.0
 442,https://github.com/jtablesaw/tablesaw/commit/b5963987e7672b92e94798336d8ec41dad5c00db,improvements towards sorting without comparitors and their auto-boxing,improvements towards sorting without comparitors and their auto-boxing,70,1,0,1,0,1,0,1,0,5,2,0.0,0.0,1.0,1.0,1.0
 443,https://github.com/jtablesaw/tablesaw/commit/a86ea19dc5fe719aea07944a9579605c0e68e4e5,tests for command processor framework for the UI,tests for command processor framework for the UI,48,2,1,1,0,1,0,1,0,1,0,0.0,N/A,N/A,N/A,N/A
 444,https://github.com/jtablesaw/tablesaw/commit/c4f3420b432a1ed2f2566da0553810806ff7f002,"a fledgling attempt to do UI skinning (and runtime, user-directed changes in chart display) without hacking CSS strings","a fledgling attempt to do UI skinning (and runtime, user-directed changes in chart display) without hacking CSS strings",119,0,1,1,0,1,0,0,1,1,0,0.0,N/A,1.0,1.0,1.0
@@ -1532,17 +1532,17 @@ git status",removed println() from SnappyCompressionBenchmark,49,2,1,0,0,1,0,1,0
 452,https://github.com/jtablesaw/tablesaw/commit/21970bb8c02ab42a6403d69181b9d518ae12bb84,"improving date and date column functionality, mostly","improving date and date column functionality, mostly",52,1,0,1,0,1,0,1,1,25,52,0.0,0.0,0.7600767754318618,0.9309021113243762,0.9500959692898272
 453,https://github.com/jtablesaw/tablesaw/commit/6762630bfd8b8190942458da85e7bc8531a6c35a,more enhancments to localDateColumn functionality,more enhancments to localDateColumn functionality,49,2,1,1,0,1,0,1,0,3,4,0.0,0.0,1.0,1.0,1.0
 454,https://github.com/jtablesaw/tablesaw/commit/9e0935ae015b79b51bb833b3384d35ec1ac70547,more enhancments to localDateColumn functionality,more enhancments to localDateColumn functionality,49,2,1,1,0,1,0,1,0,1,22,0.0,0.0,1.0,0.9690721649484536,1.0
-455,https://github.com/jtablesaw/tablesaw/commit/08dec72f1c227cdb73d86457a74baad47d3e2a52,added timing to test,added timing to test,20,1,1,1,0,1,0,1,0,1,1,0.0,0.0,N/A,1.0,1.0
-456,https://github.com/jtablesaw/tablesaw/commit/b80db10f320ba817a166291c342766a350aea8aa,added support for additional map operations,added support for additional map operations,43,2,1,1,0,1,0,1,0,3,22,0.0,0.0,0.8873239436619719,0.8028169014084507,1.0
+455,https://github.com/jtablesaw/tablesaw/commit/08dec72f1c227cdb73d86457a74baad47d3e2a52,added timing to test,added timing to test,20,1,1,1,0,1,0,1,1,1,1,0.0,0.0,N/A,1.0,1.0
+456,https://github.com/jtablesaw/tablesaw/commit/b80db10f320ba817a166291c342766a350aea8aa,added support for additional map operations,added support for additional map operations,43,2,1,1,0,1,0,1,1,3,22,0.0,0.0,0.8873239436619719,0.8028169014084507,1.0
 457,https://github.com/jtablesaw/tablesaw/commit/c71737579fef1893eaa942fa910655e9a8335698,Added in-quarter-n filters to LocalDate,Added in-quarter-n filters to LocalDate,39,2,1,1,1,1,0,1,1,33,10,0.0,0.0,1.0,1.0,1.0
 458,https://github.com/jtablesaw/tablesaw/commit/f1bddd6bad848819c564cfd1d9234625f99819ff,date filter functions added,date filter functions added,27,2,1,1,0,1,1,1,0,55,57,0.0,0.0,1.0,1.0,1.0
-459,https://github.com/jtablesaw/tablesaw/commit/c1be47af1163e981fad620ba9058f734e8cac5f9,added date filtering to datetime column,added date filtering to datetime column,39,2,1,1,0,1,0,1,0,1,30,0.0,0.0,1.0,1.0,1.0
+459,https://github.com/jtablesaw/tablesaw/commit/c1be47af1163e981fad620ba9058f734e8cac5f9,added date filtering to datetime column,added date filtering to datetime column,39,2,1,1,0,1,0,1,1,1,30,0.0,0.0,1.0,1.0,1.0
 460,https://github.com/jtablesaw/tablesaw/commit/cfa74fc13c35ae29edab05092d8aa5a864be2c3f,cleaned up parameter types and names,cleaned up parameter types and names,36,2,0,1,0,1,0,1,1,1,66,0.0,0.0,N/A,N/A,N/A
-461,https://github.com/jtablesaw/tablesaw/commit/ca7b1e36baea74e3ebaa61e6a5668d0f004c55ce,added filters to time and datetime,added filters to time and datetime,34,2,0,1,0,1,0,1,0,2,8,0.0,0.0,1.0,1.0,1.0
-462,https://github.com/jtablesaw/tablesaw/commit/7654f530e2ff417249fb70b0fc171b4aa4b0f165,added filters to category columns,added filters to category columns,33,2,1,1,0,1,0,1,0,1,14,0.0,0.0,1.0,1.0,1.0
+461,https://github.com/jtablesaw/tablesaw/commit/ca7b1e36baea74e3ebaa61e6a5668d0f004c55ce,added filters to time and datetime,added filters to time and datetime,34,2,0,1,0,1,0,1,1,2,8,0.0,0.0,1.0,1.0,1.0
+462,https://github.com/jtablesaw/tablesaw/commit/7654f530e2ff417249fb70b0fc171b4aa4b0f165,added filters to category columns,added filters to category columns,33,2,1,1,0,1,0,1,1,1,14,0.0,0.0,1.0,1.0,1.0
 463,https://github.com/jtablesaw/tablesaw/commit/9407ee470fec5ab0bf90d0c4b5dfe00edbd7fb01,deleted unused class,deleted unused class,20,1,1,1,0,1,0,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 464,https://github.com/jtablesaw/tablesaw/commit/9ef3f4235d55eed102a418fbb5c37689da84cf19,more work on string filters and map functions,more work on string filters and map functions,45,2,0,1,0,1,0,1,0,3,14,0.0,0.0,N/A,N/A,N/A
-465,https://github.com/jtablesaw/tablesaw/commit/5af2d0e83112b0d86321a7bf71153f166094fdcb,added int column filters,added int column filters,24,2,1,1,0,1,0,1,0,1,6,0.0,0.0,1.0,1.0,1.0
+465,https://github.com/jtablesaw/tablesaw/commit/5af2d0e83112b0d86321a7bf71153f166094fdcb,added int column filters,added int column filters,24,2,1,1,0,1,0,1,1,1,6,0.0,0.0,1.0,1.0,1.0
 466,https://github.com/jtablesaw/tablesaw/commit/393558cee630bfe7adb0b4c083ee75747e5e3dbc,AGPL license added,AGPL license added,18,1,1,1,1,1,0,1,0,1,0,0.0,N/A,N/A,N/A,N/A
 467,https://github.com/jtablesaw/tablesaw/commit/ec6c45464d966cbecdeb7677dc1dd3b7b90c6d02,cleaned up unused imports,cleaned up unused imports,25,2,1,1,0,1,0,1,1,1,11,0.0,0.0,1.0,1.0,1.0
 468,https://github.com/jtablesaw/tablesaw/commit/7c761cbb1a5fb1f22be0048e168e61e5f8957ca3,updated readme,updated readme,14,1,1,1,0,1,0,1,0,1,0,0.0,N/A,N/A,N/A,N/A
@@ -1553,9 +1553,9 @@ git status",removed println() from SnappyCompressionBenchmark,49,2,1,0,0,1,0,1,0
 473,https://github.com/jtablesaw/tablesaw/commit/f0daf0d4db2114b6fda6f48d2b97e7aaedc8856c,Adding more filter functions,Adding more filter functions,28,2,1,1,1,1,0,1,1,16,20,0.0,0.0,1.0,1.0,1.0
 474,https://github.com/jtablesaw/tablesaw/commit/14142bb21719223784ab177c4af7132e19e28faa,Adding more filter functions,Adding more filter functions,28,2,1,1,1,1,0,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 475,https://github.com/jtablesaw/tablesaw/commit/ed57c5e7c14c6b438d80480d999ca13e50caac6b,Adding more filter functions,Adding more filter functions,28,2,1,1,1,1,0,1,1,15,14,0.0,0.0,1.0,1.0,1.0
-476,https://github.com/jtablesaw/tablesaw/commit/fd6697d44a7d80b73c46fe5d8b91921a2c9f34eb,added equality filter for datetime col,added equality filter for datetime col,38,2,1,1,0,1,0,1,0,3,1,0.0,0.0,1.0,1.0,1.0
+476,https://github.com/jtablesaw/tablesaw/commit/fd6697d44a7d80b73c46fe5d8b91921a2c9f34eb,added equality filter for datetime col,added equality filter for datetime col,38,2,1,1,0,1,0,1,1,3,1,0.0,0.0,1.0,1.0,1.0
 477,https://github.com/jtablesaw/tablesaw/commit/0ef344ef8ec4ba3d37238acd031da1b9e01fdbb9,removed unneeded nashorn experiment class,removed unneeded nashorn experiment class,41,2,1,1,0,1,0,1,1,1,0,0.0,N/A,N/A,N/A,N/A
-478,https://github.com/jtablesaw/tablesaw/commit/8882114dd2338ad5421f082f0f75e19101147a68,added aggregation functions for float,added aggregation functions for float,37,2,1,1,0,1,0,1,0,2,3,0.0,0.0,1.0,1.0,1.0
+478,https://github.com/jtablesaw/tablesaw/commit/8882114dd2338ad5421f082f0f75e19101147a68,added aggregation functions for float,added aggregation functions for float,37,2,1,1,0,1,0,1,1,2,3,0.0,0.0,1.0,1.0,1.0
 479,https://github.com/jtablesaw/tablesaw/commit/099f11f8aaef37e89a6965f0e89e86968173e481,adding resets to new reduce functions,adding resets to new reduce functions,37,2,1,1,0,1,0,1,1,1,15,0.0,0.0,1.0,1.0,1.0
 480,https://github.com/jtablesaw/tablesaw/commit/3e28516fa736b8afce065022a5eb23b31f3ef00c,"partial implementation of packedPeriod, and implementation of PeriodColumn","partial implementation of packedPeriod, and implementation of PeriodColumn",74,0,0,1,0,1,0,0,0,6,3,0.0,0.0,0.7926421404682275,1.0,0.8795986622073578
 481,https://github.com/jtablesaw/tablesaw/commit/6ad414735c523b0671af24349df1d7fafced8727,partial implementation of packedPeriod,partial implementation of packedPeriod,38,2,1,1,0,1,0,1,0,3,14,0.0,0.0,0.4868421052631579,0.7105263157894737,1.0
@@ -1563,7 +1563,7 @@ git status",removed println() from SnappyCompressionBenchmark,49,2,1,0,0,1,0,1,0
 483,https://github.com/jtablesaw/tablesaw/commit/b344fe2a75785fd1c13e293df58a83f97ae22914,Cleanup and comments on CsvCombiner,Cleanup and comments on CsvCombiner,35,2,0,1,1,1,1,1,0,1,0,0.0,N/A,N/A,N/A,N/A
 484,https://github.com/jtablesaw/tablesaw/commit/aada3b3156eb3e1fe0f85bccbd995ffe86ddcb44,Additional work on column io,Additional work on column io,28,2,1,1,1,1,0,1,0,2,16,0.0,0.0,0.4032258064516129,0.7741935483870968,0.5241935483870968
 485,https://github.com/jtablesaw/tablesaw/commit/a120bccd9a48bdd7e1a7bddb6d837d6a54991001,Additional work on column io,Additional work on column io,28,2,1,1,1,1,0,1,0,2,10,0.0,0.0,0.39436619718309857,0.9577464788732394,0.8732394366197183
-486,https://github.com/jtablesaw/tablesaw/commit/5ac8287622f45e8032dea7e8b607d2456c09b913,Added todos for improving on disk compression,Added todos for improving on disk compression,45,2,1,1,1,1,0,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+486,https://github.com/jtablesaw/tablesaw/commit/5ac8287622f45e8032dea7e8b607d2456c09b913,Added todos for improving on disk compression,Added todos for improving on disk compression,45,2,1,1,1,1,0,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 487,https://github.com/jtablesaw/tablesaw/commit/6244a430ccb07c1254fd2495c16afaee21f54caf,"refactored columnMetaData and tableMetaData, moving them to storage package","refactored columnMetaData and tableMetaData, moving them to storage package",75,0,0,1,0,1,0,0,1,6,0,0.0,N/A,N/A,N/A,N/A
 488,https://github.com/jtablesaw/tablesaw/commit/5ef46065a8f31ef9e31f8e98aa60c4f784ff9b4d,"removed all language-related code, for smalltalk-like analysis language. May re-add later after core is finished.","removed all language-related code, for smalltalk-like analysis language. May re-add later after core is finished.",113,0,1,1,0,0,0,0,1,74,0,0.0,N/A,0.6099913867355727,0.0005167958656330749,0.22670111972437554
 489,https://github.com/jtablesaw/tablesaw/commit/09da9b728135070231212a40377fffa62ba98833,updated guava library to version 19,updated guava library to version 19,35,2,1,1,0,1,0,1,0,1,0,0.0,N/A,N/A,N/A,N/A
@@ -1576,8 +1576,8 @@ git status",removed println() from SnappyCompressionBenchmark,49,2,1,0,0,1,0,1,0
 496,https://github.com/jtablesaw/tablesaw/commit/375d34742765a4f5035473285049b3e79d1b6ce3,"Updates to minimize autoboxing, not entirely successful yet","Updates to minimize autoboxing, not entirely successful yet",59,1,1,1,1,1,0,1,1,21,53,0.0,0.0,0.6536796536796536,0.9264069264069265,0.6493506493506493
 497,https://github.com/jtablesaw/tablesaw/commit/53e5988cf650533850f80ac94e902cb203b3ca59,"continued work on primitive-based sorts (incomplete), and implementation of dummy variable functions for category columns","continued work on primitive-based sorts (incomplete), and implementation of dummy variable functions for category columns",121,0,0,1,0,1,0,0,0,8,13,0.0,0.0,N/A,1.0,1.0
 498,https://github.com/jtablesaw/tablesaw/commit/b36e9ef5387a1123a720274d791890c5fb2903ab,"continued work on primitive-based sorts (incomplete), and implementation of dummy variable functions for category columns","continued work on primitive-based sorts (incomplete), and implementation of dummy variable functions for category columns",121,0,0,1,0,1,0,0,0,13,36,0.0,0.0,1.0,1.0,1.0
-499,https://github.com/jtablesaw/tablesaw/commit/064e54fa7dd15a8ae1e6fca3c417e3de4da1057e,Added categoryColumn tests,Added categoryColumn tests,26,2,1,1,1,1,0,1,0,1,0,0.0,N/A,1.0,1.0,1.0
-500,https://github.com/jtablesaw/tablesaw/commit/7067812c59e6a40f113b1099e3085e900ac2bf1b,Added toStrings for the columns,Added toStrings for the columns,31,2,1,1,1,1,0,1,0,10,9,0.0,0.0,1.0,1.0,1.0
+499,https://github.com/jtablesaw/tablesaw/commit/064e54fa7dd15a8ae1e6fca3c417e3de4da1057e,Added categoryColumn tests,Added categoryColumn tests,26,2,1,1,1,1,0,1,1,1,0,0.0,N/A,1.0,1.0,1.0
+500,https://github.com/jtablesaw/tablesaw/commit/7067812c59e6a40f113b1099e3085e900ac2bf1b,Added toStrings for the columns,Added toStrings for the columns,31,2,1,1,1,1,0,1,1,10,9,0.0,0.0,1.0,1.0,1.0
 501,https://github.com/barryvdh/laravel-debugbar/commit/cbdf0e5c2572f4183bd645b542d38bb7f7777429,Add readme,Add readme,10,0,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 502,https://github.com/barryvdh/laravel-debugbar/commit/c37f11036cf01010266873c28822fa7b2623442f,Add common Collectors,Add common Collectors,21,2,1,1,1,1,1,1,1,1,3,0.0,0.0,N/A,1.0,1.0
 503,https://github.com/barryvdh/laravel-debugbar/commit/cc36d0aa47bb05a24785023fac17877fe9c3d857,Add events and make it actually work,Add events and make it actually work,36,2,0,1,1,1,1,1,1,1,4,0.0,0.0,N/A,N/A,N/A
@@ -2670,7 +2670,7 @@ Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>","Show lines with 
 911,https://github.com/docker-library/php/commit/e19f15271b1cbe9d3e5c9f0c552beca9579f0677,"use php.net as host, to allow mirror redirects
 
 Prevents us2.php.net from getting all of the traffic.","use php.net as host, to allow mirror redirects",46,2,1,1,0,1,1,1,1,8,0,0.0,N/A,N/A,N/A,N/A
-912,https://github.com/docker-library/php/commit/8e361ec2017cf08fc896fd0a28da3b3742cebb09,Added compile option --with-mysqli in versions with Apache,Added compile option --with-mysqli in versions with Apache,58,1,1,1,1,1,0,1,0,5,0,0.0,N/A,N/A,N/A,N/A
+912,https://github.com/docker-library/php/commit/8e361ec2017cf08fc896fd0a28da3b3742cebb09,Added compile option --with-mysqli in versions with Apache,Added compile option --with-mysqli in versions with Apache,58,1,1,1,1,1,0,1,1,5,0,0.0,N/A,N/A,N/A,N/A
 913,https://github.com/docker-library/php/commit/7d61fd53df92f93172ede35a692fd5f645a0252c,Added mysql PDO support to compile flags in versions with Apache,Added mysql PDO support to compile flags in versions with Apache,64,1,1,1,1,1,0,1,1,5,0,0.0,N/A,N/A,N/A,N/A
 914,https://github.com/docker-library/php/commit/7819c242fd0521684b31ff0b33707132ca1bd9c6,"Simplify ""-apache"" images by using the Debian apache2 packages","Simplify ""-apache"" images by using the Debian apache2 packages",62,1,1,1,1,1,1,1,1,16,0,0.0,N/A,N/A,N/A,N/A
 915,https://github.com/docker-library/php/commit/fbac56b1889188f9dd5d124a0fefca7aa1058aa2,Update versions,Update versions,15,1,1,1,1,1,1,1,1,4,0,0.0,N/A,N/A,N/A,N/A
