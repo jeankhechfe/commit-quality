@@ -60,18 +60,21 @@ def direct_object_connection(doc):
 def check_direct_object_connection(subject_line):
     subject_line = subject_line.replace(' .', ' ')
     subject_line = subject_line.replace('\'', '')
-    lower_subject_line = subject_line[0].lower() + subject_line[1:]
     nlp.tokenizer.add_special_case('fix', [{ORTH: 'fixing'}])  # treat fix as verb
     nlp.tokenizer.add_special_case('fixed', [{ORTH: 'fixing'}])  # treat fixed as verb
     nlp.tokenizer.add_special_case('update', [{ORTH: 'updating'}])  # treat update as verb
     nlp.tokenizer.add_special_case('updated', [{ORTH: 'updating'}])  # treat updated as verb
-    nlp.tokenizer.add_special_case('added', [{ORTH: 'adding'}])  # treat update as verb
+    nlp.tokenizer.add_special_case('added', [{ORTH: 'adding'}])  # treat added as verb
     nlp.tokenizer.add_special_case('show', [{ORTH: 'showing'}])  # fix 'show' not being recognized
     doc1 = nlp(subject_line)
     if direct_object_connection(doc1) == 1:
         return 1
+    lower_subject_line = subject_line[0].lower() + subject_line[1:]
     doc2 = nlp(lower_subject_line)
     if direct_object_connection(doc2) == 1:
+        return 1
+    doc3 = nlp(subject_line.lower())
+    if direct_object_connection(doc3) == 1:
         return 1
     return 0
 
