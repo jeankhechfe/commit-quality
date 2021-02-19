@@ -607,7 +607,7 @@ The computer may track ""real"" max depth more closely than it tracks
 samples.  So we trust the non-computed mean/max depths more than the
 computed ones.
 
-Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>",Only update mean/max depths with computed ones if they are way off,66,1,1,1,1,1,0,1,0,1,2,0.0,0.0,1.0,1.0,1.0
+Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>",Only update mean/max depths with computed ones if they are way off,66,1,1,1,1,1,0,1,1,1,2,0.0,0.0,1.0,1.0,1.0
 75,https://github.com/torvalds/subsurface-for-dirk/commit/c1bed52a777fb8d03e056afddf7879af7b94d157,"Add 'mean depth' marker on dive plot
 
 Just because I can.
@@ -1295,7 +1295,7 @@ git-svn-id: https://java-statistical-analysis-tool.googlecode.com/svn/trunk@101 
 Includes a menu that launches a login dialog
 for testing purposes.",Implement VSPackage with basic login dialog,43,2,1,1,1,1,1,1,1,118,1,0.0,0.0,0.6173760421237385,0.8727512066695919,0.9056603773584906
 304,https://github.com/github/VisualStudio/commit/decea1f202f9edffba0c06373bb1d08105163038,Add build script folder to repo,Add build script folder to repo,31,2,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
-305,https://github.com/github/VisualStudio/commit/53cbcbf46b370bc45403be7584435e287171956d,Update project to VS 2015,Update project to VS 2015,25,2,1,1,1,1,1,1,0,3,0,0.0,N/A,N/A,N/A,N/A
+305,https://github.com/github/VisualStudio/commit/53cbcbf46b370bc45403be7584435e287171956d,Update project to VS 2015,Update project to VS 2015,25,2,1,1,1,1,1,1,1,3,0,0.0,N/A,N/A,N/A,N/A
 306,https://github.com/github/VisualStudio/commit/0f3a7fc12dfab638c0241de79387c67b4b4d1a0f,"Add custom Fody package with patched Cecil
 
 Cecil requires a patch to work properly with Roslyn",Add custom Fody package with patched Cecil,42,2,1,1,1,1,1,1,1,15,0,0.0,N/A,N/A,N/A,N/A
@@ -1591,22 +1591,22 @@ Just for 4.0 currently (not the rewritten Router)",Add route information,21,2,1,
 
 Because of little bug, until new tag is released.",Add readme and switch to dev-master,35,2,0,1,1,1,1,1,1,2,0,0.0,N/A,N/A,N/A,N/A
 509,https://github.com/barryvdh/laravel-debugbar/commit/023b652abf49c974ae388a8f411e3ba249f6d453,Make Event logging optional,Make Event logging optional,27,2,1,1,1,1,1,1,1,2,1,0.0,0.0,1.0,1.0,1.0
-510,https://github.com/barryvdh/laravel-debugbar/commit/02d29a5585165c241cac3db40512848bcb67d326,Update readme,Update readme,13,1,1,1,1,1,1,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+510,https://github.com/barryvdh/laravel-debugbar/commit/02d29a5585165c241cac3db40512848bcb67d326,Update readme,Update readme,13,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 511,https://github.com/barryvdh/laravel-debugbar/commit/2be2dbdb226d01d387f90cd33a091a9c0077abd1,Update composer.json,Update composer.json,20,1,1,1,1,1,1,1,1,1,0,1.0,N/A,N/A,N/A,N/A
 512,https://github.com/barryvdh/laravel-debugbar/commit/cf349b6adc2967cc89254113005f78a4946d813c,"Add Laravel info
 
 Version and Environment",Add Laravel info,16,1,1,1,1,1,1,1,1,2,0,0.0,N/A,1.0,1.0,1.0
 513,https://github.com/barryvdh/laravel-debugbar/commit/0c3c25b0c7c5b8827c3f2982aee7df205444dedd,Add facade for messages,Add facade for messages,23,2,1,1,1,1,1,1,1,2,0,0.0,N/A,1.0,1.0,1.0
-514,https://github.com/barryvdh/laravel-debugbar/commit/e321c191a2fd98705455d38998ed2e65caf35791,Update readme,Update readme,13,1,1,1,1,1,1,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+514,https://github.com/barryvdh/laravel-debugbar/commit/e321c191a2fd98705455d38998ed2e65caf35791,Update readme,Update readme,13,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 515,https://github.com/barryvdh/laravel-debugbar/commit/094048d93e6d5e02e6711273a8380a7822c624aa,Add time Facade calls,Add time Facade calls,21,2,1,1,1,1,1,1,1,2,6,0.0,0.0,1.0,1.0,1.0
 516,https://github.com/barryvdh/laravel-debugbar/commit/bcb5e6d9c0109f47840c842ee34ebb72b9b570ac,Add exceptions and docs for messages,Add exceptions and docs for messages,36,2,0,1,1,1,1,1,1,2,2,0.0,0.0,1.0,1.0,1.0
 517,https://github.com/barryvdh/laravel-debugbar/commit/7b1efdb42df7b57d5d292d76260300a23ae37e72,"Update config
 
-Explain about vendors.",Update config,13,1,1,1,1,1,1,1,0,2,1,0.0,0.0,N/A,N/A,N/A
+Explain about vendors.",Update config,13,1,1,1,1,1,1,1,1,2,1,0.0,0.0,N/A,N/A,N/A
 518,https://github.com/barryvdh/laravel-debugbar/commit/50d1d12f6e5cc30ec74be4547134db7babbeed28,Remove Mailer and check for DB Connection,Remove Mailer and check for DB Connection,41,2,0,1,1,1,1,1,1,1,2,0.0,0.0,1.0,N/A,N/A
-519,https://github.com/barryvdh/laravel-debugbar/commit/6f9347158c99a89d1f5a0e35c6bee6f57e6d572e,Update readme,Update readme,13,1,1,1,1,1,1,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+519,https://github.com/barryvdh/laravel-debugbar/commit/6f9347158c99a89d1f5a0e35c6bee6f57e6d572e,Update readme,Update readme,13,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 520,https://github.com/barryvdh/laravel-debugbar/commit/de7862498f1221ad5f7ea501b8253765d01d9132,Fix non-object,Fix non-object,14,1,1,1,1,1,1,1,1,1,1,0.0,0.0,N/A,N/A,N/A
-521,https://github.com/barryvdh/laravel-debugbar/commit/3bfa8665c9593fe782e23247bd69a86900693bd4,Update readme,Update readme,13,1,1,1,1,1,1,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+521,https://github.com/barryvdh/laravel-debugbar/commit/3bfa8665c9593fe782e23247bd69a86900693bd4,Update readme,Update readme,13,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 522,https://github.com/barryvdh/laravel-debugbar/commit/05511fa17c71d3ada9092c966ddca5bfd8869980,Add current route to top of debugbar,Add current route to top of debugbar,36,2,1,1,1,1,1,1,1,1,2,0.0,0.0,1.0,1.0,1.0
 523,https://github.com/barryvdh/laravel-debugbar/commit/1aac7dbe5f5c0a605dab17d3889c646a8f95403c,Rename Monolog to Log,Rename Monolog to Log,21,2,1,1,1,1,1,1,1,1,2,0.0,0.0,N/A,N/A,N/A
 524,https://github.com/barryvdh/laravel-debugbar/commit/0a6c26695d01cd66378098ba28e0d5fafa89497a,"Fix $this for 5.3
@@ -1620,7 +1620,7 @@ Fix for #1",Fix $this for 5.3,17,1,1,1,1,1,1,1,1,1,3,0.0,0.0,N/A,N/A,N/A
 530,https://github.com/barryvdh/laravel-debugbar/commit/b64f8032b3dd0923eaf500fad2d2c0647db38390,Replace Request with SymfonyRequest,Replace Request with SymfonyRequest,35,2,1,1,1,1,1,1,1,2,2,0.0,0.0,1.0,0.7931034482758621,1.0
 531,https://github.com/barryvdh/laravel-debugbar/commit/ce869d97be0229e797e2ed6f17e9fa8897a48273,Switch some to default Debugbar,Switch some to default Debugbar,31,2,1,1,1,1,1,1,1,2,2,0.0,0.0,1.0,1.0,1.0
 532,https://github.com/barryvdh/laravel-debugbar/commit/b40fb4d0111892778cc9a1c10370d4381e8d8581,Don't include response content,Don't include response content,30,2,1,1,1,1,0,1,1,1,1,0.0,0.0,1.0,1.0,1.0
-533,https://github.com/barryvdh/laravel-debugbar/commit/512b8b8cb8940d54cb4e6c1bcd0a05f742c740f6,Update readme,Update readme,13,1,1,1,1,1,1,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+533,https://github.com/barryvdh/laravel-debugbar/commit/512b8b8cb8940d54cb4e6c1bcd0a05f742c740f6,Update readme,Update readme,13,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 534,https://github.com/barryvdh/laravel-debugbar/commit/4ffc458ce3f177234a11194694c014d2c9f930f5,Fix locale,Fix locale,10,0,1,1,1,1,1,1,1,1,1,0.0,0.0,1.0,1.0,1.0
 535,https://github.com/barryvdh/laravel-debugbar/commit/c91073a118cc7333b3a1cf52efc3f9e608b6ee7c,"Merge Messages and Monolog
 
@@ -1637,9 +1637,9 @@ For #1",Remove $this from closure for php5.3,36,2,1,1,1,1,1,1,1,1,4,0.0,0.0,N/A,
 Currently just for https://github.com/barryvdh/laravel-twigbridge",Add Twig collector,18,1,1,1,1,1,1,1,1,2,2,0.0,0.0,0.2857142857142857,1.0,1.0
 540,https://github.com/barryvdh/laravel-debugbar/commit/f8fcd5a577071d4fe3032aff4f436afa9fbf6859,Tweak log collector,Tweak log collector,19,1,1,1,1,1,1,1,1,1,1,0.0,0.0,N/A,N/A,N/A
 541,https://github.com/barryvdh/laravel-debugbar/commit/04cfd3c298c48e1b4c1d21d51b867cf375e8226c,Skip Twig header when View is enabled.,Skip Twig header when View is enabled.,38,2,1,1,1,0,1,1,1,1,1,0.0,0.0,N/A,1.0,N/A
-542,https://github.com/barryvdh/laravel-debugbar/commit/6e8a76f22ab42f9b9435ba2b3783f8052bc4abef,Update readme,Update readme,13,1,1,1,1,1,1,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+542,https://github.com/barryvdh/laravel-debugbar/commit/6e8a76f22ab42f9b9435ba2b3783f8052bc4abef,Update readme,Update readme,13,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 543,https://github.com/barryvdh/laravel-debugbar/commit/27a885905a81d1d2e2c1550054a886892eb0ba4d,Remove view badge,Remove view badge,17,1,1,1,1,1,1,1,1,1,3,0.0,0.0,N/A,N/A,N/A
-544,https://github.com/barryvdh/laravel-debugbar/commit/52b641f590710727be30a0059ad7e37c9b5616bd,Update Facade.php,Update Facade.php,17,1,1,1,1,1,1,1,0,1,1,1.0,0.0,N/A,N/A,N/A
+544,https://github.com/barryvdh/laravel-debugbar/commit/52b641f590710727be30a0059ad7e37c9b5616bd,Update Facade.php,Update Facade.php,17,1,1,1,1,1,1,1,1,1,1,1.0,0.0,N/A,N/A,N/A
 545,https://github.com/barryvdh/laravel-debugbar/commit/2780aa63d01fe1ee6691dbd0dcc56dcac8a3c000,Show db by default,Show db by default,18,1,1,1,1,1,1,1,1,1,1,0.0,0.0,N/A,N/A,N/A
 546,https://github.com/barryvdh/laravel-debugbar/commit/5035f694e59c483718023dc2e681c4bfbc08af91,Add db to config,Add db to config,16,1,1,1,1,1,1,1,1,1,1,0.0,0.0,1.0,1.0,1.0
 547,https://github.com/barryvdh/laravel-debugbar/commit/6296b84768b2e4e71c631cd36f5e25d3601de0a9,Check if collectors are available,Check if collectors are available,33,2,1,1,1,1,1,1,0,1,7,0.0,0.0,1.0,1.0,1.0
@@ -1668,11 +1668,11 @@ Use the upstream assets, so they are always up-to-date.",Change asset publishing
 564,https://github.com/barryvdh/laravel-debugbar/commit/ff03cbab98818e480ff96b386a86e3d4e3a52c9f,Use 'close' event instead of 'after' router,Use 'close' event instead of 'after' router,43,2,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 565,https://github.com/barryvdh/laravel-debugbar/commit/0bb4404ebcd86d00141cfc94f7104523af4c5551,Stack data in session after redirect,Stack data in session after redirect,36,2,1,1,1,1,1,1,1,2,10,0.0,0.0,1.0,1.0,1.0
 566,https://github.com/barryvdh/laravel-debugbar/commit/78133bff79bf6e507707418658d2d465dc404fd6,Double name,Double name,11,1,1,1,1,1,1,1,0,1,1,0.0,0.0,N/A,N/A,N/A
-567,https://github.com/barryvdh/laravel-debugbar/commit/a42e3614113ff8564de65f157bc2be05e795e8ef,Update readme,Update readme,13,1,1,1,1,1,1,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+567,https://github.com/barryvdh/laravel-debugbar/commit/a42e3614113ff8564de65f157bc2be05e795e8ef,Update readme,Update readme,13,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 568,https://github.com/barryvdh/laravel-debugbar/commit/176e3707401c0869a6a26e293aa7b1e285bc117e,Add Mail logger,Add Mail logger,15,1,1,1,1,1,1,1,1,2,3,0.0,0.0,1.0,N/A,1.0
 569,https://github.com/barryvdh/laravel-debugbar/commit/dafe5543787581d42433e2a0e9319e24f16f47e8,Refactor a bit,Refactor a bit,14,1,1,1,1,1,1,1,0,2,6,0.0,0.0,N/A,1.0,N/A
-570,https://github.com/barryvdh/laravel-debugbar/commit/5a31e2aaabc1e843a247ff25cf1fe14de5424d21,Update readme,Update readme,13,1,1,1,1,1,1,1,0,1,0,0.0,N/A,N/A,N/A,N/A
-571,https://github.com/barryvdh/laravel-debugbar/commit/173110240431bd6fa078a5407d718e8892963703,Update screenshot,Update screenshot,17,1,1,1,1,1,1,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+570,https://github.com/barryvdh/laravel-debugbar/commit/5a31e2aaabc1e843a247ff25cf1fe14de5424d21,Update readme,Update readme,13,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
+571,https://github.com/barryvdh/laravel-debugbar/commit/173110240431bd6fa078a5407d718e8892963703,Update screenshot,Update screenshot,17,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 572,https://github.com/barryvdh/laravel-debugbar/commit/dd0ed09cff361716c7b815fcfc9eb0bfb8dc2ed2,Clarify vendors,Clarify vendors,15,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 573,https://github.com/barryvdh/laravel-debugbar/commit/b544c2e8cd5ba7041a2c9b853a0b889398d8b6ea,"Fix commit
 
@@ -1681,7 +1681,7 @@ To prepare for breaking changes.",Fix commit,10,0,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,
 575,https://github.com/barryvdh/laravel-debugbar/commit/d6a0aaf057d410c7b13172e4fd0e0af4bd9405a6,Tweak a bit,Tweak a bit,11,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 576,https://github.com/barryvdh/laravel-debugbar/commit/4effb746247cfc0dd43c246e313ab09a63796727,Cleanup,Cleanup,7,0,1,1,1,1,1,1,0,3,4,0.0,0.0,N/A,N/A,N/A
 577,https://github.com/barryvdh/laravel-debugbar/commit/3157e9f4064bde9d683512024f407029a0cf016e,Move logic from facade to LaravelDebugbar,Move logic from facade to LaravelDebugbar,41,2,1,1,1,1,1,1,1,2,13,0.0,0.0,N/A,N/A,N/A
-578,https://github.com/barryvdh/laravel-debugbar/commit/817c215efddee01d8b3a3267ec86d7941c0528a8,Update readme,Update readme,13,1,1,1,1,1,1,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+578,https://github.com/barryvdh/laravel-debugbar/commit/817c215efddee01d8b3a3267ec86d7941c0528a8,Update readme,Update readme,13,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 579,https://github.com/barryvdh/laravel-debugbar/commit/0f3a9090c5af46473571631a50c0f47121921543,"Fix Session store
 
 Update for changes in https://github.com/laravel/framework/commit/3816e425ae3fdaa69474763737d5e906e073c9a9",Fix Session store,17,1,1,1,1,1,1,0,1,1,0,0.0,N/A,N/A,N/A,N/A
@@ -1725,9 +1725,9 @@ L4.1 changes stuff, this fixes #24",Remove typehinting in construct,31,2,1,1,1,1
 594,https://github.com/barryvdh/laravel-debugbar/commit/187ac4e8eeb3377a3c4bee03664138ddaaacbdc6,"Remove old session var
 
 Not needed anymore.",Remove old session var,22,2,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
-595,https://github.com/barryvdh/laravel-debugbar/commit/a0ad0bf2979e9f5b0103d0114df8f95829a85dde,Update readme,Update readme,13,1,1,1,1,1,1,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+595,https://github.com/barryvdh/laravel-debugbar/commit/a0ad0bf2979e9f5b0103d0114df8f95829a85dde,Update readme,Update readme,13,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 596,https://github.com/barryvdh/laravel-debugbar/commit/1c7eaa55cddc30d3e5a9291d29f0827b50d7dbbc,Make inject configurable,Make inject configurable,24,2,1,1,1,1,1,1,0,3,2,0.0,0.0,N/A,N/A,N/A
-597,https://github.com/barryvdh/laravel-debugbar/commit/d65e17d5c34e3954f361d6c02c24aa5e8c72327f,Update readme,Update readme,13,1,1,1,1,1,1,1,0,1,0,0.0,N/A,N/A,N/A,N/A
+597,https://github.com/barryvdh/laravel-debugbar/commit/d65e17d5c34e3954f361d6c02c24aa5e8c72327f,Update readme,Update readme,13,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 598,https://github.com/barryvdh/laravel-debugbar/commit/99c99c3ff9636c56cd0705027605044a16e17ed5,Make quotation char configurable,Make quotation char configurable,32,2,1,1,1,1,1,1,0,2,1,0.0,0.0,1.0,1.0,1.0
 599,https://github.com/barryvdh/laravel-debugbar/commit/cfc8808295383419802204fc28677c52b8e7f87f,"Fix readme
 
@@ -1738,7 +1738,7 @@ Later is better, right? Fixes #33",Append on App::close insteaf of after router,
 601,https://github.com/terryyin/lizard/commit/c89ef9569ee13065bd4761157f00065d8babf97d,move code from svn,move code from svn,18,1,1,1,0,1,1,1,0,19,0,0.0,N/A,0.36513666838576586,0.814853017019082,0.4553893759669933
 602,https://github.com/terryyin/lizard/commit/911245166293de81844030fb9b5fb241b5adea0c,move code from svn,move code from svn,18,1,1,1,0,1,1,1,0,12,0,0.0,N/A,N/A,N/A,N/A
 603,https://github.com/terryyin/lizard/commit/83e3a132007f5764595ba14e18757dfd02d40015,readme,readme,6,0,1,1,0,1,0,1,0,2,2,0.0,0.0,N/A,N/A,N/A
-604,https://github.com/terryyin/lizard/commit/dcd837a54606b5a9384ee248b2961fa21a4436a2,update folder structure,update folder structure,23,2,1,1,0,1,1,1,0,4,0,0.0,N/A,N/A,N/A,N/A
+604,https://github.com/terryyin/lizard/commit/dcd837a54606b5a9384ee248b2961fa21a4436a2,update folder structure,update folder structure,23,2,1,1,0,1,1,1,1,4,0,0.0,N/A,N/A,N/A,N/A
 605,https://github.com/terryyin/lizard/commit/23a8110f79002b5c52da891d8fbae4f40e222e58,"delete the example C code, so that this project is can be recognized as a Python project rather than a C project.","delete the example C code, so that this project is can be recognized as a Python project rather than a C project.",113,0,1,1,0,0,1,0,1,4,5,0.0,0.0,0.861266294227188,0.27932960893854747,0.7104283054003724
 606,https://github.com/terryyin/lizard/commit/802ac8d374211f852434c6224affb8f1e20cd84b,make compatible with python 3.0,make compatible with python 3.0,31,2,1,1,0,1,1,1,0,1,0,0.0,N/A,0.6348448687350835,0.931980906921241,0.6503579952267303
 607,https://github.com/terryyin/lizard/commit/35c5a282e30fffe05edd2372fd4cd7e5ed6bbce2,fix the bugs introduced by 2to3,fix the bugs introduced by 2to3,31,2,1,1,0,1,1,1,1,3,77,0.0,0.0,1.0,0.9090909090909091,1.0
@@ -1772,7 +1772,7 @@ Sets executable flags on all the appropriate places and adds #! line to extra_te
 627,https://github.com/terryyin/lizard/commit/f2838bfdf38436234c176fc3991637a87303aff6,try again,try again,9,0,1,1,0,1,1,1,0,2,0,0.0,N/A,N/A,N/A,N/A
 628,https://github.com/terryyin/lizard/commit/da206e01044a99e0e84cb71aa4e58ce4002f0dba,stop supporting 2.5 (did I),stop supporting 2.5 (did I),27,2,1,1,0,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 629,https://github.com/terryyin/lizard/commit/2cb6c672a0efc1eb481dde7803fb6d033052ebea,"fix python2.6 multiple threading problem, by disabling it.","fix python2.6 multiple threading problem, by disabling it.",58,1,1,1,0,0,1,1,1,4,1,0.0,0.0,1.0,0.6666666666666666,1.0
-630,https://github.com/terryyin/lizard/commit/442ae616963c13ec7816e24cb7c8694731be85cf,update version number,update version number,21,2,1,1,0,1,1,1,0,2,1,0.0,0.0,N/A,N/A,N/A
+630,https://github.com/terryyin/lizard/commit/442ae616963c13ec7816e24cb7c8694731be85cf,update version number,update version number,21,2,1,1,0,1,1,1,1,2,1,0.0,0.0,N/A,N/A,N/A
 631,https://github.com/terryyin/lizard/commit/d39996bc77ed4a4891f5d5acdccc3b04ce097ec1,test token count,test token count,16,1,1,1,0,1,1,1,0,3,25,0.0,0.0,1.0,1.0,1.0
 632,https://github.com/terryyin/lizard/commit/5d0c9ad3c8a56ed67a69091ae72910c7c57fd2d7,add version,add version,11,1,1,1,0,1,1,1,1,1,1,0.0,0.0,N/A,N/A,N/A
 633,https://github.com/terryyin/lizard/commit/94b172db29acabf98ecd64b1e08b44db25d8fd00,add version,add version,11,1,1,1,0,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
@@ -1799,8 +1799,8 @@ Sets executable flags on all the appropriate places and adds #! line to extra_te
 654,https://github.com/terryyin/lizard/commit/e6db8221750a5b02f9c6cf6fd7e783f17e7c1295,java!,java!,5,0,1,1,0,1,0,1,0,2,1,0.0,0.0,N/A,1.0,1.0
 655,https://github.com/terryyin/lizard/commit/c2ef33942833adbb8096d6782d57fd418d17d45c,fix the windows bin,fix the windows bin,19,1,1,1,0,1,1,1,1,2,1,0.0,0.0,N/A,N/A,N/A
 656,https://github.com/terryyin/lizard/commit/6cb94f1812e6b2fad96e11551fcb0d43f1f43406,fix for windows,fix for windows,15,1,1,1,0,1,1,1,0,1,0,0.0,N/A,N/A,N/A,N/A
-657,https://github.com/terryyin/lizard/commit/4ebcc607c349126499b1d79b3db90de29060e2c7,update version,update version,14,1,1,1,0,1,1,1,0,3,1,0.0,0.0,N/A,N/A,N/A
-658,https://github.com/terryyin/lizard/commit/7e5ffdcf68d972d5a3422263ea3bd1747df9e310,update setup information,update setup information,24,2,1,1,0,1,1,1,0,3,1,0.0,0.0,N/A,1.0,1.0
+657,https://github.com/terryyin/lizard/commit/4ebcc607c349126499b1d79b3db90de29060e2c7,update version,update version,14,1,1,1,0,1,1,1,1,3,1,0.0,0.0,N/A,N/A,N/A
+658,https://github.com/terryyin/lizard/commit/7e5ffdcf68d972d5a3422263ea3bd1747df9e310,update setup information,update setup information,24,2,1,1,0,1,1,1,1,3,1,0.0,0.0,N/A,1.0,1.0
 659,https://github.com/terryyin/lizard/commit/4d682cff5b66ef50f2b358caa32ca8a1701e9fe7,remove the wrong __eq__ overriding,remove the wrong __eq__ overriding,34,2,1,1,0,1,1,1,1,4,12,0.0,0.0,N/A,N/A,N/A
 660,https://github.com/terryyin/lizard/commit/9380b8aa18f06fa0076d4a96890a7f0baa94304e,small refactoring,small refactoring,17,1,1,1,0,1,0,1,0,3,20,0.0,0.0,N/A,N/A,N/A
 661,https://github.com/terryyin/lizard/commit/1a2cb35107444ac788e2bf3aea88cb9e452c5888,FileInformation isn't a list any more.,FileInformation isn't a list any more.,38,2,1,1,1,0,0,1,0,6,20,0.0,0.0,1.0,N/A,N/A
@@ -2673,7 +2673,7 @@ Prevents us2.php.net from getting all of the traffic.","use php.net as host, to 
 912,https://github.com/docker-library/php/commit/8e361ec2017cf08fc896fd0a28da3b3742cebb09,Added compile option --with-mysqli in versions with Apache,Added compile option --with-mysqli in versions with Apache,58,1,1,1,1,1,0,1,0,5,0,0.0,N/A,N/A,N/A,N/A
 913,https://github.com/docker-library/php/commit/7d61fd53df92f93172ede35a692fd5f645a0252c,Added mysql PDO support to compile flags in versions with Apache,Added mysql PDO support to compile flags in versions with Apache,64,1,1,1,1,1,0,1,1,5,0,0.0,N/A,N/A,N/A,N/A
 914,https://github.com/docker-library/php/commit/7819c242fd0521684b31ff0b33707132ca1bd9c6,"Simplify ""-apache"" images by using the Debian apache2 packages","Simplify ""-apache"" images by using the Debian apache2 packages",62,1,1,1,1,1,1,1,1,16,0,0.0,N/A,N/A,N/A,N/A
-915,https://github.com/docker-library/php/commit/fbac56b1889188f9dd5d124a0fefca7aa1058aa2,Update versions,Update versions,15,1,1,1,1,1,1,1,0,4,0,0.0,N/A,N/A,N/A,N/A
+915,https://github.com/docker-library/php/commit/fbac56b1889188f9dd5d124a0fefca7aa1058aa2,Update versions,Update versions,15,1,1,1,1,1,1,1,1,4,0,0.0,N/A,N/A,N/A,N/A
 916,https://github.com/docker-library/php/commit/28bebceb07d8c70702e83f6f0942edb6dcc7514d,"Update 5.6 version - fix #11
 
 Signed-off-by: Rogerio Prado de Jesus <rogeriopradoj@gmail.com>",Update 5.6 version - fix #11,28,2,1,1,1,1,1,1,1,2,0,0.0,N/A,N/A,N/A,N/A
@@ -2769,7 +2769,7 @@ Fixes #45; thanks @thaJeztah",Update to 5.5.19 and 5.6.3 for CVEs,35,2,0,1,1,1,1
 952,https://github.com/docker-library/php/commit/938bbe3bad664cc4ec93d982934fd250a57d6d3b,Run update.sh,Run update.sh,13,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 953,https://github.com/docker-library/php/commit/4bb8f8678056630c0322364d080acd585baef95d,Run update again to fix apache and fpm versions,Run update again to fix apache and fpm versions,47,2,0,1,1,1,1,1,1,2,0,0.0,N/A,N/A,N/A,N/A
 954,https://github.com/docker-library/php/commit/be46002aeedac80205e5d7a54a93169c6fa8bc51,Bump to 5.6.4 and 5.4.36,Bump to 5.6.4 and 5.4.36,24,2,0,1,1,1,1,1,0,2,0,0.0,N/A,N/A,N/A,N/A
-955,https://github.com/docker-library/php/commit/f972d91aac11cf41e5de6d24a45dcb1bb00f221d,Update variants too...,Update variants too...,22,2,1,1,1,0,1,1,0,5,0,0.0,N/A,N/A,N/A,N/A
+955,https://github.com/docker-library/php/commit/f972d91aac11cf41e5de6d24a45dcb1bb00f221d,Update variants too...,Update variants too...,22,2,1,1,1,0,1,1,1,5,0,0.0,N/A,N/A,N/A,N/A
 956,https://github.com/docker-library/php/commit/a51c16e5f91be6243452471d1454dca5b168e3d4,Add a pid cleaner in case container was killed unexpectedly,Add a pid cleaner in case container was killed unexpectedly,59,1,1,1,1,1,1,1,1,10,0,0.0,N/A,N/A,N/A,N/A
 957,https://github.com/docker-library/php/commit/5d49ba5861c0245da96132b011c8dbdad8c28188,Switch from pgp.mit.edu to pool.sks-keyservers.net,Switch from pgp.mit.edu to pool.sks-keyservers.net,50,2,1,1,1,1,1,1,0,9,0,0.0,N/A,N/A,N/A,N/A
 958,https://github.com/docker-library/php/commit/c871678cc7c8dbc9277832e35f14f3534f2dd0fb,"Run update.sh, php 5.5 and 5.6 version bumped","Run update.sh, php 5.5 and 5.6 version bumped",45,2,0,1,1,1,1,1,1,6,0,0.0,N/A,N/A,N/A,N/A
