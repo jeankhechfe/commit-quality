@@ -2764,7 +2764,7 @@ Fixes #45; thanks @thaJeztah",Update to 5.5.19 and 5.6.3 for CVEs,35,2,0,1,1,1,1
 947,https://github.com/docker-library/php/commit/583557dc05de007ee5701d0a92c400fd397c8970,MOAAR,MOAAR,5,0,1,1,1,1,0,1,0,4,0,0.0,N/A,N/A,N/A,N/A
 948,https://github.com/docker-library/php/commit/5bcd974ac087165b250ef7da60f398a3937ebb81,Add readme stub,Add readme stub,15,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 949,https://github.com/docker-library/php/commit/9bb0b224807e03fff64574d0e76ed3e6e7d2ef26,"Fix php:fpm ""listen"" directive","Fix php:fpm ""listen"" directive",30,2,1,1,1,1,1,1,1,4,0,0.0,N/A,N/A,N/A,N/A
-950,https://github.com/docker-library/php/commit/58c3fd175cb3ab30633fbc3e86314154ecc38e89,Load opcache as a zend_extension.,Load opcache as a zend_extension.,33,2,1,1,1,0,1,1,0,10,0,0.0,N/A,N/A,N/A,N/A
+950,https://github.com/docker-library/php/commit/58c3fd175cb3ab30633fbc3e86314154ecc38e89,Load opcache as a zend_extension.,Load opcache as a zend_extension.,33,2,1,1,1,0,1,1,1,10,0,0.0,N/A,N/A,N/A,N/A
 951,https://github.com/docker-library/php/commit/2482d466611d497fc2c6b7f3268ed0cae8ee9144,[5.4][fpm][php-fpm.conf] Impossible to listen on [::]:9000. Replace by 9000,[5.4][fpm][php-fpm.conf] Impossible to listen on [::]:9000. Replace by 9000,75,0,1,1,1,1,0,0,0,1,0,0.0,N/A,N/A,N/A,N/A
 952,https://github.com/docker-library/php/commit/938bbe3bad664cc4ec93d982934fd250a57d6d3b,Run update.sh,Run update.sh,13,1,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 953,https://github.com/docker-library/php/commit/4bb8f8678056630c0322364d080acd585baef95d,Run update again to fix apache and fpm versions,Run update again to fix apache and fpm versions,47,2,0,1,1,1,1,1,1,2,0,0.0,N/A,N/A,N/A,N/A
