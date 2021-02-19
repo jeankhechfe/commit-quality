@@ -6,6 +6,12 @@ from spacy.symbols import ORTH
 
 nlp = spacy.load("en_core_web_lg", disable=['ner'])
 
+nlp.tokenizer.add_special_case('fix', [{ORTH: 'fixing'}])  # treat fix as verb
+nlp.tokenizer.add_special_case('fixed', [{ORTH: 'fixing'}])  # treat fixed as verb
+nlp.tokenizer.add_special_case('update', [{ORTH: 'updating'}])  # treat update as verb
+nlp.tokenizer.add_special_case('updated', [{ORTH: 'updating'}])  # treat updated as verb
+nlp.tokenizer.add_special_case('added', [{ORTH: 'adding'}])  # treat added as verb
+nlp.tokenizer.add_special_case('show', [{ORTH: 'showing'}])  # fix 'show' not being recognized
 
 def separated_with_blank(commit_message):
     message_array = commit_message.split('\n')
@@ -60,12 +66,6 @@ def direct_object_connection(doc):
 def check_direct_object_connection(subject_line):
     subject_line = subject_line.replace(' .', ' ')
     subject_line = subject_line.replace('\'', '')
-    nlp.tokenizer.add_special_case('fix', [{ORTH: 'fixing'}])  # treat fix as verb
-    nlp.tokenizer.add_special_case('fixed', [{ORTH: 'fixing'}])  # treat fixed as verb
-    nlp.tokenizer.add_special_case('update', [{ORTH: 'updating'}])  # treat update as verb
-    nlp.tokenizer.add_special_case('updated', [{ORTH: 'updating'}])  # treat updated as verb
-    nlp.tokenizer.add_special_case('added', [{ORTH: 'adding'}])  # treat added as verb
-    nlp.tokenizer.add_special_case('show', [{ORTH: 'showing'}])  # fix 'show' not being recognized
     doc1 = nlp(subject_line)
     if direct_object_connection(doc1) == 1:
         return 1
