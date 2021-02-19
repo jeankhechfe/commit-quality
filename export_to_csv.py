@@ -44,14 +44,7 @@ def ignore_type_if_any(subject_line):
     return subject_line
 
 
-def check_direct_obj(subject_line):
-    subject_line = subject_line.replace(' .', ' ')
-    subject_line = subject_line.replace('\'', '')
-    subject_line = subject_line[0].lower() + subject_line[1:]
-    nlp.tokenizer.add_special_case('fix', [{ORTH: 'fixing'}])  # treat fix as verb
-    nlp.tokenizer.add_special_case('update', [{ORTH: 'updating'}])  # treat update as verb
-    nlp.tokenizer.add_special_case('show', [{ORTH: 'showing'}])  # fix 'show' not being recognized
-    doc = nlp(subject_line)
+def direct_object_connection(doc):
     for t1 in doc:
         if t1.dep_ == 'ROOT':
             for t2 in doc:
@@ -61,6 +54,22 @@ def check_direct_obj(subject_line):
             for t2 in doc:
                 if t2 in t1.children and t2.dep_ == 'dobj':
                     return 1
+    return 0
+
+
+def check_direct_object_connection(subject_line):
+    subject_line = subject_line.replace(' .', ' ')
+    subject_line = subject_line.replace('\'', '')
+    lower_subject_line = subject_line[0].lower() + subject_line[1:]
+    nlp.tokenizer.add_special_case('fix', [{ORTH: 'fixing'}])  # treat fix as verb
+    nlp.tokenizer.add_special_case('update', [{ORTH: 'updating'}])  # treat update as verb
+    nlp.tokenizer.add_special_case('show', [{ORTH: 'showing'}])  # fix 'show' not being recognized
+    doc1 = nlp(subject_line)
+    if direct_object_connection(doc1) == 1:
+        return 1
+    doc2 = nlp(lower_subject_line)
+    if direct_object_connection(doc2) == 1:
+        return 1
     return 0
 
 
@@ -105,7 +114,7 @@ def export_to_csv():
                     first_word_of_subject_line = ignore_type_if_any(subject_line).split(" ")[0].lower()
                     imperative_mode = 1 if first_word_of_subject_line in imperative.words else 0
                     wrap_72 = 1 if wrap_to_72(message) else 0
-                    verb_direct_obj = check_direct_obj(subject_line)
+                    verb_direct_obj = check_direct_object_connection(subject_line)
 
                     files = commit.split('\n---files---\n')[1].split('\n---dmm---\n')[0].split('\n----\n')
                     changed_files_count = files.pop(0)

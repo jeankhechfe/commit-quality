@@ -41,7 +41,7 @@ Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>",Move the parser c
 .. but don't actually parse anything yet.  But hey - now it tells you
 how many samples it (hasn't) parsed.
 
-Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>",Fill in dummy parse target code,31,2,1,1,1,1,1,1,0,1,9,0.0,0.0,0.6666666666666666,0.7291666666666666,1.0
+Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>",Fill in dummy parse target code,31,2,1,1,1,1,1,1,1,1,9,0.0,0.0,0.6666666666666666,0.7291666666666666,1.0
 6,https://github.com/torvalds/subsurface-for-dirk/commit/414565e000d24fe8b483294fbec64539e336bb4e,"Start showing unparsed entries
 
 (ie all of them)
@@ -1310,7 +1310,7 @@ to script/.",Rename folder build -> script for ci integration,48,2,1,1,1,1,1,1,1
 309,https://github.com/github/VisualStudio/commit/a98555d6381b2d4719c22a9d5ced32190054cbfb,"Get everything building on the command line
 
 Fix build from scripts for ci, add xunit runner for
-visual studio",Get everything building on the command line,43,2,1,1,1,1,1,1,0,6,0,0.0,N/A,N/A,N/A,N/A
+visual studio",Get everything building on the command line,43,2,1,1,1,1,1,1,1,6,0,0.0,N/A,N/A,N/A,N/A
 310,https://github.com/github/VisualStudio/commit/4efe7be1eb8bf2d526b1041dc54f426f9a4afc58,Bump Fody submodule to catch cecil fix,Bump Fody submodule to catch cecil fix,38,2,1,1,1,1,1,1,1,1,0,0.0,N/A,N/A,N/A,N/A
 311,https://github.com/github/VisualStudio/commit/6b235e8327f443bec519e4a34ee1748d3c4c3716,Update packages to latest stable,Update packages to latest stable,32,2,1,1,1,1,1,1,1,10,1,0.0,0.0,1.0,1.0,1.0
 312,https://github.com/github/VisualStudio/commit/a107c79d66a754c5858466dc2f03ec25c55194d5,"Refactoring, navigation and lifetime of mef
