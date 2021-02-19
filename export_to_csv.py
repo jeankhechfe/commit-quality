@@ -11,6 +11,7 @@ nlp.tokenizer.add_special_case('fixed', [{ORTH: 'fixing'}])  # treat fixed as ve
 nlp.tokenizer.add_special_case('update', [{ORTH: 'updating'}])  # treat update as verb
 nlp.tokenizer.add_special_case('updated', [{ORTH: 'updating'}])  # treat updated as verb
 nlp.tokenizer.add_special_case('added', [{ORTH: 'adding'}])  # treat added as verb
+nlp.tokenizer.add_special_case('import', [{ORTH: 'importing'}])  # treat import as verb
 nlp.tokenizer.add_special_case('show', [{ORTH: 'showing'}])  # fix 'show' not being recognized
 
 def separated_with_blank(commit_message):
