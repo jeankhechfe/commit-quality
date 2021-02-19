@@ -1615,7 +1615,7 @@ Fix for #1",Fix $this for 5.3,17,1,1,1,1,1,1,1,1,1,3,0,0,N/A,N/A,N/A,good,
 525,https://github.com/barryvdh/laravel-debugbar/commit/5b12f3c6acb7d076007eb10a0d90ad56e29705e1,Prepare for 4.1,Prepare for 4.1,15,1,1,1,1,1,1,1,0,1,0,0,N/A,N/A,N/A,N/A,bad,
 526,https://github.com/barryvdh/laravel-debugbar/commit/16451d83e5cb93ed8128f3088de47c8dabd435cb,Resolve Router,Resolve Router,14,1,1,1,1,1,1,1,1,2,4,0,0,N/A,N/A,N/A,good,
 527,https://github.com/barryvdh/laravel-debugbar/commit/bbb2c9686fbf09c6cb3882b3d91cbd0621676983,Only for 4.0,Only for 4.0,12,1,1,1,1,1,0,1,0,2,0,0,N/A,N/A,N/A,N/A,bad,
-528,https://github.com/barryvdh/laravel-debugbar/commit/c1c4a062db19dbfab022f9d9bd18bb38b3215805,Add Router for 4.1,Add Router for 4.1,18,1,1,1,1,1,1,1,1,5,2,0,0,0.765432099,1,1,,
+528,https://github.com/barryvdh/laravel-debugbar/commit/c1c4a062db19dbfab022f9d9bd18bb38b3215805,Add Router for 4.1,Add Router for 4.1,18,1,1,1,1,1,1,1,1,5,2,0,0,0.765432099,1,1,good,
 529,https://github.com/barryvdh/laravel-debugbar/commit/6a48b286bc6bcb4e1ba9d4b5caae93868373cf97,Rewrite logic based of Webprofiler,Rewrite logic based of Webprofiler,34,2,1,1,1,1,1,1,1,1,7,0,0,1,1,1,good,
 530,https://github.com/barryvdh/laravel-debugbar/commit/b64f8032b3dd0923eaf500fad2d2c0647db38390,Replace Request with SymfonyRequest,Replace Request with SymfonyRequest,35,2,1,1,1,1,1,1,1,2,2,0,0,1,0.793103448,1,good,
 531,https://github.com/barryvdh/laravel-debugbar/commit/ce869d97be0229e797e2ed6f17e9fa8897a48273,Switch some to default Debugbar,Switch some to default Debugbar,31,2,1,1,1,1,1,1,1,2,2,0,0,1,1,1,good,
@@ -2637,7 +2637,7 @@ Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>","Show lines with 
 889,https://github.com/apple/swift-llbuild/commit/14d1075c45ebb62cb4f70cf984a866e86614167c,"Added Core library, with rudimentary dependency graph, node, and command classes.  No connections yet, but ability to look up and create nodes and commands.  Commands have lambdas as actions.  Clearly these are early days, but this is a start of a skeletal structure.","Added Core library, with rudimentary dependency graph, node, and command classes.  No connections yet, but ability to look up and create nodes and commands.  Commands have lambdas as actions.  Clearly these are early days, but this is a start of a skeletal structure.",267,0,0,1,1,0,0,0,1,13,0,0,N/A,0.7625,1,1,bad,
 890,https://github.com/apple/swift-llbuild/commit/23e61aa148e322b04583cd09beb9e6998860c0f3,"Node and command numbers are one-based, not zero-based.","Node and command numbers are one-based, not zero-based.",55,1,0,1,1,0,0,1,0,3,4,0,0,1,1,1,bad,
 891,https://github.com/apple/swift-llbuild/commit/37e4749b842d5088cc2909c9277517e2f4429bb6,"[NinjaCommand] Fix a bug in my ::chdir() logic, that didn't update the input path.","[NinjaCommand] Fix a bug in my ::chdir() logic, that didn't update the input path.",82,0,1,1,1,0,1,0,1,1,1,0,0,N/A,1,N/A,bad,
-892,https://github.com/apple/swift-llbuild/commit/37a870f3c067fd2c40aca544ebe9cbe3fa51c059,[Ninja/ManifestLoader] Diagnose missing 'depth' assignment.,[Ninja/ManifestLoader] Diagnose missing 'depth' assignment.,59,1,1,1,1,0,1,1,1,2,2,0,0,1,1,1,,
+892,https://github.com/apple/swift-llbuild/commit/37a870f3c067fd2c40aca544ebe9cbe3fa51c059,[Ninja/ManifestLoader] Diagnose missing 'depth' assignment.,[Ninja/ManifestLoader] Diagnose missing 'depth' assignment.,59,1,1,1,1,0,1,1,1,2,2,0,0,1,1,1,neutral,
 893,https://github.com/apple/swift-llbuild/commit/a2c03e7d2689b6bb25a5278042f2fa07684b8c71,"[unittests] Remove redundant main.cpp files.
 
  - I guess I forgot to remove these, originally I was going to skip having the
@@ -2754,7 +2754,7 @@ RUN apt-get update && apt-get install -y libpng12-dev && rm -rf /var/lib/apt/lis
 
 RUN docker-php-ext-install mysqli
 ```",Add new `docker-php-ext-*` scripts for magic,44,2,1,1,1,1,1,0,1,21,0,0.285714286,N/A,N/A,N/A,N/A,neutral,
-942,https://github.com/docker-library/php/commit/c06a6485d6a3025c89d233c2c2066c8c7582d32e,"Make the root more obvious, fix DirectoryIndex to php first","Make the root more obvious, fix DirectoryIndex to php first",59,1,1,1,1,1,1,1,1,4,0,0,N/A,N/A,N/A,N/A,,
+942,https://github.com/docker-library/php/commit/c06a6485d6a3025c89d233c2c2066c8c7582d32e,"Make the root more obvious, fix DirectoryIndex to php first","Make the root more obvious, fix DirectoryIndex to php first",59,1,1,1,1,1,1,1,1,4,0,0,N/A,N/A,N/A,N/A,good,
 943,https://github.com/docker-library/php/commit/b2e1b8e2a37db419ae1244b9f63456b86f666ffe,Add back make (which we somehow missed),Add back make (which we somehow missed),39,2,1,1,1,1,1,1,1,6,0,0,N/A,N/A,N/A,N/A,good,
 944,https://github.com/docker-library/php/commit/80f855114cb4c44eef7aa2a0e22a07e40e97cc03,Add FPM variant,Add FPM variant,15,1,1,1,1,1,1,1,1,17,0,0,N/A,N/A,N/A,N/A,neutral,
 945,https://github.com/docker-library/php/commit/844ed7ce004749b2d81e98cfa2962043a1581fee,"Update to 5.5.19 and 5.6.3 for CVEs
