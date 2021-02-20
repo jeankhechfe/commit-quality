@@ -8,27 +8,36 @@ from sklearn.metrics import accuracy_score
 import joblib
 
 data = pd.read_csv('data/data.csv')
-x = data.drop(columns=['result'])
-y = data['result']
+x = data.drop(columns=['label'])
+y = data['label']
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
 
-# model = KNeighborsClassifier()
+def try_model(model):
+    accuracy = 0
+    for i in range(100):
+        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
+        model.fit(x_train, y_train)
+        prediction = model.predict(x_test)
+        accuracy += accuracy_score(y_test, prediction)
+    return accuracy / 100
 
-# model = SVC(kernel="linear", C=2)
 
-# model = DecisionTreeClassifier()
+m1 = KNeighborsClassifier()
+print("KNeighborsClassifier:", try_model(m1))
 
-model = RandomForestClassifier(n_estimators=60, max_depth=3, random_state=1)
+m2 = SVC(kernel="linear", C=2)
+print("SVC:", try_model(m2))
 
-model.fit(x_train, y_train)
-prediction = model.predict(x_test)
+m3 = DecisionTreeClassifier()
+print("DecisionTreeClassifier:", try_model(m3))
 
-for i in range(len(prediction)):
-    if prediction[i] != y_test.values.tolist()[i]:
-        print(prediction[i], x_test.values.tolist()[i], y_test.values.tolist()[i])
+m4 = RandomForestClassifier(n_estimators=60, max_depth=3, random_state=1)
+print("RandomForestClassifier:", try_model(m4))
 
-print(accuracy_score(y_test, prediction))
+# for i in range(len(prediction)):
+#     if prediction[i] != y_test.values.tolist()[i]:
+#         print(prediction[i], x_test.values.tolist()[i], y_test.values.tolist()[i])
+
 
 # joblib.dump(model, 'model.joblib')
 # model = joblib.load('model.joblib')
