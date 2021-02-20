@@ -37,7 +37,7 @@ with open("commits_logs/--temp.txt", "w") as txt_file:
                         txt_file.write('\n---methods---')
                         for method in m.changed_methods:
                             txt_file.write('\n')
-                            txt_file.write(method.name)
+                            txt_file.write(method.name.split("::")[-1])
                 txt_file.write('\n---dmm---\n')
                 methods_long = commit.dmm_unit_size if commit.dmm_unit_size else -1
                 txt_file.write(str(methods_long))
