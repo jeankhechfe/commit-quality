@@ -99,7 +99,7 @@ def export_to_csv():
                 ['number', 'link', 'Message', 'Subject Line', 'character count', 'subject_len', 'and_or_count',
                  'Blank Line', 'Capital', 'dot', 'imperative', 'wrap', 'verb_direct_obj', 'changed_files_count',
                  'changes_methods_count', 'files_to_body_ratio', 'methods_to_body_ratio', 'methods_long',
-                 'methods_complexity', 'methods_parameters'])
+                 'methods_complexity', 'methods_parameters', 'added_lines'])
 
             file = open("commits_logs/all_commits.txt", "r")
             projects = file.read().split('\n---project---\n')
@@ -148,11 +148,13 @@ def export_to_csv():
                     methods_parameters = dmm[1]
                     methods_complexity = dmm[2]
 
+                    added_lines = commit.split('\n---added_lines---\n')[1]
+
                     spam_writer.writerow(
                         [total_count, link, message, subject_line, len(subject_line), subject_len,
                          and_or_count, blank_line, capital, dot, imperative_mode, wrap_72, verb_direct_obj,
                          changed_files_count, changes_methods_count, files_to_body_ratio, methods_to_body_ratio,
-                         methods_long, methods_complexity, methods_parameters])
+                         methods_long, methods_complexity, methods_parameters, added_lines])
 
             print('\x1b[6;30;42m', 'commits messages has been exported', '\x1b[0m')
 
