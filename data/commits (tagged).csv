@@ -451,7 +451,7 @@ Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>",Fix up small deta
 Now, as we start parsing more, we just need to also add the code to save
 it.
 
-Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>",Save everything in our current dives and samples into the xml file,66,1,0,1,1,1,1,1,1,1,5,0,0,1,0.21,1,27,neutral,
+Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>",Save everything in our current dives and samples into the xml file,66,1,0,1,1,1,1,1,1,1,5,0,0,1,0.21,1,27,good,
 57,https://github.com/torvalds/subsurface-for-dirk/commit/5001ab66cba885411e9ee4e8c701688b4928ab1d,"Teach the date parser to also parse the international standard date format
 
 The standard way to write a date is yyyy-mm-dd, which is unambiguous and
@@ -857,7 +857,7 @@ Backward compatibility has been maintained though.",Made pooling objects directl
 129,https://github.com/bitronix/btm/commit/e576bbbae5541b85e66a7869bae978482898c267,javadoc improvements,javadoc improvements,20,1,1,1,0,1,0,1,0,4,0,0,-1,-1,-1,-1,14,bad,
 130,https://github.com/bitronix/btm/commit/44280f307bbbf9e109b6bb7a6ac5c5e80cae7ae6,reafactored test to get rid of deprecated classes usage,reafactored test to get rid of deprecated classes usage,55,1,1,1,0,1,0,1,0,2,4,0,0,1,1,1,15,bad,1
 131,https://github.com/bitronix/btm/commit/2f1caa1a465bfebd3afdaced2f866b99b27d7d6d,improved recovery test; it now works with a mock resource,improved recovery test; it now works with a mock resource,57,1,1,1,0,1,0,1,0,6,22,0,0,1,1,1,133,bad,1
-132,https://github.com/bitronix/btm/commit/52d6f92d33785ea1d6ef81c0d61f509f7c1575a0,fixed some tests + moved manual ones to new source folder,fixed some tests + moved manual ones to new source folder,57,1,1,1,0,1,0,1,1,21,5,0,0,1,1,1,31,neutral,
+132,https://github.com/bitronix/btm/commit/52d6f92d33785ea1d6ef81c0d61f509f7c1575a0,fixed some tests + moved manual ones to new source folder,fixed some tests + moved manual ones to new source folder,57,1,1,1,0,1,0,1,1,21,5,0,0,1,1,1,31,bad,
 133,https://github.com/bitronix/btm/commit/e2b6e0c73898456ca1229c325dccef44fe9848c3,added useful error check,added useful error check,24,2,1,1,0,1,0,1,1,2,2,0,0,1,1,1,4,neutral,1
 134,https://github.com/bitronix/btm/commit/3d9e060e17d0ad81071ad98a7bbd368f8341247c,improved exception type,improved exception type,23,2,1,1,0,1,0,1,0,1,1,0,0,-1,-1,-1,1,bad,
 135,https://github.com/bitronix/btm/commit/25e80c96e8c7eb58a6bf2f0c5c2a95cbaeaa83b8,fixed serialization + small cleanups,fixed serialization + small cleanups,36,2,1,1,0,1,0,1,1,2,5,0,0,-1,-1,-1,15,neutral,
@@ -925,7 +925,7 @@ Backward compatibility has been maintained though.",Made pooling objects directl
 
 createDurableSubscriber now enlists resource in the transaction using proper producer/consumer caching scheme",fixed BTM-8 - Durable subscribers cannot participate in XA,58,1,1,1,0,1,0,0,1,4,6,0,0.33,1,0.58,0.17,72,neutral,
 197,https://github.com/bitronix/btm/commit/d4fd329949a6af37bf9a845dc8fa6695e6f327db,fixed BTM-9 - reference created by getReference() throws NPE on toString(),fixed BTM-9 - reference created by getReference() throws NPE on toString(),74,0,1,1,0,1,0,0,1,1,1,0,1,-1,-1,-1,2,bad,
-198,https://github.com/bitronix/btm/commit/d5a34ad5179df58fef6f6d52b6a17f249f991d23,moved non-XA classes to another package,moved non-XA classes to another package,39,2,1,1,0,1,0,1,1,55,0,0,-1,-1,-1,-1,92,neutral,
+198,https://github.com/bitronix/btm/commit/d5a34ad5179df58fef6f6d52b6a17f249f991d23,moved non-XA classes to another package,moved non-XA classes to another package,39,2,1,1,0,1,0,1,1,55,0,0,-1,-1,-1,-1,92,bad,
 199,https://github.com/bitronix/btm/commit/689da0830325c9fb9fa2e8c1671e3a11ef9a6fec,added backward compatibility class,added backward compatibility class,34,2,1,1,0,1,0,1,1,2,0,0,-1,1,1,1,24,neutral,
 200,https://github.com/bitronix/btm/commit/04a5b2d2046f65691dc4dcf5cf293eeb6caf6852,minor code cleanup,minor code cleanup,18,1,1,1,0,1,1,1,0,1,2,0,0,-1,-1,-1,5,bad,
 201,https://github.com/EdwardRaff/JSAT/commit/41ba764e99baff1b19d64b3e3cbe62496e5e6b2e,"Initial Import into repository
@@ -1418,7 +1418,7 @@ viewmodels that can be disposed of.
 Add some UI testing to the DesignTimeStyleHelper app,
 it's faster to iterate over the UI outside the extension
 itself.",Refactor how views and viewmodels are exported,46,2,0,1,1,1,1,1,0,27,15,0,0,0.64,0.21,1,306,bad,
-364,https://github.com/github/VisualStudio/commit/5f02280b3e160e1897f24f6da238bc1ff94ee408,Reorganize files into more meaningful folders,Reorganize files into more meaningful folders,45,2,1,1,1,1,1,1,1,18,0,0,-1,-1,-1,-1,68,good,
+364,https://github.com/github/VisualStudio/commit/5f02280b3e160e1897f24f6da238bc1ff94ee408,Reorganize files into more meaningful folders,Reorganize files into more meaningful folders,45,2,1,1,1,1,1,1,1,18,0,0,-1,-1,-1,-1,68,bad,
 365,https://github.com/github/VisualStudio/commit/715fefaa32e536c5f6170bc38a0df12eedd6ee65,Fix namespaces and using statements everywhere,Fix namespaces and using statements everywhere,46,2,0,1,1,1,1,1,1,93,22,0,0,-1,-1,-1,300,bad,
 366,https://github.com/github/VisualStudio/commit/6e74072044d04440ba9e4b435bcd163cfddb0ee6,Export 2fa viewmodel for the 2fa challenge handler,Export 2fa viewmodel for the 2fa challenge handler,50,2,1,1,1,1,1,1,1,1,0,0,-1,-1,-1,-1,1,good,
 367,https://github.com/github/VisualStudio/commit/821663ffbbb49093e46a213b740c2b97512433f9,Fix ExportFactoryProvider build and code issues,Fix ExportFactoryProvider build and code issues,47,2,0,1,1,1,1,1,1,1,2,0,0,-1,-1,-1,8,good,
@@ -1890,12 +1890,12 @@ Still tons of warnings with ""-Wall"", but now it's actually getting closer.
 It even compiles again.",Lots of ANSI'fication and cleanups,34,2,0,1,1,1,0,0,0,26,300,0,0,0.84,0.35,0.48,1152,bad,
 714,https://github.com/torvalds/uemacs/commit/d0ed902432e60671a9b5df62f14c1683ed23a7eb,"Fix up some trivial gcc -Wall warnings
 
-Lots more to go.",Fix up some trivial gcc -Wall warnings,38,2,1,1,1,1,1,1,1,10,11,0,0,-1,-1,-1,22,good,
+Lots more to go.",Fix up some trivial gcc -Wall warnings,38,2,1,1,1,1,1,1,1,10,11,0,0,-1,-1,-1,22,neutral,
 715,https://github.com/torvalds/uemacs/commit/8eab871e557bcd0666f0a002330c9465463dd8f3,More warning avoidance and code cleanup,More warning avoidance and code cleanup,39,2,0,1,1,1,0,1,0,6,6,0,0,0.33,-1,0.33,30,bad,
 716,https://github.com/torvalds/uemacs/commit/d79d222a45561055e6a353a6a3065f8d5700c42f,Fix up unused variable and ambiguous else in random.c,Fix up unused variable and ambiguous else in random.c,53,1,0,1,1,1,1,1,1,1,2,1,0,1,-1,1,2,good,
 717,https://github.com/torvalds/uemacs/commit/d66d329986bd916e201fb15664afc76dca198f21,"Replace ""WINDOW"" type with ""window_t""
 
-Starting to try to avoid name clashes with curses and friends.","Replace ""WINDOW"" type with ""window_t""",37,2,1,1,1,1,1,1,1,12,40,0,0,-1,-1,-1,65,good,
+Starting to try to avoid name clashes with curses and friends.","Replace ""WINDOW"" type with ""window_t""",37,2,1,1,1,1,1,1,1,12,40,0,0,-1,-1,-1,65,neutral,
 718,https://github.com/torvalds/uemacs/commit/12cb79ceb4ebaa528efc5b6c6063b55374aca8fd,"Avoid various name clashes with curses and termcap headers
 
 This allows us to include the proper headers, instead of declaring
@@ -1976,7 +1976,7 @@ an uninitialized variable was never used if it wasn't initialized etc.
 Some of them were name clashes (""crypt()"" is a standard library
 function, so rename it to ""myencrypt()"") etc.
 
-Signed-off-by: Linus Torvalds <torvalds@osdl.org>",Clean up various compile warnings,33,2,1,1,1,1,1,1,1,17,16,0,0.12,-1,0.6,-1,41,neutral,1
+Signed-off-by: Linus Torvalds <torvalds@osdl.org>",Clean up various compile warnings,33,2,1,1,1,1,1,1,1,17,16,0,0.12,-1,0.6,-1,41,bad,1
 730,https://github.com/torvalds/uemacs/commit/c2a7e41fae342531dbd0b8ba74136ad90b060817,"Turn ESC+'[' into a CSI character
 
 This avoids the annoying behavior where we're on the command line,
