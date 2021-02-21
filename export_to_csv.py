@@ -40,11 +40,9 @@ def subject_length(subject_line):
 
 
 def ignore_type_if_any(subject_line):
-    index = subject_line.find(" ")
-    if index == -1:
-        return subject_line
-    if subject_line[index - 1] == ":":
-        return subject_line[index + 1:]
+    index = subject_line.rfind(": ")
+    if index != -1:
+        return subject_line[index+2:]
     if subject_line[0] == "[":
         index = subject_line.find("] ")
         if index != -1:
@@ -68,15 +66,15 @@ def direct_object_connection(doc):
 def check_direct_object_connection(subject_line):
     subject_line = subject_line.replace(' .', ' ')
     subject_line = subject_line.replace('\'', '')
-    doc1 = nlp(subject_line)
-    if direct_object_connection(doc1) == 1:
+    doc = nlp(subject_line)
+    if direct_object_connection(doc) == 1:
         return 1
     lower_subject_line = subject_line[0].lower() + subject_line[1:]
-    doc2 = nlp(lower_subject_line)
-    if direct_object_connection(doc2) == 1:
+    doc = nlp(lower_subject_line)
+    if direct_object_connection(doc) == 1:
         return 1
-    doc3 = nlp(subject_line.lower())
-    if direct_object_connection(doc3) == 1:
+    doc = nlp(subject_line.lower())
+    if direct_object_connection(doc) == 1:
         return 1
     return 0
 
@@ -140,13 +138,13 @@ def export_to_csv():
                             changes_methods_count += len(methods_list)
                             methods_tokens.extend(methods_list)
 
-                    files_to_body_ratio = get_ratio(files_tokens, message) if files_tokens else 1
-                    methods_to_body_ratio = get_ratio(methods_tokens, message) if methods_tokens else 1
+                    files_to_body_ratio = round(get_ratio(files_tokens, message), 2) if files_tokens else 1
+                    methods_to_body_ratio = round(get_ratio(methods_tokens, message), 2) if methods_tokens else 1
 
                     dmm = commit.split('\n---dmm---\n')[1].split('\n----\n')
-                    methods_long = dmm[0]
-                    methods_parameters = dmm[1]
-                    methods_complexity = dmm[2]
+                    methods_long = round(float(dmm[0]), 2)
+                    methods_parameters = round(float(dmm[1]), 2)
+                    methods_complexity = round(float(dmm[2]), 2)
 
                     added_lines = commit.split('\n---added_lines---\n')[1]
 
