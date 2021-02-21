@@ -96,7 +96,7 @@ def export_to_csv():
             spam_writer.writerow(
                 ['number', 'link', 'Message', 'Subject Line', 'character count', 'subject_len', 'and_or_count',
                  'Blank Line', 'Capital', 'dot', 'imperative', 'wrap', 'verb_direct_obj', 'changed_files_count',
-                 'changes_methods_count', 'methods_to_body_ratio', 'methods_long',
+                 'changes_methods_count', 'files_to_body_ratio', 'methods_to_body_ratio', 'methods_long',
                  'methods_complexity', 'methods_parameters', 'added_lines'])
 
             file = open("commits_logs/all_commits.txt", "r")
@@ -138,6 +138,7 @@ def export_to_csv():
                             changes_methods_count += len(methods_list)
                             methods_tokens.extend(methods_list)
 
+                    files_to_body_ratio = round(get_ratio(files_tokens, message), 2) if files_tokens else 1
                     methods_to_body_ratio = round(get_ratio(methods_tokens, message), 2) if methods_tokens else 1
 
                     dmm = commit.split('\n---dmm---\n')[1].split('\n----\n')
@@ -150,7 +151,7 @@ def export_to_csv():
                     spam_writer.writerow(
                         [total_count, link, message, subject_line, len(subject_line), subject_len,
                          and_or_count, blank_line, capital, dot, imperative_mode, wrap_72, verb_direct_obj,
-                         changed_files_count, changes_methods_count, methods_to_body_ratio,
+                         changed_files_count, changes_methods_count, files_to_body_ratio, methods_to_body_ratio,
                          methods_long, methods_complexity, methods_parameters, added_lines])
 
             print('\x1b[6;30;42m', 'commits messages has been exported', '\x1b[0m')
