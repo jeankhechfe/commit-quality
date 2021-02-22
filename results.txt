@@ -1,0 +1,27 @@
+(test_size=0.2, commits_count=1000, labeling=manual, values=real)
+Iterations: [100]
+KNeighborsClassifier: [highest 0.68] [accuracy 0.6] [time 1.0]
+SVC (linear): [highest 0.84] [accuracy 0.81] [time 58.43]
+DecisionTreeClassifier: [highest 0.84] [accuracy 0.75] [time 0.51]
+RandomForestClassifier: [highest 0.86] [accuracy 0.81] [time 14.46]
+
+(test_size=0.2, commits_count=1000, labeling=manual, values=mapped)
+Iterations: [100]
+KNeighborsClassifier: [highest 0.82] [accuracy 0.74] [time 1.01]
+SVC (linear): [highest 0.84] [accuracy 0.79] [time 1.6]
+DecisionTreeClassifier: [highest 0.84] [accuracy 0.76] [time 0.44]
+RandomForestClassifier: [highest 0.86] [accuracy 0.79] [time 13.87]
+
+(test_size=0.2, commits_count=1000, labeling=auto, values=real)
+Iterations: [100]
+KNeighborsClassifier: [highest 0.6] [accuracy 0.53] [time 1.03]
+SVC (linear): [highest 0.92] [accuracy 0.87] [time 4945.95]
+DecisionTreeClassifier: [highest 0.88] [accuracy 0.81] [time 0.5]
+RandomForestClassifier: [highest 0.94] [accuracy 0.88] [time 14.26]
+
+(test_size=0.2, commits_count=1000, labeling=auto, values=mapped)
+Iterations: [100]
+KNeighborsClassifier: [highest 0.88] [accuracy 0.82] [time 1.01]
+SVC (linear): [highest 1.0] [accuracy 0.98] [time 1.15]
+DecisionTreeClassifier: [highest 0.91] [accuracy 0.85] [time 0.43]
+RandomForestClassifier: [highest 0.94] [accuracy 0.9] [time 13.61]
