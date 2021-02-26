@@ -9,7 +9,7 @@ import timeit
 
 # import joblib
 
-data = pd.read_csv('data/data_auto.csv')
+data = pd.read_csv('data/data.csv')
 x = data.drop(columns=['label'])
 y = data['label']
 
