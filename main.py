@@ -1,23 +1,31 @@
 import itertools
+
 import spacy
 # from pydriller import RepositoryMining
 # import timeit
 from spacy.symbols import ORTH
+import pandas as pd
 
-nlp = spacy.load("en_core_web_lg")
+data = pd.read_csv('data/commits (tagged).csv')
+label = list(data['label'])
+print(label.count('good'))
+print(label.count('neutral'))
+print(label.count('bad'))
 
-def check_direct_obj(subject_line):
-    doc = nlp(subject_line)
-    print([(token.text, token.dep_, token.pos_) for token in doc])
-    for t1 in doc:
-        if t1.dep_ == 'ROOT':
-            print(t1)
-            for t2 in doc:
-                print(list(t1.children))
-                if t2 in t1.children and t2.dep_ == 'dobj':
-                    return 1
-    return 0
-print(check_direct_obj("get everything building on the command line"))
+# nlp = spacy.load("en_core_web_lg")
+#
+# def check_direct_obj(subject_line):
+#     doc = nlp(subject_line)
+#     print([(token.text, token.dep_, token.pos_) for token in doc])
+#     for t1 in doc:
+#         if t1.dep_ == 'ROOT':
+#             print(t1)
+#             for t2 in doc:
+#                 print(list(t1.children))
+#                 if t2 in t1.children and t2.dep_ == 'dobj':
+#                     return 1
+#     return 0
+# print(check_direct_obj("python 2.6 doesn't have assertListEqual"))
 
 # doc = nlp("zzzzz")
 # print([(token.text, token.dep_, token.pos_) for token in doc])
