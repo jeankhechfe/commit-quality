@@ -1,4 +1,4 @@
-character count,and_or_count,Blank Line,Capital,dot,imperative,wrap,verb_direct_obj,changed_files_count,changes_methods_count,files_to_body_ratio,methods_to_body_ratio,methods_long,methods_complexity,methods_parameters,added_lines,label
+characters_count,and_or_count,blank_line,capital_start,end_dot,imperative_start,wrap_to_72,verb_direct_obj,changed_files_count,changes_methods_count,files_to_body_ratio,methods_to_body_ratio,methods_long,methods_complexity,methods_parameters,added_lines,label
 32,1,1,1,1,1,1,1,2,0,0,-1,1,1,1,50,good
 35,1,1,1,1,1,1,1,4,0,0,-1,-1,-1,-1,8,good
 45,1,1,1,0,1,1,1,2,6,0,0,-1,0.31,-1,64,good

@@ -30,15 +30,6 @@ def wrap_to_72(commit_message):
     return True
 
 
-def subject_length(subject_line):
-    if 20 < len(subject_line) < 51:
-        return 2
-    elif 10 < len(subject_line) < 21 or 50 < len(subject_line) < 73:
-        return 1
-    else:
-        return 0
-
-
 def ignore_type_if_any(subject_line):
     index = subject_line.rfind(": ")
     if index != -1:
@@ -94,10 +85,10 @@ def export_to_csv():
         with open('data/commits.csv', 'w', newline='') as csv_file:
             spam_writer = csv.writer(csv_file)
             spam_writer.writerow(
-                ['number', 'link', 'Message', 'Subject Line', 'character count', 'subject_len', 'and_or_count',
-                 'Blank Line', 'Capital', 'dot', 'imperative', 'wrap', 'verb_direct_obj', 'changed_files_count',
-                 'changes_methods_count', 'files_to_body_ratio', 'methods_to_body_ratio', 'methods_long',
-                 'methods_complexity', 'methods_parameters', 'added_lines'])
+                ['Number', 'Link', 'Message', 'Subject Line', 'characters_count', 'and_or_count',
+                 'blank_line', 'capital_start', 'end_dot', 'imperative_start', 'wrap_to_72', 'verb_direct_obj',
+                 'changed_files_count', 'changes_methods_count', 'files_to_body_ratio', 'methods_to_body_ratio',
+                 'methods_long', 'methods_complexity', 'methods_parameters', 'added_lines'])
 
             file = open("commits_logs/all_commits.txt", "r")
             projects = file.read().split('\n---project---\n')
@@ -112,7 +103,6 @@ def export_to_csv():
                     link = project_link + '/commit/' + commit_id
                     message = commit.split('\n---message---\n')[1].split('\n---files---\n')[0]
                     subject_line = textwrap.dedent(message.split("\n")[0])
-                    subject_len = subject_length(subject_line)
                     and_or_count = 0 if ' and ' in subject_line or ' or ' in subject_line else 1
                     blank_line = separated_with_blank(message)
                     capital = 1 if str.isupper(ignore_type_if_any(subject_line)[0]) else 0
@@ -149,10 +139,10 @@ def export_to_csv():
                     added_lines = commit.split('\n---added_lines---\n')[1]
 
                     spam_writer.writerow(
-                        [total_count, link, message, subject_line, len(subject_line), subject_len,
-                         and_or_count, blank_line, capital, dot, imperative_mode, wrap_72, verb_direct_obj,
-                         changed_files_count, changes_methods_count, files_to_body_ratio, methods_to_body_ratio,
-                         methods_long, methods_complexity, methods_parameters, added_lines])
+                        [total_count, link, message, subject_line, len(subject_line), and_or_count, blank_line,
+                         capital, dot, imperative_mode, wrap_72, verb_direct_obj, changed_files_count,
+                         changes_methods_count, files_to_body_ratio, methods_to_body_ratio, methods_long,
+                         methods_complexity, methods_parameters, added_lines])
 
             print('\x1b[6;30;42m', 'commits messages has been exported', '\x1b[0m')
 
