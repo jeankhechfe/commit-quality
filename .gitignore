@@ -4,3 +4,4 @@ venv/
 temp.csv
 commits_logs/--temp.txt
 jupyter_notebook/.ipynb_checkpoints
+draft.py
