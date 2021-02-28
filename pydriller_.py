@@ -28,11 +28,13 @@ with open("commits_logs/--temp.txt", "w") as txt_file:
                 editedFilesCount = str(len(commit.modifications))
                 txt_file.write(editedFilesCount)
                 added_lines = 0
+                removed_lines = 0
                 for m in commit.modifications:
                     txt_file.write('\n----\n')
                     fileDetails = m.filename + '|' + m.change_type.name
                     txt_file.write(fileDetails)
                     added_lines += m.added
+                    removed_lines += m.removed
                     if m.changed_methods:
                         txt_file.write('\n---methods---')
                         for method in m.changed_methods:
@@ -50,3 +52,5 @@ with open("commits_logs/--temp.txt", "w") as txt_file:
                 txt_file.write('\n----\n')
                 txt_file.write('---added_lines---\n')
                 txt_file.write(str(added_lines))
+                txt_file.write('\n---removed_lines---\n')
+                txt_file.write(str(removed_lines))
