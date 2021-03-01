@@ -4,6 +4,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.metrics import accuracy_score
 import timeit
 
@@ -58,6 +59,14 @@ results = try_model(m4)
 stop = timeit.default_timer()
 print("RandomForestClassifier: [highest {}] [accuracy {}] [time {}]".format(results[0], results[1],
                                                                             round(stop - start, 2)))
+
+start = timeit.default_timer()
+m4 = ExtraTreesClassifier()
+results = try_model(m4)
+stop = timeit.default_timer()
+print("ExtraTreesClassifier: [highest {}] [accuracy {}] [time {}]".format(results[0], results[1],
+                                                                            round(stop - start, 2)))
+
 
 # x_trn, x_tst, y_trn, y_tst = train_test_split(x, y, test_size=0.2)
 # m.fit(x_trn, y_trn)
