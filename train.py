@@ -5,6 +5,7 @@ from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import ExtraTreesClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import accuracy_score
 import timeit
 
@@ -13,14 +14,12 @@ data = pd.read_csv('data/data.csv')
 x = data.drop(columns=['label'])
 y = data['label']
 
-iterations = 100
-print("Iterations: [{}]".format(iterations))
-
 
 def try_model(model):
-    start = timeit.default_timer()
+    iterations = 100
     total_accuracy = 0
     highest = 0
+    start = timeit.default_timer()
     for i in range(iterations):
         x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
         model.fit(x_train, y_train)
@@ -47,3 +46,4 @@ try_model(RandomForestClassifier())  # n_estimators=100, max_depth=10, random_st
 
 try_model(ExtraTreesClassifier())
 
+try_model(GradientBoostingClassifier())
