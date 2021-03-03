@@ -8,7 +8,6 @@ from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.metrics import accuracy_score
 import timeit
 
-# import joblib
 
 data = pd.read_csv('data/data.csv')
 x = data.drop(columns=['label'])
@@ -48,20 +47,3 @@ try_model(RandomForestClassifier())  # n_estimators=100, max_depth=10, random_st
 
 try_model(ExtraTreesClassifier())
 
-
-# x_trn, x_tst, y_trn, y_tst = train_test_split(x, y, test_size=0.2)
-# m.fit(x_trn, y_trn)
-# pred = m.predict(x_tst)
-# acc = accuracy_score(y_tst, pred)
-# print(acc)
-# for i in range(1, 21):
-#     nof = [1, 0, 1, 1, 1, 1, 1, 1, 3, 0, -1, -1, 1, 1, 1, i*10]
-#     print(i, m.predict([nof]))
-
-# for i in range(len(prediction)):
-#     if prediction[i] != y_test.values.tolist()[i]:
-#         print(prediction[i], x_test.values.tolist()[i], y_test.values.tolist()[i])
-
-
-# joblib.dump(model, 'model.joblib')
-# model = joblib.load('model.joblib')
