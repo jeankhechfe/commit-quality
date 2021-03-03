@@ -19,6 +19,7 @@ print("Iterations: [{}]".format(iterations))
 
 
 def try_model(model):
+    start = timeit.default_timer()
     total_accuracy = 0
     highest = 0
     for i in range(iterations):
@@ -29,43 +30,23 @@ def try_model(model):
         total_accuracy += accuracy
         if highest < accuracy:
             highest = accuracy
-    return [round(highest, 2), round(total_accuracy / iterations, 2)]
+    stop = timeit.default_timer()
+    print("{}: [highest {}] [accuracy {}] [time {}]".format(
+        model.__class__.__name__,
+        round(highest, 2),
+        round(total_accuracy / iterations, 2),
+        round(stop - start, 2)))
 
 
-start = timeit.default_timer()
-m1 = KNeighborsClassifier()
-results = try_model(m1)
-stop = timeit.default_timer()
-print("KNeighborsClassifier: [highest {}] [accuracy {}] [time {}]".format(results[0], results[1],
-                                                                             round(stop - start, 2)))
+try_model(KNeighborsClassifier())
 
-start = timeit.default_timer()
-m2 = SVC(kernel="linear")
-results = try_model(m2)
-stop = timeit.default_timer()
-print("SVC (linear): [highest {}] [accuracy {}] [time {}]".format(results[0], results[1], round(stop - start, 2)))
+try_model(SVC(kernel="linear"))
 
+try_model(DecisionTreeClassifier())
 
-start = timeit.default_timer()
-m3 = DecisionTreeClassifier()
-results = try_model(m3)
-stop = timeit.default_timer()
-print("DecisionTreeClassifier: [highest {}] [accuracy {}] [time {}]".format(results[0], results[1],
-                                                                            round(stop - start, 2)))
+try_model(RandomForestClassifier())  # n_estimators=100, max_depth=10, random_state=1
 
-start = timeit.default_timer()
-m4 = RandomForestClassifier()  # n_estimators=100, max_depth=10, random_state=1
-results = try_model(m4)
-stop = timeit.default_timer()
-print("RandomForestClassifier: [highest {}] [accuracy {}] [time {}]".format(results[0], results[1],
-                                                                            round(stop - start, 2)))
-
-start = timeit.default_timer()
-m4 = ExtraTreesClassifier()
-results = try_model(m4)
-stop = timeit.default_timer()
-print("ExtraTreesClassifier: [highest {}] [accuracy {}] [time {}]".format(results[0], results[1],
-                                                                            round(stop - start, 2)))
+try_model(ExtraTreesClassifier())
 
 
 # x_trn, x_tst, y_trn, y_tst = train_test_split(x, y, test_size=0.2)
