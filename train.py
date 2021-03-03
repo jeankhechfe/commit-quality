@@ -16,23 +16,18 @@ y = data['label']
 
 
 def try_model(model):
-    iterations = 100
-    total_accuracy = 0
-    highest = 0
+    accuracies = []
     start = timeit.default_timer()
-    for i in range(iterations):
+    for i in range(100):
         x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
         model.fit(x_train, y_train)
         prediction = model.predict(x_test)
-        accuracy = accuracy_score(y_test, prediction)
-        total_accuracy += accuracy
-        if highest < accuracy:
-            highest = accuracy
+        accuracies.append(accuracy_score(y_test, prediction))
     stop = timeit.default_timer()
     print("{}: [highest {}] [accuracy {}] [time {}]".format(
         model.__class__.__name__,
-        round(highest, 2),
-        round(total_accuracy / iterations, 2),
+        round(max(accuracies), 2),
+        round(sum(accuracies) / len(accuracies), 2),
         round(stop - start, 2)))
 
 
