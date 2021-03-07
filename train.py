@@ -12,12 +12,36 @@ from sklearn.metrics import f1_score
 import timeit
 
 
-data = pd.read_csv('data/data.csv')
-x = data.drop(columns=['label'])
-# x = data.drop(columns=['changed_files_count', 'changes_methods_count', 'files_to_body_ratio',
-#                        'methods_to_body_ratio', 'methods_long', 'methods_complexity',
-#                        'methods_parameters', 'added_lines', 'removed_lines', 'label'])
-y = data['label']
+def get_xy_for_all_features(file_name):
+    data = pd.read_csv(file_name)
+    features = data.drop(columns=['label'])
+    labels = data['label']
+    return features, labels
+
+
+def get_xy_for_msg_only_features(file_name):
+    data = pd.read_csv(file_name)
+    data = data.drop(columns=['changed_files_count', 'changes_methods_count', 'files_to_body_ratio',
+                              'methods_to_body_ratio', 'methods_long', 'methods_complexity',
+                              'methods_parameters', 'added_lines', 'removed_lines'])
+    good = data[data.label == 'good']
+    neutral = data[data.label == 'neutral']
+    bad = data[data.label == 'bad']
+    good = good.sample(frac=1)
+    neutral = neutral.sample(frac=1)
+    bad = bad.sample(frac=1)
+    shortest_length = min(len(good), len(neutral), len(bad))
+    good_shrunk = good[:shortest_length]
+    neutral_shrunk = neutral[:shortest_length]
+    bad_shrunk = bad[:shortest_length]
+    data = pd.concat([good_shrunk, neutral_shrunk, bad_shrunk])
+    data = data.sample(frac=1)
+    features = data.drop(columns=['label'])
+    labels = data['label']
+    return features, labels
+
+
+x, y = get_xy_for_msg_only_features('data/data.csv')
 
 
 def try_model(model):
@@ -45,7 +69,7 @@ try_model(SVC(kernel="linear"))
 
 try_model(DecisionTreeClassifier())
 
-try_model(RandomForestClassifier())  # n_estimators=100, max_depth=10, random_state=1
+try_model(RandomForestClassifier())
 
 try_model(ExtraTreesClassifier())
 
