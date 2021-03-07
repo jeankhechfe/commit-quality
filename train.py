@@ -11,19 +11,11 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import f1_score
 import timeit
 
-
-def get_xy_for_all_features(file_name):
-    data = pd.read_csv(file_name)
-    features = data.drop(columns=['label'])
-    labels = data['label']
-    return features, labels
+UNEQUAL_LABELS = 0
+EQUAL_LABELS = 1
 
 
-def get_xy_for_msg_only_features(file_name):
-    data = pd.read_csv(file_name)
-    data = data.drop(columns=['changed_files_count', 'changes_methods_count', 'files_to_body_ratio',
-                              'methods_to_body_ratio', 'methods_long', 'methods_complexity',
-                              'methods_parameters', 'added_lines', 'removed_lines'])
+def shuffle_and_cut_extra(data):
     good = data[data.label == 'good']
     neutral = data[data.label == 'neutral']
     bad = data[data.label == 'bad']
@@ -41,7 +33,16 @@ def get_xy_for_msg_only_features(file_name):
     return features, labels
 
 
-x, y = get_xy_for_msg_only_features('data/data.csv')
+def get_xy(file_name, labels_numbers):
+    data = pd.read_csv(file_name)
+    features = data.drop(columns=['label'])
+    labels = data['label']
+    if labels_numbers == UNEQUAL_LABELS:
+        return features, labels
+    return shuffle_and_cut_extra(data)
+
+
+x, y = get_xy('data/data.csv', EQUAL_LABELS)
 
 
 def try_model(model):
