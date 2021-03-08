@@ -30,3 +30,19 @@ DecisionTreeClassifier: [highest 0.67] [accuracy 0.57] [f1 [0.61 0.46 0.62]] [ti
 RandomForestClassifier: [highest 0.68] [accuracy 0.58] [f1 [0.62 0.48 0.64]] [time 13.09]
 ExtraTreesClassifier: [highest 0.64] [accuracy 0.56] [f1 [0.62 0.45 0.61]] [time 10.93]
 GradientBoostingClassifier: [highest 0.71] [accuracy 0.62] [f1 [0.66 0.49 0.69]] [time 21.99]
+
+(msg-only features [8] - unequal number of labels [413-good, 296-neutral, 291-bad ] - labeling based on message only)
+KNeighborsClassifier: [highest 0.78] [accuracy 0.72] [f1 [0.79 0.57 0.73]] [time 1.03]
+SVC: [highest 0.8] [accuracy 0.69] [f1 [0.76 0.5  0.77]] [time 20.43]
+DecisionTreeClassifier: [highest 0.8] [accuracy 0.74] [f1 [0.81 0.58 0.77]] [time 0.51]
+RandomForestClassifier: [highest 0.85] [accuracy 0.77] [f1 [0.83 0.63 0.8 ]] [time 13.31]
+ExtraTreesClassifier: [highest 0.8] [accuracy 0.74] [f1 [0.82 0.59 0.78]] [time 11.28]
+GradientBoostingClassifier: [highest 0.87] [accuracy 0.77] [f1 [0.83 0.64 0.81]] [time 24.46]
+
+(msg-only features [8] - equal number of labels [291 each] - labeling based on message only)
+KNeighborsClassifier: [highest 0.79] [accuracy 0.7] [f1 [0.73 0.6  0.75]] [time 0.95]
+SVC: [highest 0.79] [accuracy 0.68] [f1 [0.71 0.57 0.76]] [time 16.33]
+DecisionTreeClassifier: [highest 0.81] [accuracy 0.72] [f1 [0.76 0.59 0.79]] [time 0.47]
+RandomForestClassifier: [highest 0.79] [accuracy 0.74] [f1 [0.76 0.63 0.81]] [time 12.55]
+ExtraTreesClassifier: [highest 0.81] [accuracy 0.72] [f1 [0.76 0.61 0.79]] [time 10.64]
+GradientBoostingClassifier: [highest 0.82] [accuracy 0.77] [f1 [0.79 0.68 0.82]] [time 22.75]
