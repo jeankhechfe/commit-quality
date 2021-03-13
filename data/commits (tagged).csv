@@ -629,7 +629,7 @@ Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>",Use the newer Gtk
 79,https://github.com/torvalds/subsurface-for-dirk/commit/3a04342607a9fa7255be60ee5d4b8a816ecb7b0a,"Improve the layout of the text entries in gtk3. For gtk2 this could also be useful
 
 Signed-off-by: Nathan Samson <nathansamson@gmail.com>
-Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>",Improve the layout of the text entries in gtk3. For gtk2 this could also be useful,82,1,1,1,1,1,0,1,1,1,0,0,1,-1,1,7,1,good,,
+Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>",Improve the layout of the text entries in gtk3. For gtk2 this could also be useful,82,1,1,1,1,1,0,1,1,1,0,0,1,-1,1,7,1,neutral,,
 80,https://github.com/torvalds/subsurface-for-dirk/commit/6fd86ab6b7784e11f67c879b51c37c6e0011416f,"Don't bother saving n2 percentage
 
 It's all calculated anyway, and for the same reason we don't bother even
