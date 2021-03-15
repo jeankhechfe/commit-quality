@@ -1,0 +1,13 @@
+,antecedents,consequents,antecedent support,consequent support,support,confidence,lift,leverage,conviction
+702,"1_end_dot,  1_imperative_start,  1_verb_direct_obj,  1_and_or_count",good,0.336,0.413,0.275,0.818452381,1.981724893,0.136232,3.233311475
+712,"1_end_dot,  1_verb_direct_obj,  1_and_or_count,  1_imperative_start,  1_blank_line",good,0.336,0.413,0.275,0.818452381,1.981724893,0.136232,3.233311475
+783,"1_end_dot,  1_wrap_to_72,  1_verb_direct_obj,  1_and_or_count,  1_imperative_start",good,0.308,0.413,0.259,0.840909091,2.036099494,0.131796,3.689714286
+800,"1_end_dot,  1_wrap_to_72,  1_verb_direct_obj,  1_and_or_count,  1_imperative_start,  1_blank_line",good,0.308,0.413,0.259,0.840909091,2.036099494,0.131796,3.689714286
+1180,"1_end_dot,  1_capital_start,  1_wrap_to_72,  1_verb_direct_obj,  1_and_or_count'",good,0.295,0.413,0.236,0.8,1.937046005,0.114165,2.935
+1193,"1_end_dot,  1_wrap_to_72,  1_capital_start,  1_verb_direct_obj,  1_and_or_count,  1_blank_line",good,0.295,0.413,0.236,0.8,1.937046005,0.114165,2.935
+1276,"1_end_dot,  1_capital_start,  1_verb_direct_obj,  1_and_or_count,  1_imperative_start",good,0.276,0.413,0.23,0.833333333,2.017756255,0.116012,3.522
+1291,"1_end_dot,  1_capital_start,  1_verb_direct_obj,  1_and_or_count,  1_imperative_start,  1_blank_line",good,0.276,0.413,0.23,0.833333333,2.017756255,0.116012,3.522
+1334,"1_end_dot,  1_capital_start,  1_wrap_to_72,  1_verb_direct_obj,  1_imperative_start",good,0.282,0.413,0.229,0.812056738,1.966239074,0.112534,3.123283019
+1359,"1_end_dot,  1_wrap_to_72,  1_capital_start,  1_verb_direct_obj,  1_imperative_start,  1_blank_line",good,0.282,0.413,0.229,0.812056738,1.966239074,0.112534,3.123283019
+1409,"1_end_dot,  1_wrap_to_72,  1_capital_start,  1_verb_direct_obj,  1_and_or_count,  1_imperative_start",good,0.253,0.413,0.218,0.861660079,2.086344017,0.113511,4.243171429
+1430,"1_end_dot,  1_wrap_to_72,  1_capital_start,  1_verb_direct_obj,  1_and_or_count,  1_imperative_start,  1_blank_line",good,0.253,0.413,0.218,0.861660079,2.086344017,0.113511,4.243171429
