@@ -887,7 +887,7 @@ characters_count,and_or_count,blank_line,capital_start,end_dot,imperative_start,
 58,1,1,1,0,1,1,1,neutral
 81,1,1,1,0,1,0,1,bad
 70,1,1,1,0,1,1,1,neutral
-267,0,1,1,0,0,0,1,bad
+199,0,1,1,0,0,0,1,bad
 55,0,1,1,0,0,1,0,bad
 82,1,1,1,0,1,0,1,bad
 59,1,1,1,0,1,1,1,neutral
