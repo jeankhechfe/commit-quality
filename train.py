@@ -9,6 +9,9 @@ from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import f1_score
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
+
 import timeit
 
 UNEQUAL_LABELS = 0
@@ -42,12 +45,14 @@ def get_xy(file_name, labels_numbers):
     return shuffle_and_cut_extra(data)
 
 
-x, y = get_xy('data/data.csv', EQUAL_LABELS)
+x, y = get_xy('data/data_msg_only.csv', EQUAL_LABELS)
 
 
 def try_model(model):
     accuracies = []
     f1_scores = []
+    precision = []
+    recall = []
     start = timeit.default_timer()
     for i in range(100):
         x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
@@ -55,12 +60,16 @@ def try_model(model):
         prediction = model.predict(x_test)
         accuracies.append(accuracy_score(y_test, prediction))
         f1_scores.append(f1_score(y_test, prediction, average=None, labels=['good', 'neutral', 'bad']))
+        precision.append(precision_score(y_test, prediction, average=None, labels=['good', 'neutral', 'bad']))
+        recall.append(recall_score(y_test, prediction, average=None, labels=['good', 'neutral', 'bad']))
     stop = timeit.default_timer()
-    print("{}: [highest {}] [accuracy {}] [f1 {}] [time {}]".format(
+    print("{}: [highest {}] [accuracy {}] [f1 {}] [precision {}] [recall {}] [time {}]".format(
         model.__class__.__name__,
         round(max(accuracies), 2),
         round(sum(accuracies) / len(accuracies), 2),
         np.round(sum(f1_scores) / len(f1_scores), 2),
+        np.round(sum(precision) / len(precision), 2),
+        np.round(sum(recall) / len(recall), 2),
         round(stop - start, 2)))
 
 
