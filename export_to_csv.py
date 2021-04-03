@@ -15,6 +15,7 @@ nlp.tokenizer.add_special_case('import', [{ORTH: 'importing'}])  # treat import 
 nlp.tokenizer.add_special_case('load', [{ORTH: 'loading'}])  # treat load as verb
 nlp.tokenizer.add_special_case('show', [{ORTH: 'showing'}])  # fix 'show' not being recognized
 
+
 def separated_with_blank(commit_message):
     message_array = commit_message.split('\n')
     if len(message_array) > 1 and textwrap.dedent(message_array[1]) != '':
