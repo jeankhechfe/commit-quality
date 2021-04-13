@@ -87,7 +87,7 @@ def export_to_csv():
             spam_writer = csv.writer(csv_file)
             spam_writer.writerow(
                 ['Number', 'Link', 'Message', 'Subject Line', 'characters_count', 'and_or_count',
-                 'blank_line', 'capital_start', 'end_dot', 'imperative_start', 'wrap_to_72', 'verb_direct_obj',
+                 'blank_line', 'capital_start', 'end_dot', 'imperative_start', 'wrap_to_72', 'verb_obj_conn',
                  'changed_files_count', 'changes_methods_count', 'files_to_body_ratio', 'methods_to_body_ratio',
                  'methods_long', 'methods_complexity', 'methods_parameters', 'added_lines', 'removed_lines'])
 
@@ -111,7 +111,7 @@ def export_to_csv():
                     first_word_of_subject_line = ignore_type_if_any(subject_line).split(" ")[0].lower()
                     imperative_mode = 1 if first_word_of_subject_line in imperative.words else 0
                     wrap_72 = 1 if wrap_to_72(message) else 0
-                    verb_direct_obj = check_direct_object_connection(subject_line)
+                    verb_obj_conn = check_direct_object_connection(subject_line)
 
                     files = commit.split('\n---files---\n')[1].split('\n---dmm---\n')[0].split('\n----\n')
                     changed_files_count = files.pop(0)
@@ -142,7 +142,7 @@ def export_to_csv():
 
                     spam_writer.writerow(
                         [total_count, link, message, subject_line, len(subject_line), and_or_count, blank_line,
-                         capital, dot, imperative_mode, wrap_72, verb_direct_obj, changed_files_count,
+                         capital, dot, imperative_mode, wrap_72, verb_obj_conn, changed_files_count,
                          changes_methods_count, files_to_body_ratio, methods_to_body_ratio, methods_long,
                          methods_complexity, methods_parameters, added_lines, removed_lines])
 

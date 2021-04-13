@@ -1,13 +1,13 @@
 ,antecedents,consequents,antecedent support,consequent support,support,confidence,lift,leverage,conviction
-769,"1_verb_direct_obj,  1_imperative_start,  1_end_dot,  1_and_or_count",good,0.336,0.413,0.275,0.818452381,1.981724893,0.136232,3.233311475
-1099,"1_end_dot,  1_imperative_start,  1_blank_line,  1_and_or_count,  1_verb_direct_obj",good,0.336,0.413,0.275,0.818452381,1.981724893,0.136232,3.233311475
-1185,"1_end_dot,  1_imperative_start,  1_and_or_count,  1_verb_direct_obj,  1_capital_start",good,0.276,0.413,0.23,0.833333333,2.017756255,0.116012,3.522
-1208,"1_end_dot,  1_and_or_count,  1_verb_direct_obj,  1_capital_start,  1_wrap_to_72",good,0.295,0.413,0.236,0.8,1.937046005,0.114165,2.935
-1238,"1_end_dot,  1_imperative_start,  1_and_or_count,  1_verb_direct_obj,  1_wrap_to_72",good,0.308,0.413,0.259,0.840909091,2.036099494,0.131796,3.689714286
-1338,"1_end_dot,  1_imperative_start,  1_verb_direct_obj,  1_capital_start,  1_wrap_to_72",good,0.282,0.413,0.229,0.812056738,1.966239074,0.112534,3.123283019
-1368,"1_end_dot,  1_imperative_start,  1_blank_line,  1_and_or_count,  1_verb_direct_obj,  1_capital_start",good,0.276,0.413,0.23,0.833333333,2.017756255,0.116012,3.522
-1417,"1_end_dot,  1_blank_line,  1_and_or_count,  1_verb_direct_obj,  1_capital_start,  1_wrap_to_72",good,0.295,0.413,0.236,0.8,1.937046005,0.114165,2.935
-1479,"1_end_dot,  1_imperative_start,  1_blank_line,  1_and_or_count,  1_verb_direct_obj,  1_wrap_to_72",good,0.308,0.413,0.259,0.840909091,2.036099494,0.131796,3.689714286
-1512,"1_end_dot,  1_imperative_start,  1_and_or_count,  1_verb_direct_obj,  1_capital_start,  1_wrap_to_72",good,0.253,0.413,0.218,0.861660079,2.086344017,0.113511,4.243171429
-1532,"1_end_dot,  1_imperative_start,  1_blank_line,  1_verb_direct_obj,  1_capital_start,  1_wrap_to_72",good,0.282,0.413,0.229,0.812056738,1.966239074,0.112534,3.123283019
-1562,"1_end_dot,  1_imperative_start,  1_blank_line,  1_and_or_count,  1_verb_direct_obj,  1_capital_start,  1_wrap_to_72",good,0.253,0.413,0.218,0.861660079,2.086344017,0.113511,4.243171429
+769,"1_verb_obj_conn,  1_imperative_start,  1_end_dot,  1_and_or_count",good,0.336,0.413,0.275,0.818452381,1.981724893,0.136232,3.233311475
+1099,"1_end_dot,  1_imperative_start,  1_blank_line,  1_and_or_count,  1_verb_obj_conn",good,0.336,0.413,0.275,0.818452381,1.981724893,0.136232,3.233311475
+1185,"1_end_dot,  1_imperative_start,  1_and_or_count,  1_verb_obj_conn,  1_capital_start",good,0.276,0.413,0.23,0.833333333,2.017756255,0.116012,3.522
+1208,"1_end_dot,  1_and_or_count,  1_verb_obj_conn,  1_capital_start,  1_wrap_to_72",good,0.295,0.413,0.236,0.8,1.937046005,0.114165,2.935
+1238,"1_end_dot,  1_imperative_start,  1_and_or_count,  1_verb_obj_conn,  1_wrap_to_72",good,0.308,0.413,0.259,0.840909091,2.036099494,0.131796,3.689714286
+1338,"1_end_dot,  1_imperative_start,  1_verb_obj_conn,  1_capital_start,  1_wrap_to_72",good,0.282,0.413,0.229,0.812056738,1.966239074,0.112534,3.123283019
+1368,"1_end_dot,  1_imperative_start,  1_blank_line,  1_and_or_count,  1_verb_obj_conn,  1_capital_start",good,0.276,0.413,0.23,0.833333333,2.017756255,0.116012,3.522
+1417,"1_end_dot,  1_blank_line,  1_and_or_count,  1_verb_obj_conn,  1_capital_start,  1_wrap_to_72",good,0.295,0.413,0.236,0.8,1.937046005,0.114165,2.935
+1479,"1_end_dot,  1_imperative_start,  1_blank_line,  1_and_or_count,  1_verb_obj_conn,  1_wrap_to_72",good,0.308,0.413,0.259,0.840909091,2.036099494,0.131796,3.689714286
+1512,"1_end_dot,  1_imperative_start,  1_and_or_count,  1_verb_obj_conn,  1_capital_start,  1_wrap_to_72",good,0.253,0.413,0.218,0.861660079,2.086344017,0.113511,4.243171429
+1532,"1_end_dot,  1_imperative_start,  1_blank_line,  1_verb_obj_conn,  1_capital_start,  1_wrap_to_72",good,0.282,0.413,0.229,0.812056738,1.966239074,0.112534,3.123283019
+1562,"1_end_dot,  1_imperative_start,  1_blank_line,  1_and_or_count,  1_verb_obj_conn,  1_capital_start,  1_wrap_to_72",good,0.253,0.413,0.218,0.861660079,2.086344017,0.113511,4.243171429
