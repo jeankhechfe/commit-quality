@@ -1,4 +1,4 @@
-characters_count,and_or_count,blank_line,capital_start,end_dot,imperative_start,wrap_to_72,verb_obj_conn,label
+characters_count,and_or,blank_line,capital_start,end_dot,imperative_start,wrap_to_72,verb_obj_conn,label
 32,1,1,1,1,1,1,1,good
 35,1,1,1,1,1,1,1,good
 45,1,1,1,0,1,1,1,good

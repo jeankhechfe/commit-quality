@@ -1,4 +1,4 @@
-number,link,Message,Subject Line,characters_count,and_or_count,blank_line,capital_start,end_dot,imperative_start,wrap_to_72,verb_obj_conn,label,a mark
+number,link,Message,Subject Line,characters_count,and_or,blank_line,capital_start,end_dot,imperative_start,wrap_to_72,verb_obj_conn,label,a mark
 1,https://github.com/torvalds/subsurface-for-dirk/commit/ed45f7cb140a508b6f661f75b2c4803686b0e379,"Add crazy (bad) xml parser thing
 
 It only works for the Suunto ""one xml file per dive"" format, not for the

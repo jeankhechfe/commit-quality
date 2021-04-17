@@ -1,6 +1,6 @@
 **ATTRIBUTES
 + characters_count : (integer)
-+ and_or_count : [0, 1]
++ and_or : [0, 1]
 + blank_line : [0, 1]
 + capital_start : [0, 1]
 + end_dot : [0, 1]
@@ -12,7 +12,7 @@ decision: label
 
 **PREFERENCES
 characters_count : none
-and_or_count : gain
+and_or : gain
 blank_line : gain
 capital_start : gain
 end_dot : gain
