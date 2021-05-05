@@ -15,7 +15,7 @@ Classes: bad, neutral, good
 
 [ATTRIBUTES]
 + characters_count: (integer), none
-+ and_or_count: [0, 1], gain
++ and_or: [0, 1], gain
 + blank_line: [0, 1], gain
 + capital_start: [0, 1], gain
 + end_dot: [0, 1], gain
@@ -28,7 +28,7 @@ decision: label
 
 [PREFERENCES]
 characters_count: none
-and_or_count: gain
+and_or: gain
 blank_line: gain
 capital_start: gain
 end_dot: gain
@@ -39,38 +39,38 @@ label: gain
 
 [RULES]
 #Certain at least rules
-1: (characters_count = 40) & (and_or_count >= 1) & (imperative >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
+1: (characters_count = 40) & (and_or >= 1) & (imperative >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
 2: (characters_count = 40) & (end_dot >= 1) & (imperative >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
-3: (characters_count = 40) & (and_or_count >= 1) & (end_dot >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
-4: (characters_count = 40) & (and_or_count >= 1) & (wrap_to_72 >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
-5: (characters_count = 40) & (and_or_count >= 1) & (capital_start >= 1) & (imperative >= 1) & (wrap_to_72 >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
-6: (characters_count = 50) & (and_or_count >= 1) & (end_dot >= 1) & (imperative >= 1) & (wrap_to_72 >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
-7: (characters_count = 50) & (and_or_count >= 1) & (imperative >= 1) & (wrap_to_72 >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
+3: (characters_count = 40) & (and_or >= 1) & (end_dot >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
+4: (characters_count = 40) & (and_or >= 1) & (wrap_to_72 >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
+5: (characters_count = 40) & (and_or >= 1) & (capital_start >= 1) & (imperative >= 1) & (wrap_to_72 >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
+6: (characters_count = 50) & (and_or >= 1) & (end_dot >= 1) & (imperative >= 1) & (wrap_to_72 >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
+7: (characters_count = 50) & (and_or >= 1) & (imperative >= 1) & (wrap_to_72 >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
 8: (characters_count = 50) & (capital_start >= 1) & (end_dot >= 1) & (wrap_to_72 >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
-9: (characters_count = 50) & (and_or_count >= 1) & (blank_line >= 1) & (capital_start >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
+9: (characters_count = 50) & (and_or >= 1) & (blank_line >= 1) & (capital_start >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
 10: (characters_count = 30) & (blank_line >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
 11: (characters_count = 30) & (end_dot >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
-12: (characters_count = 30) & (and_or_count >= 1) & (capital_start >= 1) & (end_dot >= 1) & (imperative >= 1) & (wrap_to_72 >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
+12: (characters_count = 30) & (and_or >= 1) & (capital_start >= 1) & (end_dot >= 1) & (imperative >= 1) & (wrap_to_72 >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
 13: (characters_count = 20) & (imperative >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
 14: (characters_count = 20) & (blank_line >= 1) & (capital_start >= 1) & (end_dot >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
-15: (characters_count = 50) & (and_or_count >= 1) & (verb_obj_conn >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
+15: (characters_count = 50) & (and_or >= 1) & (verb_obj_conn >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
 16: (characters_count = 50) & (capital_start >= 1) & (verb_obj_conn >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
 17: (characters_count = 50) & (imperative >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
 18: (characters_count = 60) & (imperative >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
 19: (characters_count = 60) & (capital_start >= 1) & (verb_obj_conn >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
-20: (characters_count = 60) & (and_or_count >= 1) & (verb_obj_conn >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
-21: (characters_count = 60) & (and_or_count >= 1) & (capital_start >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
+20: (characters_count = 60) & (and_or >= 1) & (verb_obj_conn >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
+21: (characters_count = 60) & (and_or >= 1) & (capital_start >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
 22: (characters_count = 20) & (end_dot >= 1) & (verb_obj_conn >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
-23: (characters_count = 40) & (and_or_count >= 1) & (verb_obj_conn >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
+23: (characters_count = 40) & (and_or >= 1) & (verb_obj_conn >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
 24: (characters_count = 40) & (end_dot >= 1) & (verb_obj_conn >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
 25: (characters_count = 30) & (verb_obj_conn >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
-26: (characters_count = 70) & (and_or_count >= 1) & (wrap_to_72 >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
+26: (characters_count = 70) & (and_or >= 1) & (wrap_to_72 >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
 27: (characters_count = 10) & (verb_obj_conn >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
 28: (characters_count = 70) & (imperative >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
-29: (characters_count = 70) & (and_or_count >= 1) & (end_dot >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
-30: (characters_count = 30) & (and_or_count >= 1) & (imperative >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
+29: (characters_count = 70) & (and_or >= 1) & (end_dot >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
+30: (characters_count = 30) & (and_or >= 1) & (imperative >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
 31: (characters_count = 20) & (capital_start >= 1) & (imperative >= 1) & (wrap_to_72 >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
-32: (characters_count = 40) & (and_or_count >= 1) & (capital_start >= 1) & (end_dot >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
+32: (characters_count = 40) & (and_or >= 1) & (capital_start >= 1) & (end_dot >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
 33: (characters_count = 40) & (end_dot >= 1) & (wrap_to_72 >= 1) => (label >= neutral) |CERTAIN, AT_LEAST, neutral|
 #Certain at most rules
 34: (characters_count = 90) => (label <= bad) |CERTAIN, AT_MOST, bad|
@@ -89,28 +89,28 @@ label: gain
 47: (blank_line <= 0) & (verb_obj_conn <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
 48: (characters_count = 60) & (imperative <= 0) & (verb_obj_conn <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
 49: (characters_count = 50) & (imperative <= 0) & (verb_obj_conn <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
-50: (and_or_count <= 0) & (wrap_to_72 <= 0) & (verb_obj_conn <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
+50: (and_or <= 0) & (wrap_to_72 <= 0) & (verb_obj_conn <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
 51: (characters_count = 30) & (imperative <= 0) & (verb_obj_conn <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
 52: (characters_count = 20) & (imperative <= 0) & (verb_obj_conn <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
 53: (characters_count = 40) & (end_dot <= 0) & (verb_obj_conn <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
 54: (capital_start <= 0) & (wrap_to_72 <= 0) & (verb_obj_conn <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
-55: (characters_count = 30) & (and_or_count <= 0) & (verb_obj_conn <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
+55: (characters_count = 30) & (and_or <= 0) & (verb_obj_conn <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
 56: (characters_count = 30) & (capital_start <= 0) & (verb_obj_conn <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
 57: (capital_start <= 0) & (end_dot <= 0) & (imperative <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
-58: (characters_count = 70) & (and_or_count <= 0) & (imperative <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
-59: (characters_count = 50) & (and_or_count <= 0) & (capital_start <= 0) & (imperative <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
-60: (characters_count = 60) & (and_or_count <= 0) & (capital_start <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
-61: (characters_count = 40) & (and_or_count <= 0) & (end_dot <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
+58: (characters_count = 70) & (and_or <= 0) & (imperative <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
+59: (characters_count = 50) & (and_or <= 0) & (capital_start <= 0) & (imperative <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
+60: (characters_count = 60) & (and_or <= 0) & (capital_start <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
+61: (characters_count = 40) & (and_or <= 0) & (end_dot <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
 62: (characters_count = 20) & (end_dot <= 0) & (imperative <= 0) => (label <= bad) |CERTAIN, AT_MOST, bad|
 63: (characters_count = 70) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
 64: (characters_count = 80) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
 65: (verb_obj_conn <= 0) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
 66: (characters_count = 10) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
-67: (and_or_count <= 0) & (imperative <= 0) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
-68: (and_or_count <= 0) & (capital_start <= 0) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
-69: (and_or_count <= 0) & (end_dot <= 0) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
-70: (characters_count = 60) & (and_or_count <= 0) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
-71: (characters_count = 40) & (and_or_count <= 0) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
+67: (and_or <= 0) & (imperative <= 0) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
+68: (and_or <= 0) & (capital_start <= 0) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
+69: (and_or <= 0) & (end_dot <= 0) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
+70: (characters_count = 60) & (and_or <= 0) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
+71: (characters_count = 40) & (and_or <= 0) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
 72: (characters_count = 50) & (capital_start <= 0) & (wrap_to_72 <= 0) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
 73: (characters_count = 50) & (blank_line <= 0) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
 74: (characters_count = 60) & (imperative <= 0) => (label <= neutral) |CERTAIN, AT_MOST, neutral|
@@ -120,7 +120,7 @@ label: gain
 
 [RULESINFO]
 #Certain at least rules
-1: (characters_count = 40) & (and_or_count >= 1) & (imperative >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
+1: (characters_count = 40) & (and_or >= 1) & (imperative >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
 LearningPositiveExamples: 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 16, 17, 20, 21, 23, 25, 26, 28, 30, 34, 35, 37, 38, 40, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 55, 59, 60, 63, 65, 68, 69, 70, 71, 72, 75, 76, 77, 78, 80, 89, 92, 93, 94, 95, 96, 98, 99, 100, 103, 105, 118, 133, 155, 164, 167, 185, 188, 191, 195, 199, 204, 212, 219, 224, 233, 237, 238, 240, 245, 247, 249, 253, 267, 275, 279, 283, 286, 288, 293, 298, 299, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 314, 321, 322, 323, 325, 330, 336, 338, 339, 340, 342, 344, 345, 347, 350, 354, 355, 356, 362, 366, 368, 369, 370, 372, 374, 375, 376, 377, 378, 381, 383, 385, 386, 387, 388, 389, 390, 391, 392, 395, 396, 397, 398, 400, 435, 436, 437, 439, 450, 457, 459, 462, 465, 467, 476, 478, 479, 486, 489, 499, 502, 503, 504, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 517, 519, 520, 521, 522, 523, 524, 526, 529, 530, 531, 532, 533, 535, 536, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 551, 553, 554, 555, 556, 557, 558, 559, 560, 564, 567, 568, 570, 571, 572, 577, 578, 579, 580, 581, 582, 583, 584, 586, 587, 588, 589, 593, 594, 595, 596, 597, 598, 604, 607, 609, 610, 612, 613, 616, 617, 619, 620, 623, 630, 637, 638, 639, 645, 650, 652, 653, 655, 657, 658, 659, 664, 670, 674, 676, 678, 679, 680, 681, 688, 692, 697, 698, 703, 709, 717, 719, 720, 722, 724, 725, 726, 729, 730, 731, 732, 735, 737, 738, 739, 740, 741, 742, 745, 755, 757, 761, 762, 765, 766, 767, 768, 773, 776, 779, 781, 784, 789, 793, 795, 797, 801, 810, 813, 814, 818, 820, 822, 823, 825, 826, 830, 834, 839, 841, 848, 849, 851, 854, 856, 857, 861, 862, 868, 870, 876, 880, 881, 893, 897, 900, 902, 905, 908, 909, 910, 911, 915, 916, 917, 919, 920, 927, 928, 929, 930, 932, 933, 934, 935, 938, 939, 943, 944, 948, 949, 950, 953, 957, 959, 960, 964, 965, 968, 971, 972, 974, 978, 982, 988, 993, 1000
 Support: 92
 SupportingExamples: 1, 2, 4, 5, 16, 20, 23, 34, 37, 41, 42, 47, 48, 55, 59, 60, 63, 65, 69, 71, 75, 89, 92, 237, 304, 307, 310, 311, 314, 322, 338, 370, 374, 377, 381, 387, 392, 400, 522, 529, 530, 531, 538, 541, 547, 560, 583, 584, 586, 587, 593, 598, 607, 619, 659, 703, 717, 725, 729, 730, 732, 737, 738, 739, 740, 742, 745, 755, 761, 765, 767, 768, 776, 781, 789, 820, 822, 825, 834, 851, 897, 905, 909, 917, 929, 930, 932, 943, 950, 960, 964, 972
@@ -156,7 +156,7 @@ A-ConfirmationMeasure: 0.11662187691243381
 Z-ConfirmationMeasure: 0.8296422487223168
 l-ConfirmationMeasure: 2.548801804203283
 
-3: (characters_count = 40) & (and_or_count >= 1) & (end_dot >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
+3: (characters_count = 40) & (and_or >= 1) & (end_dot >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
 LearningPositiveExamples: 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 16, 17, 20, 21, 23, 25, 26, 28, 30, 34, 35, 37, 38, 40, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 55, 59, 60, 63, 65, 68, 69, 70, 71, 72, 75, 76, 77, 78, 80, 89, 92, 93, 94, 95, 96, 98, 99, 100, 103, 105, 118, 133, 155, 164, 167, 185, 188, 191, 195, 199, 204, 212, 219, 224, 233, 237, 238, 240, 245, 247, 249, 253, 267, 275, 279, 283, 286, 288, 293, 298, 299, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 314, 321, 322, 323, 325, 330, 336, 338, 339, 340, 342, 344, 345, 347, 350, 354, 355, 356, 362, 366, 368, 369, 370, 372, 374, 375, 376, 377, 378, 381, 383, 385, 386, 387, 388, 389, 390, 391, 392, 395, 396, 397, 398, 400, 435, 436, 437, 439, 450, 457, 459, 462, 465, 467, 476, 478, 479, 486, 489, 499, 502, 503, 504, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 517, 519, 520, 521, 522, 523, 524, 526, 529, 530, 531, 532, 533, 535, 536, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 551, 553, 554, 555, 556, 557, 558, 559, 560, 564, 567, 568, 570, 571, 572, 577, 578, 579, 580, 581, 582, 583, 584, 586, 587, 588, 589, 593, 594, 595, 596, 597, 598, 604, 607, 609, 610, 612, 613, 616, 617, 619, 620, 623, 630, 637, 638, 639, 645, 650, 652, 653, 655, 657, 658, 659, 664, 670, 674, 676, 678, 679, 680, 681, 688, 692, 697, 698, 703, 709, 717, 719, 720, 722, 724, 725, 726, 729, 730, 731, 732, 735, 737, 738, 739, 740, 741, 742, 745, 755, 757, 761, 762, 765, 766, 767, 768, 773, 776, 779, 781, 784, 789, 793, 795, 797, 801, 810, 813, 814, 818, 820, 822, 823, 825, 826, 830, 834, 839, 841, 848, 849, 851, 854, 856, 857, 861, 862, 868, 870, 876, 880, 881, 893, 897, 900, 902, 905, 908, 909, 910, 911, 915, 916, 917, 919, 920, 927, 928, 929, 930, 932, 933, 934, 935, 938, 939, 943, 944, 948, 949, 950, 953, 957, 959, 960, 964, 965, 968, 971, 972, 974, 978, 982, 988, 993, 1000
 Support: 105
 SupportingExamples: 1, 2, 4, 5, 16, 20, 23, 30, 34, 37, 41, 42, 47, 48, 55, 59, 60, 63, 65, 69, 75, 80, 89, 92, 93, 155, 167, 188, 199, 212, 224, 237, 240, 249, 283, 298, 304, 307, 310, 311, 314, 322, 325, 330, 338, 370, 374, 377, 381, 387, 392, 400, 435, 436, 450, 457, 459, 462, 476, 478, 479, 489, 522, 529, 530, 531, 538, 547, 548, 560, 583, 584, 587, 593, 598, 607, 619, 659, 703, 717, 725, 729, 730, 732, 737, 738, 739, 740, 742, 761, 765, 767, 768, 781, 905, 909, 917, 929, 930, 932, 935, 943, 960, 964, 972
@@ -174,7 +174,7 @@ A-ConfirmationMeasure: 0.14574717999495215
 Z-ConfirmationMeasure: 0.7048920844008638
 l-ConfirmationMeasure: 1.914495123666271
 
-4: (characters_count = 40) & (and_or_count >= 1) & (wrap_to_72 >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
+4: (characters_count = 40) & (and_or >= 1) & (wrap_to_72 >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
 LearningPositiveExamples: 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 16, 17, 20, 21, 23, 25, 26, 28, 30, 34, 35, 37, 38, 40, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 55, 59, 60, 63, 65, 68, 69, 70, 71, 72, 75, 76, 77, 78, 80, 89, 92, 93, 94, 95, 96, 98, 99, 100, 103, 105, 118, 133, 155, 164, 167, 185, 188, 191, 195, 199, 204, 212, 219, 224, 233, 237, 238, 240, 245, 247, 249, 253, 267, 275, 279, 283, 286, 288, 293, 298, 299, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 314, 321, 322, 323, 325, 330, 336, 338, 339, 340, 342, 344, 345, 347, 350, 354, 355, 356, 362, 366, 368, 369, 370, 372, 374, 375, 376, 377, 378, 381, 383, 385, 386, 387, 388, 389, 390, 391, 392, 395, 396, 397, 398, 400, 435, 436, 437, 439, 450, 457, 459, 462, 465, 467, 476, 478, 479, 486, 489, 499, 502, 503, 504, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 517, 519, 520, 521, 522, 523, 524, 526, 529, 530, 531, 532, 533, 535, 536, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 551, 553, 554, 555, 556, 557, 558, 559, 560, 564, 567, 568, 570, 571, 572, 577, 578, 579, 580, 581, 582, 583, 584, 586, 587, 588, 589, 593, 594, 595, 596, 597, 598, 604, 607, 609, 610, 612, 613, 616, 617, 619, 620, 623, 630, 637, 638, 639, 645, 650, 652, 653, 655, 657, 658, 659, 664, 670, 674, 676, 678, 679, 680, 681, 688, 692, 697, 698, 703, 709, 717, 719, 720, 722, 724, 725, 726, 729, 730, 731, 732, 735, 737, 738, 739, 740, 741, 742, 745, 755, 757, 761, 762, 765, 766, 767, 768, 773, 776, 779, 781, 784, 789, 793, 795, 797, 801, 810, 813, 814, 818, 820, 822, 823, 825, 826, 830, 834, 839, 841, 848, 849, 851, 854, 856, 857, 861, 862, 868, 870, 876, 880, 881, 893, 897, 900, 902, 905, 908, 909, 910, 911, 915, 916, 917, 919, 920, 927, 928, 929, 930, 932, 933, 934, 935, 938, 939, 943, 944, 948, 949, 950, 953, 957, 959, 960, 964, 965, 968, 971, 972, 974, 978, 982, 988, 993, 1000
 Support: 100
 SupportingExamples: 1, 2, 4, 5, 16, 20, 30, 34, 37, 41, 42, 47, 48, 55, 59, 63, 65, 69, 71, 75, 80, 89, 92, 93, 155, 167, 188, 199, 304, 307, 310, 311, 314, 322, 325, 330, 338, 370, 374, 377, 381, 387, 392, 400, 435, 436, 450, 457, 459, 462, 476, 478, 479, 489, 522, 529, 530, 531, 538, 541, 547, 548, 560, 583, 584, 586, 587, 593, 598, 607, 619, 659, 703, 717, 729, 730, 732, 742, 745, 755, 768, 776, 781, 820, 822, 825, 834, 851, 862, 905, 909, 917, 929, 930, 932, 935, 943, 950, 960, 972
@@ -192,7 +192,7 @@ A-ConfirmationMeasure: 0.13485245502891197
 Z-ConfirmationMeasure: 0.6702753201077101
 l-ConfirmationMeasure: 1.7786935825072094
 
-5: (characters_count = 40) & (and_or_count >= 1) & (capital_start >= 1) & (imperative >= 1) & (wrap_to_72 >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
+5: (characters_count = 40) & (and_or >= 1) & (capital_start >= 1) & (imperative >= 1) & (wrap_to_72 >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
 LearningPositiveExamples: 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 16, 17, 20, 21, 23, 25, 26, 28, 30, 34, 35, 37, 38, 40, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 55, 59, 60, 63, 65, 68, 69, 70, 71, 72, 75, 76, 77, 78, 80, 89, 92, 93, 94, 95, 96, 98, 99, 100, 103, 105, 118, 133, 155, 164, 167, 185, 188, 191, 195, 199, 204, 212, 219, 224, 233, 237, 238, 240, 245, 247, 249, 253, 267, 275, 279, 283, 286, 288, 293, 298, 299, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 314, 321, 322, 323, 325, 330, 336, 338, 339, 340, 342, 344, 345, 347, 350, 354, 355, 356, 362, 366, 368, 369, 370, 372, 374, 375, 376, 377, 378, 381, 383, 385, 386, 387, 388, 389, 390, 391, 392, 395, 396, 397, 398, 400, 435, 436, 437, 439, 450, 457, 459, 462, 465, 467, 476, 478, 479, 486, 489, 499, 502, 503, 504, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 517, 519, 520, 521, 522, 523, 524, 526, 529, 530, 531, 532, 533, 535, 536, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 551, 553, 554, 555, 556, 557, 558, 559, 560, 564, 567, 568, 570, 571, 572, 577, 578, 579, 580, 581, 582, 583, 584, 586, 587, 588, 589, 593, 594, 595, 596, 597, 598, 604, 607, 609, 610, 612, 613, 616, 617, 619, 620, 623, 630, 637, 638, 639, 645, 650, 652, 653, 655, 657, 658, 659, 664, 670, 674, 676, 678, 679, 680, 681, 688, 692, 697, 698, 703, 709, 717, 719, 720, 722, 724, 725, 726, 729, 730, 731, 732, 735, 737, 738, 739, 740, 741, 742, 745, 755, 757, 761, 762, 765, 766, 767, 768, 773, 776, 779, 781, 784, 789, 793, 795, 797, 801, 810, 813, 814, 818, 820, 822, 823, 825, 826, 830, 834, 839, 841, 848, 849, 851, 854, 856, 857, 861, 862, 868, 870, 876, 880, 881, 893, 897, 900, 902, 905, 908, 909, 910, 911, 915, 916, 917, 919, 920, 927, 928, 929, 930, 932, 933, 934, 935, 938, 939, 943, 944, 948, 949, 950, 953, 957, 959, 960, 964, 965, 968, 971, 972, 974, 978, 982, 988, 993, 1000
 Support: 74
 SupportingExamples: 1, 2, 4, 5, 16, 20, 34, 41, 42, 47, 48, 55, 59, 63, 65, 69, 71, 75, 89, 92, 304, 307, 310, 311, 314, 322, 338, 370, 374, 377, 381, 387, 392, 400, 522, 529, 530, 531, 538, 541, 547, 560, 583, 584, 586, 587, 593, 598, 619, 703, 717, 729, 730, 732, 745, 755, 768, 781, 820, 822, 825, 834, 851, 905, 909, 917, 929, 930, 932, 943, 950, 960, 968, 972
@@ -210,7 +210,7 @@ A-ConfirmationMeasure: 0.10194393375048347
 Z-ConfirmationMeasure: 0.7622915098450933
 l-ConfirmationMeasure: 2.1707356702832334
 
-6: (characters_count = 50) & (and_or_count >= 1) & (end_dot >= 1) & (imperative >= 1) & (wrap_to_72 >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
+6: (characters_count = 50) & (and_or >= 1) & (end_dot >= 1) & (imperative >= 1) & (wrap_to_72 >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
 LearningPositiveExamples: 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 16, 17, 20, 21, 23, 25, 26, 28, 30, 34, 35, 37, 38, 40, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 55, 59, 60, 63, 65, 68, 69, 70, 71, 72, 75, 76, 77, 78, 80, 89, 92, 93, 94, 95, 96, 98, 99, 100, 103, 105, 118, 133, 155, 164, 167, 185, 188, 191, 195, 199, 204, 212, 219, 224, 233, 237, 238, 240, 245, 247, 249, 253, 267, 275, 279, 283, 286, 288, 293, 298, 299, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 314, 321, 322, 323, 325, 330, 336, 338, 339, 340, 342, 344, 345, 347, 350, 354, 355, 356, 362, 366, 368, 369, 370, 372, 374, 375, 376, 377, 378, 381, 383, 385, 386, 387, 388, 389, 390, 391, 392, 395, 396, 397, 398, 400, 435, 436, 437, 439, 450, 457, 459, 462, 465, 467, 476, 478, 479, 486, 489, 499, 502, 503, 504, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 517, 519, 520, 521, 522, 523, 524, 526, 529, 530, 531, 532, 533, 535, 536, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 551, 553, 554, 555, 556, 557, 558, 559, 560, 564, 567, 568, 570, 571, 572, 577, 578, 579, 580, 581, 582, 583, 584, 586, 587, 588, 589, 593, 594, 595, 596, 597, 598, 604, 607, 609, 610, 612, 613, 616, 617, 619, 620, 623, 630, 637, 638, 639, 645, 650, 652, 653, 655, 657, 658, 659, 664, 670, 674, 676, 678, 679, 680, 681, 688, 692, 697, 698, 703, 709, 717, 719, 720, 722, 724, 725, 726, 729, 730, 731, 732, 735, 737, 738, 739, 740, 741, 742, 745, 755, 757, 761, 762, 765, 766, 767, 768, 773, 776, 779, 781, 784, 789, 793, 795, 797, 801, 810, 813, 814, 818, 820, 822, 823, 825, 826, 830, 834, 839, 841, 848, 849, 851, 854, 856, 857, 861, 862, 868, 870, 876, 880, 881, 893, 897, 900, 902, 905, 908, 909, 910, 911, 915, 916, 917, 919, 920, 927, 928, 929, 930, 932, 933, 934, 935, 938, 939, 943, 944, 948, 949, 950, 953, 957, 959, 960, 964, 965, 968, 971, 972, 974, 978, 982, 988, 993, 1000
 Support: 43
 SupportingExamples: 7, 12, 26, 28, 38, 53, 77, 94, 95, 303, 306, 308, 309, 321, 323, 336, 342, 344, 345, 347, 355, 366, 372, 391, 395, 396, 398, 564, 577, 580, 581, 620, 709, 719, 726, 793, 797, 908, 911, 938, 957, 965, 982
@@ -228,7 +228,7 @@ A-ConfirmationMeasure: 0.06091847249506348
 Z-ConfirmationMeasure: 0.8888971187319458
 l-ConfirmationMeasure: 3.0141650538925164
 
-7: (characters_count = 50) & (and_or_count >= 1) & (imperative >= 1) & (wrap_to_72 >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
+7: (characters_count = 50) & (and_or >= 1) & (imperative >= 1) & (wrap_to_72 >= 1) & (verb_obj_conn >= 1) => (label >= good) |CERTAIN, AT_LEAST, good|
 LearningPositiveExamples: 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 16, 17, 20, 21, 23, 25, 26, 28, 30, 34, 35, 37, 38, 40, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 55, 59, 60, 63, 65, 68, 69, 70, 71, 72, 75, 76, 77, 78, 80, 89, 92, 93, 94, 95, 96, 98, 99, 100, 103, 105, 118, 133, 155, 164, 167, 185, 188, 191, 195, 199, 204, 212, 219, 224, 233, 237, 238, 240, 245, 247, 249, 253, 267, 275, 279, 283, 286, 288, 293, 298, 299, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 314, 321, 322, 323, 325, 330, 336, 338, 339, 340, 342, 344, 345, 347, 350, 354, 355, 356, 362, 366, 368, 369, 370, 372, 374, 375, 376, 377, 378, 381, 383, 385, 386, 387, 388, 389, 390, 391, 392, 395, 396, 397, 398, 400, 435, 436, 437, 439, 450, 457, 459, 462, 465, 467, 476, 478, 479, 486, 489, 499, 502, 503, 504, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 517, 519, 520, 521, 522, 523, 524, 526, 529, 530, 531, 532, 533, 535, 536, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 551, 553, 554, 555, 556, 557, 558, 559, 560, 564, 567, 568, 570, 571, 572, 577, 578, 579, 580, 581, 582, 583, 584, 586, 587, 588, 589, 593, 594, 595, 596, 597, 598, 604, 607, 609, 610, 612, 613, 616, 617, 619, 620, 623, 630, 637, 638, 639, 645, 650, 652, 653, 655, 657, 658, 659, 664, 670, 674, 676, 678, 679, 680, 681, 688, 692, 697, 698, 703, 709, 717, 719, 720, 722, 724, 725, 726, 729, 730, 731, 732, 735, 737, 738, 739, 740, 741, 742, 745, 755, 757, 761, 762, 765, 766, 767, 768, 773, 776, 779, 781, 784, 789, 793, 795, 797, 801, 810, 813, 814, 818, 820, 822, 823, 825, 826, 830, 834, 839, 841, 848, 849, 851, 854, 856, 857, 861, 862, 868, 870, 876, 880, 881, 893, 897, 900, 902, 905, 908, 909, 910, 911, 915, 916, 917, 919, 920, 927, 928, 929, 930, 932, 933, 934, 935, 938, 939, 943, 944, 948, 949, 950, 953, 957, 959, 960, 964, 965, 968, 971, 972, 974, 978, 982, 988, 993, 1000
 Support: 68
 SupportingExamples: 3, 7, 12, 26, 38, 53, 77, 78, 94, 95, 303, 306, 308, 309, 321, 323, 336, 342, 344, 345, 347, 355, 366, 372, 391, 395, 396, 398, 564, 577, 580, 581, 620, 709, 719, 726, 735, 741, 762, 784, 793, 795, 797, 810, 813, 818, 823, 826, 830, 839, 841, 848, 849, 856, 857, 861, 868, 870, 876, 880, 881, 900, 908, 911, 938, 957, 965, 982
