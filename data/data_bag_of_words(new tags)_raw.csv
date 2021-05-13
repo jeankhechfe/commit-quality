@@ -1,0 +1,2876 @@
+message,label
+"add crazy bad xml parser thing
+
+it only works for the suunto one xml file per dive format not for the
+libdivecomputer one that just puts many dives in one file
+
+maybe there is some way for libxml2 to handle concatenated xml files
+start again on errors but i dont know it yet
+
+i need to get stinking drunk before i look at more xml mess
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"make the multidive files valid xml
+
+they had multiple root entries all called dive which makes baby
+jesus cry
+
+so just enclose them all in one root entry called dives that
+magically turns it all into parseable xml
+
+yeah that really helps make the world a better place
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"turn the xml into something almost parseable
+
+of course now the problem is that the different xml files have
+different node names but at least weve turned it into a halfway sane
+format and have a nice callback place per value
+
+soon we could use that to actually fill in useful information
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"move the parser closer to being usable
+
+ok so we have the dive split and the sample splits so now we could
+really just start filling in data
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"fill in dummy parse target code
+
+ but dont actually parse anything yet  but hey  now it tells you
+how many samples it hasnt parsed
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"start showing unparsed entries
+
+ie all of them
+
+this also shows the type of entry which makes it clear that ive
+screwed up the sample matching  oh well
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"fix stupid misinitialization of current sample
+
+ nice compiler warning hidden by the crazy gcc pointer sign warnings
+that nobody wants to see yes we really do want to do strlen even
+on unsigned strings dont complain crazy bitch compiler
+
+so this also makes our cflags set wnopointersign
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"move the text nodename hackery out of nodename
+
+its better to do it in the caller  debug users may well want the full
+node name
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"start parsing dive dates
+
+ only the suunto xml format though
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"start parsing numeric fields
+
+depth pressure and sample times
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"add verbose flag
+
+now that we actually parse some of the dives dont spam stdout with the
+list of stuff we cant parse by default
+
+add a verbose flag which enables that output when set
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"start actually reporting the numbers we parsed
+
+ which also showed that the sampletime thing had gotten a bit too much
+copypaste from the temperature parsing 
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"fix up temperature conversion
+
+oops no the water temperature wasnt really 500 degc
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"add datetime parsing for libdivecomputer xml files
+
+i think this gets me dates on all my dives  so now i could start
+sorting them and removing duplicates
+
+but before i try to remove dups i guess i should compare the
+libdivecomputer ones against the suunto ones  because i bet they have
+various interesting issues like using bar vs atm etc
+
+but xml is portable crazy people
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"dont report dives as they are parsed sort them at the end and report them then
+
+this makes it much easier to see the duplicates but more importantly
+we do need to actually save the dives off to do any real work with them
+
+also require a verbosity level of 1 v to show all the samples
+while vv shows unparsed entries
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",bad
+"add some more parsing functions
+
+ and fix the duration parsing it can be either in seconds or in
+mmss format  floating point doesnt make any sense
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"clean up dive reporting
+
+show date max depth and time by default  the stuff that matters and
+should always exist
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"split up dive data structure declarations into diveh
+
+the dive parser should eventually be just a part of the program not the
+whole thing so start preparing for that
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"start moving some of the nonparsing stuff out of parsec
+
+create a mainc with the main routine and argument parsing etc
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"add gitignore file for current state
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"create a gtk window
+
+it doesnt do anything but some day it will
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"generate a default name for a dive if it doesnt have one already
+
+the name is a string containint date time depth and length  so its
+useful even with nothing else going on
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"show the dives as a gtk listtree widget
+
+ok so im not very good at this  ill need to enclose the dang thing
+in a scrollable window and then make that scrollable thing just part of
+the whole window
+
+but hey its pixels on the screen  pixels that show the names of the
+dives weve parsed  at least as many as will fit on screen at one time 
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"make the dive list scrollable and put it in a vbox
+
+this means you can actually see them all and walk through them
+
+it doesnt make any of this useful but whatever
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"fix depth parsing
+
+the decimal its meters integer its feet logic doesnt work  its
+just always meters because the xml ends up sometimes having whole meters
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"draw some kind of profile for the first dive
+
+this is all kinds of broken it doesnt actually follow the selected
+dive and the profile isnt scaled properly etc  but it shows something
+new and not just text
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"split up profile frame generation into its own file
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"get rid of now unused showdive function
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"split up divelist scroll window generation into its own file
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"dont newlineterminate the dive name
+
+that resulted in ugly lists and it was wrong to begin with
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"redo the tree selection code with a selection callback
+
+learnign gtk by looking at cairo examples its one way
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"teach the thing to actually track the currently selected dive
+
+ and repaint the profile when the selection changes
+
+now if it just wasnt so ugly it might even be useful  except it
+obviously needs to also show all the other dive information  and allow
+the user to fill in details  and save the end results
+
+so no its not useful
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"add repaintdive prototype and fix dependencies
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"use a gtk table instead of hbox
+
+well want to add various dive statistics so  without them it all
+looks pretty much the same though
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"add fake info frame contents
+
+it should have depth time place etc information but right now it only
+has a fake depth that doesnt even get updated  just to show the idea
+of the table usage
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"plot dive profile slightly more intelligently
+
+this actually creates a bounding box and some scale markers
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"plot a fancier filled depth profile
+
+now im just dicking around with cairo
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"dive profile plot use saner minimum limits
+
+the time minimum was in seconds not minutes and we really do want to
+show at least to 90ft to make shallow dives look shallow rather than
+scaled to some full depth
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"dive parsing enforce maxdepth and dive duration
+
+if we see samples from past the dive duration update the dive duration
+likewise with maxdepth
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"add some more dive info  and actually update it
+
+its still the ugliest application ever but now it at least gives you
+some basic dive info
+
+id love to add a way to edit the dives to add new data name buddies
+location etc but that would also require the ability to save the end
+result  maybe some day
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"use a notebook for info vs profile
+
+i dunno  this seems a better interface at least if we get more info for
+the dive but i suspect ill want to the add basic info to the profile
+page too
+
+this makes the table approach to layout be kind of pointless again
+and the table has become a fancy vbox  maybe ill put the core info
+back and use the notebook info page for extended information
+
+i should just bite the bullet and start saving the dive data and adding
+editing functions for adding information  but instead im playing
+around with random gtk widgets
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"start cleaning up dive accessors
+
+im going to add a menu to import and eventually export dives and so
+wed like to be able to start out with no dives at all  right now we
+croak if that happens  its not like the code has been written with
+actual end users in mind
+
+so start cleaning things up  first make the currentdive macro work
+right even for invalid dives
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"do something halfway sane no sigsegv when there are no dives
+
+it just leaves ugly blank areas but whatever
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",bad
+"add a top file menu
+
+it doesnt actually do anything but what else is new
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"boilerplate code for openingsaving a file
+
+all just copied from the gtk docs  no actual loading or saving is
+taking place though
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"make the main display saner
+
+this tweaks
+  packing to be what youd kind of expect
+  makes the summary info always visible
+  the extended info is now on a notebook page of its own
+  dive profile the first notebook page since the summary
+   information is visible regardless
+which all just seems a lot more logical
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"add some extended dive info fields
+
+ and tweak the basic info layout a bit
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"rename some files to be more appropriate
+
+the executable is now called divelog  if this gets useful enough to
+actually use i guess ill have to come up with a real name some day
+
+add a silly readme rename parse to parsexml
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"xml parsing start traversing properties too
+
+this requires us to change the way we match things up because now we
+can have things like
+
+   divesdivesampleeventtime
+
+and
+
+   divesdivesampletime
+
+and they are different things that sampleeventtime is a time
+property of the event
+
+now this is always going to be ambiguous since our linearized name of
+the xml doesnt really care whether its a xml node child or a
+property but quite frankly i dont care xml just isnt worth the pain
+
+in fact maybe this ambiguity can end up being a good thing  we will
+parse these two different lines of xml the same way
+
+  divesampletime50timedepth108depthsampledive
+
+  divesample time=50 depth=108sampledive
+
+and the attribute approach seems to be the nicer one  maybe ill use
+that for the output format
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"get rid of our ignore rules
+
+ill start doing some kind of save unparsed things as extended items
+thing and the ignore rules were just there to get rid of some of the
+noise from early parsing
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"start parsing gas mixes
+
+the suunto xml is just completely crazy  whats the helium percentage
+companion to o2pct would it be hepct no its hepct0
+
+ok so they didnt number the first o2pct which could be seen as sane
+thats the only mix value that should always exist  and they clearly
+started their indexing with 0  so with multiple mixes youd then
+expect o2pct1 and hepct1 right
+
+wrong because xml people are crazy the second o2 mix percentage is
+obviously o2pct2  so the o2 percentages are onebased with an
+implicit one  but the he percentages are zerobased with an explicit
+zero  so the second mix is o2pct2 and hepct1
+
+id like to ask what drugs suunto people are on but hey its a finnish
+company  no need to ask  vodka explains everything  lots and lots of
+vodka
+
+in comparison the libdivecomputer output is nice and sane and uses a
+gasmix node  of course now we have so many different xml nesting
+nodes to check that i just made it an array of different noces  that
+also allows me to mark the suunto case so that we only do the check
+for crazy alcoholic xml entries when its a suunto file
+
+the type of file thing is probably a good idea for deciding on default
+units too some day
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"libdivecomputer does crazy gas mixes too
+
+did i just say in comparison the libdivecomputer output is nice and
+sane
+
+it turns out that libdivecomputer has been doing some drugs too when it
+comes to gas mixes  like showing o2 percentages as 2550% and n2
+percentages as 1550%
+
+clearly libdivecomputer uses a unsigned char for oxygen percentage
+and makes 1 be undefined  and then it prints that nonexisting mix
+out and in the process does math on the damn thing 100o2 to
+calculate the nitrogen percentage
+
+christ
+
+just make the parser silently ignore the craziness because printing out
+strange percentage reading 1550 a few hundred times just doesnt
+make anything any better
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",bad
+"gasmix stop tracking nitrogen percentages
+
+the only thing you can do with that thing is screw things up like
+libdivecomputer did  theres no value in tracking the filler gas
+since you can always just calculate it from the gases that actually
+matter
+
+so just track oxygen and helium  and make sure they have sane values
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"add ability to save dives
+
+this just generates another xml file  dont get me wrong i still dont
+like xml but this way we can save in the same format we load things
+from  except the saveformat is a lot cleaner than the abortion that
+is suunto or libdivecomputer xml
+
+dont bother with some crazy xml library crap for saving just do it
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"fix up small details in inputoutput
+
+be more careful with fp conversions and with the kelvinc offset
+and make sure to use the same names when saving as when parsing
+
+now when we save a set of dives then reload them and save again the
+second save image is identical to the first one
+
+of course we dont actually save everything we load so we still do
+lose information when we load and then save the result  but at least we
+now dont lose the information that we do save
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"save everything in our current dives and samples into the xml file
+
+now as we start parsing more we just need to also add the code to save
+it
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"teach the date parser to also parse the international standard date format
+
+the standard way to write a date is yyyymmdd which is unambiguous and
+sorts correctly
+
+we parsed that right in the datetime case but not in the normal date
+case  and we do want to use that in our output format exactly because
+its standard
+
+and also parse duration for the dive duration  its what we use when
+saving it just so happened that we ended up not parsing it right but
+then picking it up from the samples instead
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",bad
+"always use proper units when saving
+
+when we see a number like 23145 wed better always also see a unit
+its just good practice  so add min to duration and use only two
+digits for number of seconds and m to depth
+
+and write the date in international standard format
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"clean up savefile output a bit
+
+use the empty element form for samples that dont have any events
+associated with them and none do right now  this avoids that
+annoying sample crud
+
+and output the units in the output helpers so that you cant forget
+them even if you try
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"do gasmix as an empty element xml too
+
+lets make it a goal that the xml we output is pretty  that clearly was
+never a goal for the suunto xml but we can be ohsomuchbetter than that
+
+i still dont love xml but lets try to make the best of a bad situation
+and take pride in what we do
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"save and parse notes and locations
+
+its pretty rough but it seems to work
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"we cant save escape characters
+
+i think it should be legal xml but whatever  libxml2 is very unhappy
+and complains when loading  even if i escape them  so lets just
+replace the low escape characters with 
+
+the only thing to ever care was my testcase i suspect
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"fix wrongly nested watertemp xml entry
+
+too much cutandpaste the ending tag said airtemp
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"generate watertemp field from samples if required
+
+sure its redundant but its convenient for the general dive info
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"show temperature in the info summary
+
+if it exists it really does help identify the dive  at least it does
+for me local or maui
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"hack up some very rudimentary support for the uemis xml format
+
+i think ill need to reorganize the handling of performat code but
+for now we just mix it all up
+
+the uemis conversion is also questionable even for just the small parts
+i do  does it really do centipsi that sounds crazy  im waiting for
+dirk to send me some actual humanreadable output from the dives right
+now some of it is just rough guesses
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"use units value instead of guessing based on integerfp
+
+we still end up guessing based on magnitude of the value though it
+might be bar or mbar we end up picking one or the other based on
+just how big the value is
+
+i should make it look at any possible explicit units too since at least
+with good xml they exist  of course the only good xml ive seen so
+far is the one we generate ourselves 
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"silently ignore zero pressure
+
+dont complain about them theyre just missing values
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"improve uemis xml parsing a bit
+
+it looks like the unitspressure setting is only about the units that
+things are shown in on the wrist computer the units in the file are
+always in bar or rather centibar
+
+which is definitely the right thing to do and means that we shouldnt
+care about parsing the units setting  its purely about how something
+is shown not about parsing
+
+thats probably true of the other units too but lets see when i have
+more data to go on
+
+also parse water temperatures and tank pressure
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"do a dive dedup pass
+
+if given multiple dives at the same time just dedup the dives  this
+happens when youve dumped the whole divecomputer several times and
+some dives show up in multiple dumps
+
+when deduping try to avoid dropping data  so if one dive has notes
+attached to it and the other one does not pick the notes from the dive
+that does have them  obvious stuff like that
+
+the sample merge is also written so that it should be possible to merge
+two dives which we dont actually do yet
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"add location note to the top bar too
+
+i really dont understand the packing rules  this does not look like
+what i intended
+
+oh well
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"update readme a bit
+
+since this is now on github might as well tell people what they need
+to compile it and warn them about the state of the project
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"add various dive fixups and show pressure if any in the plot
+
+now the dive profile plot really needs some units  the pressure is
+just a random line otherwise
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",bad
+"only update meanmax depths with computed ones if they are way off
+
+the computer may track real max depth more closely than it tracks
+samples  so we trust the noncomputed meanmax depths more than the
+computed ones
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"add mean depth marker on dive plot
+
+just because i can
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+divec fix spelling,good
+"do better cylinder information management
+
+instead of just tracking gasmix track the size and workng pressure of
+the cylinder too
+
+and use cylinder instead of tank throughout
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"use the newer gtkuimanager for menu creation
+
+signedoffby nathan samson nathansamson@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"improve the layout of the text entries in gtk3 for gtk2 this could also be useful
+
+signedoffby nathan samson nathansamson@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",bad
+"dont bother saving n2 percentage
+
+its all calculated anyway and for the same reason we dont bother even
+parsing it at load time we really shouldnt bother saving it either
+
+the only thing you can do with that value is check if the percentages
+add up to 100% and so what
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"add quit menu item and fix invisible file on gtk2
+
+i didnt even notice that the file part of the file menu no longer
+showed up since the keyboard accelerator for ^s worked fine  but
+apparently theres no default label associated with gtkstockfile in
+gtk2 so the file text went away with the conversion to gtkuimanager
+in commit 4d62478e14fe use the newer gtkuimanager for menu creation
+
+the addition of a quit menu entry with the associated keyboard
+accelerator also makes ^q just work
+
+of course if we actually tracked dirty state etc we could perhaps ask
+the user whether they wanted to save or something  but im not exactly
+famous for my gui chops so 
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"change location to a text entry instead of text view
+
+signedoffby nathan samson nathansamson@gmailcom",neutral
+"word wrap the info textview also do not show the scrollbars if not necessary
+
+signedoffby nathan samson nathansamson@gmailcom",bad
+"removed the unused startemp and enttemp calculations this fixes a compiler warning too
+
+signedoffby nathan samson nathansamson@gmailcom",bad
+"oops i forgot to fclose the file after saving the xml
+
+it never actually triggered anything for me but any buffered data might
+be lost especially if you forceexit the application after saving a
+dive log
+
+this probably explains a corrupted truncated dive file report from
+nathan samson
+
+reportedby nathan samson httpsgithubcomnathansamson
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"update gitignore for the namechange of the executable
+
+its not called parse any more  and i think i should rename divelog
+too to something more unique  right now the working name for the
+project is diveclog kind of like jdivelog  but im not convinced
+that the c implementation part is really important enough to make a
+point of longterm
+
+subsurface i dont know  maybe i should follow the name all
+projects after myself mantra  divenut
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"use a pane so the dive list can be made wider or smaller to the users wishes
+
+signedoffby nathan samson nathansamson@gmailcom",bad
+"remove the redundant frames in the notebook closes #9
+
+signedoffby nathan samson nathansamson@gmailcom",good
+"fix typo in makefile ldlags  ldflags
+
+reportedby konrad delong httpsgithubcomkonryd
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"some ui beauty patches
+
+uppercase first letter for each label word
+tweak the paddings for easier reading
+rename file menu to log menu
+add a separator before quit in the log menu
+remove frame in extended diving info and add 6px padding
+
+signedoffby hylke bons hylkebons@gmailcom",bad
+"split the dive list in columns columns are sortable now name = date depth duration
+
+signedoffby nathan samson nathansamson@gmailcom",bad
+"remove redundant temperature readings
+
+im aiming to really differentiate in dive log software by making my xml
+export files be clean dammit
+
+that means that we dont have random names we dont have crazy random
+units and we dont have redundant information
+
+so when the temperature doesnt change just dont report it  thats
+already what no sample means just clean things up
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"dont save cylinder working pressure
+
+it was a mistake to save it  and i did it just because other dive
+managers did  its a totally nonsensical measure and nobody cares
+the only thing that matters is the size of the cylinder and the
+actual pressures  those give actual air consumption numbers and are
+meaningful and unambiguous
+
+so the working pressure for a cylinder is pointless except for two
+things
+
+  if you dont know the actual physical size you need the working
+   pressure along with the air size eg 85 cuft in order to compute
+   the physical size  so we do use the working pressure on input from
+   systems that report cylinder sizes that way
+
+  people may well want to know what kind of cylinder they were diving
+   and again you can make a good guess about this from the working
+   pressure  so saving information like hp100+ for the cylinder would
+   be a good thing
+
+but notice how in neither case do we actually want to save the working
+pressure itself  and in fact saving it actually makes the output format
+ambiguous if we give both size and working pressure what does size
+mean is it physical size in liters or air size in cu ft
+
+so saving working pressure is just wrong get rid of it
+
+im going to add some kind of cylinder description thing which we can
+save instead and perhaps guess standard cylinders from input like the
+working pressure from dive logs that dont do this sanely  which is all
+of them as far as i can tell
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"add placeholder for cylinder type description
+
+so we dont want to save working pressure but cylinder type knowledge
+would be lovely and useful  and we can probably make a good initial
+guess or at least let people fill it in later
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"generate date string for the dive list dynamically
+
+ and sort based on the timet value itself
+
+this allows us to use a more compact date format that doesnt need to
+sort alphabetically because sorting by date is always based on the date
+value  so we can use just a twodigit year and skip the seconds to
+keep the column narrow while still sorting correctly
+
+also depth is a nice header string but it is wider than the column
+itself which makes the whole column wider than necessary  so put the
+units in the header instead of in the string keeping things narrow
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"clean up fixupdive a bit
+
+we dont want to override potentially more exact values for water
+temperature etc either  the sample save interval may be longer than
+some internally kept state of key perdive values like that
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"make a guess at the cylinder description from the size and pressure
+
+ill want to also add a way to overrideset the cylinder type both
+manually by just setting a size in liters and by picking from some list
+of standard cylinder sizes
+
+for example it looks like most of my dives are marked as having
+12liter cylinders  that is probably some default from suunto dive
+manager or from whatever dirk did  its almost certainly not right for
+any of them as far as i know the standard cylinders for lahaina divers
+which is likely most of the warm water dives are al72s for air and
+al80s for nitrox
+
+that would be a 10l and a 111l tank respectively afaik  i dont know
+what a 12liter tank would be or where that size comes from
+
+anyway the lp85+ tank designation for some of the dives looks more
+likely thats one of the common sizes ive used for local dives  so
+the size of that thing is much more probably correct
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"right align the numbers
+
+signedoffby nathan samson nathansamson@gmailcom",good
+"parse uemis cylinder data
+
+this is some seriously crazy stuff  instead of making sense as a
+divelog the uemis xml makes more sense as a dive computer settings
+dump
+
+and i guess i can see why theyd do that  but it makes parsing it just
+incredibly annoying  the thing is more of a these are the
+configurations i support as a dive computer thing than a this was the
+tank you were diving with
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"properly saverestore cylinder description string
+
+we saved it under the wrong name and didnt restore it at all fix
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+fixed transaction unregistration from jmx when it does not finish properly,bad
+implemented recovery mbean,bad
+fixed exception message,good
+made sessions collection private and added pending sessions close at connection close,bad
+fixed timeout semantic,good
+when a resource cannot be rolled back after timeout the journal does not contain a rolledback entry anymore,bad
+fixed javadoc,good
+improved warn log statement,neutral
+fixed bug that jms connection lost track of its jms sessions,neutral
+aligned timeout semantics with jta spec,neutral
+fixed race conditions by cleaning session recycling code,neutral
+fixed potential race condition in closing pending sessions,neutral
+improved logs,neutral
+improved javadoc,neutral
+improved javadoc,neutral
+implemented filtering by gtrid,neutral
+improved logging,neutral
+fixed shutdown race condition,good
+"made pooling objects directly instanciatable not need to use bean objects to create resources
+
+backward compatibility has been maintained though",bad
+allowed restarting the tm after it has shutdown,neutral
+fixed management unregistration bug,neutral
+cleaned up shutdown code now only resources created by resource loader will be automatically closed at tm shutdown,bad
+refactored recoverer so that it queries resourceregistrar instead of expecting resources to be registered this required updating some code in the resourceloader as well,bad
+refactored recoverer so that it queries resourceregistrar instead of expecting resources to be registered this required updating some code in the resourceloader as well,bad
+more cleanup + updated test,neutral
+updated javadoc,neutral
+updated javadoc,neutral
+minor code cleanup,bad
+javadoc improvements,bad
+reafactored test to get rid of deprecated classes usage,neutral
+improved recovery test it now works with a mock resource,bad
+fixed some tests + moved manual ones to new source folder,bad
+added useful error check,good
+improved exception type,bad
+fixed serialization + small cleanups,neutral
+improved javadoc,neutral
+removed deprecated methods usage,bad
+refactored properties reflection exceptions handling,bad
+fixed transactions integrity when a resource cannot be recovered and is present in the journal now recoverer refuses to run,bad
+reorganized tests to allow them to run as a suite,neutral
+reorganized tests to allow them to run as a suite,neutral
+added test task to build script,neutral
+fixed typos,neutral
+fixed more tests,neutral
+fixed multienlisted connection veto on close now connection handle is left untouched when veto happens,bad
+added apache license for jta and jms libs,bad
+added 10 release notes,neutral
+latest version of intellij project files,bad
+made serverid reconfigurable after a shutdown,good
+made pooled objects unwrappable,neutral
+improved test target to build html reports,neutral
+implemented resizable pooling,neutral
+implemented keepconnectionopenuntilafter2pc required to support ibm db2,bad
+updated javadoc,neutral
+fixed typo in setmaxidletime property,good
+fixed deferred release synchronization cleanup when a connection gets recycled,bad
+fixed missing statechanging event propagation,good
+improved getproperties so that it only returns properties that have both a getter and a setter,bad
+added resource password encryption capability,neutral
+fixed test,neutral
+refactored task scheduler it is now more robust and more testable,bad
+improved xaresourcerecover calls error handling and reporting,bad
+fixed bug related to properties access using isxxx getters,good
+added test for isxxx getter,good
+improved javadoc,neutral
+code cleanup & refactorings,neutral
+removed pooledconnection implementation,good
+fixed test,neutral
+improved javadoc,neutral
+refactored jndi support classes to have more consistentstandard naming,neutral
+improved main,neutral
+improved management interface,bad
+simplified shutdown method,bad
+removed usage of deprecated methods,bad
+improved javadoc,neutral
+changed warnings into debug logs for calls to cancelxxx where there is no task to be cancelled,bad
+allowed disabling registration of the shutdown hook,neutral
+moved head to 11,bad
+added test for tostring method will also be useful to catch some propertyutils bugs,bad
+fixed tostring test,neutral
+fixed bug btm2  recovery failures are now properly reported,neutral
+disallowed savepoint related methods in global tx mode as per jdbc3 spec,neutral
+improved javadoc,neutral
+fixed bug that connection could still be used after being closed,neutral
+added autocommit reset code,good
+added public method to get wrapped connection,good
+fix for btm6 support for jms credentials,neutral
+upgraded slf4j to latest version,good
+fixed btm5 implemented pooling of prepared statements  statement cache,bad
+removed keepconnectionopenuntilafter2pc references,good
+added 12 release notes,good
+upgraded project files for 12,bad
+fixed bug btm7 encrypted password now properly decrypted both in resourceloader and api cases,bad
+fixed lock semantics difference between win32 and unix that allowed the log files to be overwritten on unix,bad
+removed shutdown hook,good
+"fixed btm8  durable subscribers cannot participate in xa
+
+createdurablesubscriber now enlists resource in the transaction using proper producerconsumer caching scheme",bad
+fixed btm9  reference created by getreference throws npe on tostring,bad
+moved nonxa classes to another package,bad
+added backward compatibility class,good
+minor code cleanup,neutral
+"initial import into repository
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@2 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"initial import into repository
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@3 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added scatter plot matrix
+added setpadding for graph2d
+	graph2d wont draw axies if the padding is zero
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@4 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added histogram
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@5 c8979423a7686f1717f2fb57d64bf5d2",good
+"created better single variable statistics window
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@6 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"updated countinous distribution to be able to return the current parameters values
+updated countinous distribution to set parameters based off of given data
+updated distritbuion selection and qqplotdist menu item to make use of these two new features
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@7 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added grey out of menu items when no data set made
+also made a quit drop down ctrl+q
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@8 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added example data files that can be used to test against
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@9 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"made file parsing slightly faster
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@10 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added ability to maximize by switching from jdialog to jframe
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@11 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added linear regression implementatino & gui 
+	modified scatter plot to support drawing a regression function
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@12 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added the beta function to specialmath
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@13 c8979423a7686f1717f2fb57d64bf5d2",good
+"created integration methods added trapezoidal and romberg integration
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@14 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added default max iterations method for romberg
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@15 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"intial work with incomplete and regularized gamma functions
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@16 c8979423a7686f1717f2fb57d64bf5d2",bad
+"more work on gamma functions now a functional complete set that is accurate to full precision for most common values
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@17 c8979423a7686f1717f2fb57d64bf5d2",bad
+"adding some java docs
+
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@18 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added gamma and chi squared other than inverpdf which may not be possible for all distirbutions
+started studentt but needs regularized beta function first
+
+small changes to densevector & vector to simple do a little more that should have been done before
+
+added inverse function for gammap
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@19 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added regularized incomplete beta function
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@20 c8979423a7686f1717f2fb57d64bf5d2",good
+"added root finding methods so that accurate but slower methods of obtaining an inverse function can be quickly made
+	added bisection
+	added secant
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@21 c8979423a7686f1717f2fb57d64bf5d2",bad
+"root finding commit
+	fixed bug in bisection
+	added zeroin brents method
+	added riddlers method
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@22 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added inverse incomplete beta function using root finding method
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@23 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"implemented students t distribution
+
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@24 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"implemented weibull distribution
+	missing 1 part i couldent find or deduce a way to estimate the parameters of the distribution from a data set
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@25 c8979423a7686f1717f2fb57d64bf5d2",good
+"added f distribtution
+exposed lnbeta to the public
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@26 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added inver x log x method to special math
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@27 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added kolmogorov distribution but only cdf pdf is not really used and invcdf is confusing
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@28 c8979423a7686f1717f2fb57d64bf5d2",bad
+"removed invpdf requirement from continousdistribution added mean median mode variance and standard deviation
+implemented new added functions for continous distribution for most all current distributions
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@29 c8979423a7686f1717f2fb57d64bf5d2",bad
+"fixed up vec and modified dense vector and created a sparce counter part
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@30 c8979423a7686f1717f2fb57d64bf5d2",bad
+"renamed some distributions for consistency
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@31 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"clean up in kolmogorov removing some of the unsupported operation exceptions
+
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@32 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added text package & stemming
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@33 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added void stemmer
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@34 c8979423a7686f1717f2fb57d64bf5d2",good
+"added an online statistics object mean variance skew kurtois
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@35 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added skewness and kurtois to vector
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@36 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"updated skewness calculations to use an unbiased estimate when the sample is large enough 2
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@37 c8979423a7686f1717f2fb57d64bf5d2",bad
+"minor bug fix to satisfy the compiler
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@38 c8979423a7686f1717f2fb57d64bf5d2",good
+"intitial foundation for implementing classifiers
+
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@39 c8979423a7686f1717f2fb57d64bf5d2",good
+"added parameter approximation for the weilbull distribution
+also commiting some files that had to be changed bc of method changes  they forgot to be added
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@40 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added skewness to continousdistribution
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@41 c8979423a7686f1717f2fb57d64bf5d2",good
+"updated skewness for student t and added documentation for skewness and variance
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@42 c8979423a7686f1717f2fb57d64bf5d2",bad
+"improved ridders method to keep it out of infinit loops
+used root finding to implement an inverse cdf for kolmogorov
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@43 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added ks goodness of fit testing
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@44 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added ks goodness of fit search to maingui
+fixed bug in weibull setusingdata the parameters were set in the wrong order
+fixed bug in kstest where it would not respect the minimum value of the cdf for distributions
+
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@45 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"removed a debug print out
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@46 c8979423a7686f1717f2fb57d64bf5d2",good
+"fixed another bug in ks test with range checking the distribution
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@47 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added beta distribution
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@48 c8979423a7686f1717f2fb57d64bf5d2",good
+"updated ks test to display a message when no distribution is found to be a suitable match
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@49 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added uniform distribution continuos
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@50 c8979423a7686f1717f2fb57d64bf5d2",good
+"added failure rate and reliability function to weibull
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@51 c8979423a7686f1717f2fb57d64bf5d2",bad
+"missed a folder on the last commit
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@52 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"+ 2 for the range makes scatter plot useless for small valued data sets so it has been removed
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@53 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added lognormal distribution
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@54 c8979423a7686f1717f2fb57d64bf5d2",good
+"added one sample test class
+added one sample z test
+implemented dynamic gui for one sample tests it still needs some cleaning up
+added greekletters class
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@55 c8979423a7686f1717f2fb57d64bf5d2",bad
+"moved one sample tests into their own folder
+added t test
+added a set function to studentt distribution
+updated gui with new test
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@56 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"fixed bug in gamma distribution where pdf returned bad values usually zero
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@57 c8979423a7686f1717f2fb57d64bf5d2",bad
+"intial work for classification of data sets including a naive bayes classifier
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@58 c8979423a7686f1717f2fb57d64bf5d2",bad
+"fixed initaliziation bug for the no parameter constructor
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@59 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"updated gammap and gammaq functions with a series evaluation from numerical recepies that is much faster
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@60 c8979423a7686f1717f2fb57d64bf5d2",bad
+"updated cdf to throw an arithmetic exception for nan and infinite input many more of these eventualy need to be placed in many more methods
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@61 c8979423a7686f1717f2fb57d64bf5d2",bad
+"updated vector implementations to cache certain commonly used values instead of computing them every time
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@62 c8979423a7686f1717f2fb57d64bf5d2",bad
+"updated classifier & naive bayes to have a multi threaded traning method
+
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@63 c8979423a7686f1717f2fb57d64bf5d2",bad
+"removed wall of commented code
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@64 c8979423a7686f1717f2fb57d64bf5d2",good
+"added mutable methods to the vector interface and implemented it
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@65 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added pnorm distance to vectors implementation can easily be improved for cases of sparcevector input
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@66 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added normalization to vector and implemenations
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@67 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added kernel functions
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@68 c8979423a7686f1717f2fb57d64bf5d2",good
+"nearest neighbor and some supporting classes
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@69 c8979423a7686f1717f2fb57d64bf5d2",bad
+"wrong defitinon for polynomial kernel
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@70 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added svm smo
+added and updated the kernel functions
+fixed a bug in naive bayes that made it fail when a numerical variable had no variance
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@71 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"updated stemming into its own folder and added another implementation and some renaiming
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@72 c8979423a7686f1717f2fb57d64bf5d2",bad
+"updated arff loader to load integer attributes as real
+added an indetable designed for values  = 0
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@73 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added onevsall classifier so that svm and other future binary classifiers can be used on datasets predicting more than one category
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@74 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added kd tree accelerated version of the knn algorithmw ith impresive speed ups 40% for 5000 data set despite a high dimesnionality 40 variables
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@75 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added 2 new distance metrics
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@76 c8979423a7686f1717f2fb57d64bf5d2",good
+"added pnorm to vectors
+maid main file distinguish between the time taken for training and the time it takes for classification
+added cosine distance metric
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@77 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added 2 new continous distributions laplace and rayleigh
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@78 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"renamed kernelfuction to kerneltrick since there is something else that actualy has the name of being a kernel fuction
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@79 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added underlying code for weighted training
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@80 c8979423a7686f1717f2fb57d64bf5d2",good
+"updated arffloader to load in numeric as real
+added convinence method in classificationdataset
+added implementation of id3 decision tree
+	still need to add pruning
+added a modifable count down latch that is very usefull for multithreading when the number of tasks that will be created is not known apriori
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@81 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"moved the distribution search out from naive bayes into its own class
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@82 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"moved classes around a bit for organization
+added a nominaltonumeric transform
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@83 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"renamed incorrectly named function
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@84 c8979423a7686f1717f2fb57d64bf5d2",good
+"added numericaltohistogram categorization of numerical attributes
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@85 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added logistic distribution and the trig functions lacking in javamath
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@86 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added cauchy distribution
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@87 c8979423a7686f1717f2fb57d64bf5d2",good
+"no stupid vector lengths negative values err zero values are allowed
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@88 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added rocchio classifier
+made classificationdataset return a new array list so that the user can not alter the data set so easily they cans till alter the vectors but when they remove a data point from their list it wont effect others
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@89 c8979423a7686f1717f2fb57d64bf5d2",good
+"updated onlinestatistics to keep track of the min and max observed value
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@90 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added pairwise multiplication and division for vectors
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@91 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added datatransform to transform a data set from any arbitrary range into a specified range of values
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@92 c8979423a7686f1717f2fb57d64bf5d2",bad
+"accidently messed up the constructors fixed
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@93 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added convinence method to categorical results
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@94 c8979423a7686f1717f2fb57d64bf5d2",good
+"the begining of matrix abilities
+
+added an abstract matric class and a dense matrix implementation
+
+note something will have to be incomplete since the matrix base class is for reals and more complex operations on real matricies can produce complex results a complex object and complex matrix class will have to be added in the future
+
+also future sparce matrix implementation based on sparcevector
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@95 c8979423a7686f1717f2fb57d64bf5d2",bad
+"added some quick comments on something i might forget
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@96 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added transpose to the matrix class
+added vec vec constroctor to the densematrix implemenation a parallel one needs to be added
+added single and multi threaded block multiplication methods to dense matrix they are slightly more efficently but require the exact cache size to be known before hand so they are not used by default and the block size for a 256kb cache size is hard coded
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@97 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"added a shortcut getvector function to datapointpair for convinence
+added a summary stats function to classificationdataset for convinence
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@98 c8979423a7686f1717f2fb57d64bf5d2",neutral
+"convience object for returning 2 objects
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@99 c8979423a7686f1717f2fb57d64bf5d2",good
+"added 2 neural net algos
+preceptron
+	has 2 different training methods the multi threade method is a parallel batch implementation the single threaded is an online version these 2 methods have different training behavior
+backpropagationnet
+	an implementaition of a fully connected neural net trained with back propagation it should be easily parallizable but ive gotten much worse performance out of it not sure why will look into it more some other time
+	this is the first classifier to use the new matrix class it may need to be modified frequently as the matrix class is improved
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@100 c8979423a7686f1717f2fb57d64bf5d2",good
+"deleted accidental duplicate file with different case that should not exist
+
+gitsvnid httpsjavastatisticalanalysistoolgooglecodecomsvntrunk@101 c8979423a7686f1717f2fb57d64bf5d2",bad
+add initial vsix project,good
+add githubui project for styles and controls,good
+"implement vspackage with basic login dialog
+
+includes a menu that launches a login dialog
+for testing purposes",good
+add build script folder to repo,good
+update project to vs 2015,good
+"add custom fody package with patched cecil
+
+cecil requires a patch to work properly with roslyn",good
+update to fody 1264 with fixed cecil,good
+"rename folder build  script for ci integration
+
+the existing ci scripts are expecting a folder
+called script where all builddeploy scripts
+reside for now and for consistencys sake
+with the desktop apps rename the build folder
+to script",good
+"get everything building on the command line
+
+fix build from scripts for ci add xunit runner for
+visual studio",good
+bump fody submodule to catch cecil fix,good
+update packages to latest stable,good
+"refactoring navigation and lifetime of mef
+
+extract interfaces of mef exports to separate dll
+to decouple things a bit
+only load reactive things when requesting ui dialogs
+teamexplorer items should not load any reactive stuff
+introduce exportfactory to dispose of idisposable mef
+components properly
+start fleshing out team explorer implementation",bad
+github section on teamexplorer home,bad
+update github styles add image icon,good
+fixing namespaces and using statements,bad
+"fleshing out home and connect pages
+
+set up base classes for team explorer navigation pages sections items
+and links
+home and connect sections underway",bad
+fix typo,neutral
+add navigation items and icons,neutral
+use pngs for the navigation icons,neutral
+"refactor all the things add simple api fix copyrights
+
+add simple api to query github for info related to
+the navigation items so we dont pull in any
+extra dependencies for those bits",bad
+ignore autogenerated akavache linker file,good
+fix references to teamfoundation dlls,good
+fix extractingparsing repo url from the solution,good
+pleasing nitpick nancy,bad
+fixing dll references some more,good
+showing nav items depending on repo url,neutral
+"implement nav item execute refactoring
+
+get rid of the team explorer sections for now connect nav items to
+repo and open browser to navigate to wiki and issues when they exist",bad
+"hook up all nav items add color bars
+
+check for existence of wiki by doing a get on the url if its enabled
+but hasnt been created itll redirect to the repo home
+add colors for the nav bars",neutral
+added license and target install ranges to vsix manifest unblocking ability to install the vsix directly,bad
+fixed copy behavior for licensetxt,good
+"enable warnings as errors and code analysis
+
+fix a ton of stuff for code analysis",neutral
+nullguard nav item execution,bad
+fix style,neutral
+thread guard,bad
+nitpick nancy on the prowl,bad
+fix browser ctor to grab correct service provider,good
+more null guards,bad
+fix some more code analysis issues,good
+"remove reactive usage
+
+make sure team explorer code in general doesnt require any
+reactive bits to keep the footprint small",good
+fix nav items colors and priorities,good
+dedup code,bad
+rename files to match the classinterface inside,good
+nitpick nancy hunting spaces,bad
+align color definitions neatly just cause,good
+add home section showing repo information,good
+async fixes,bad
+"add an empty wpf app for designtime resources
+
+vs cant seem to handle loading resources at designtime
+from referenced libraries without an actual wpf app with
+an appxaml in the solution
+all other hacks failed to bleh just stuff one in",good
+add separate lib to hold mef interfaces with reactive dependencies,neutral
+shared resource dictionaries,bad
+add vs logger,good
+"uicontroller manages the ui loading logic
+
+a little state machine to manage the ui logic of
+the login2fa create and clone workflows",neutral
+uiprovider is our iserviceprovider implementation,bad
+language nazi on the prowl,bad
+decouple ui logic from backend,good
+move interfaces out to separate assemblies,good
+kill unused usercontrols,good
+"temporary te section for triggering clonecreate
+
+while we dont have the definitive classesinterfaces
+for the github connect section in team explorer use
+a mock one that triggers our clonecreate dialogs
+with optional auth",neutral
+"add clone and create dialogs
+
+ and everything that the ui depends on translations styles
+controls user errors etc etc",bad
+fix build,neutral
+fix build again,neutral
+the build it is fixed,bad
+move view models to viewmodels,good
+"refactor how views and viewmodels are exported
+
+export all views and viewmodels with metadata and a
+common interface so we can easily add more
+exportfactoryprovider exposes lists of views and
+viewmodels that can be disposed of
+
+add some ui testing to the designtimestylehelper app
+its faster to iterate over the ui outside the extension
+itself",neutral
+reorganize files into more meaningful folders,neutral
+fix namespaces and using statements everywhere,bad
+export 2fa viewmodel for the 2fa challenge handler,good
+fix exportfactoryprovider build and code issues,neutral
+fix code analysis,good
+fix exporting of views,good
+add composition service for testing,good
+aaaaand it builds again,bad
+add missing metadata attributes so imports work,good
+"shared exports arent picked up by exportfactory
+
+twofactorviewmodel is shared so the challenge handler can get the
+instance so it needs to be initialized differently exportfactory only
+picks up nonshared exports",bad
+fix launching the create dialog,good
+fix silly copy paste,good
+fix ci build,good
+"disable nullguard on gitthubui
+
+while doing ui work the designer triggers nullguard everywhere and
+makes it extremely hard to prototype also might not be that useful on a
+control library need to evaluate it here",good
+flesh out createrepo xaml,good
+make the test app work,bad
+latest r# really really wants me to add these settings,neutral
+"add unit test of logincontrolviewmodel
+
+setting up some test infrastructure for the view models before
+i start to implement stuff",good
+aba  always be asserting,bad
+"remove the learn more section
+
+were no longer going to have that in the login screen",good
+set the width and height we can fix it up later,neutral
+"remove the cancel command
+
+no need for this",good
+fix up the login button bindings and positioning,good
+"fix up the sign up link section
+
+and actually bind the sign up link so it works",good
+bind text boxes enablement,good
+move githubcom and enterprise tabs to the center,good
+"make login label persistent
+
+well always show it and not make it contextual",good
+implement forgotpassword command properly,good
+hook up the forgot password button,good
+changes to reference dev14 assemblies  required to build on a machine that only has dev14 installed,bad
+reference 14000 versions explicitly instead of referencing the 12000 versions explicitly and adding sspecificversion=false,bad
+update manifest to target dev14 instead of dev12,good
+"add githubtabcontrol to githubuireactive
+
+im gunna need this",good
+add errormessagedisplay,good
+add new validators to reactivepropertyvalidators,good
+fixup add githubtabcontrol,neutral
+move controls out of assets folder,good
+first approximate cleanup of category column,bad
+"removed println from snappycompressionbenchmark
+git staut
+git status",bad
+moved utilities and removed a println,neutral
+moved utilities and removed a println,neutral
+mostly work on boolean columns,bad
+io for boolean columns,bad
+enhancements to localdatecolumn and extension of the column api,bad
+enhancements to storagemanager to support new column types and supporting changes in the columns themselves,bad
+enhancements to storagemanager csvreader and datetime columns to extend io functionality,bad
+new test new test data,bad
+added basic functionality to table,neutral
+more io test cases and supporting changes in tables and columns,bad
+more work on csv reading and related work on time representations parsing etc,bad
+sorting implemented but needs more testing,neutral
+initial implementation of fluent api,neutral
+extensions to equality testing,bad
+extensions to equality testing,bad
+extensions to equality testing,bad
+reformatting code,neutral
+renamed class,bad
+extensions to equality testing,bad
+extensions to row selection,bad
+extensions to row selection,bad
+extensions to row selection,bad
+implementation of basic functionality for getting started example partial,bad
+implemented basic booleanmaputils,neutral
+added readme and made the most basic example code in it work,bad
+added integrated stringmaputils,neutral
+added integrated stringmaputils,neutral
+implementing readmemd example functionality,neutral
+parsing smalltalk variant for interactive language,neutral
+initial ui work with javafx,neutral
+made mainmenu its own class and removed unused file,bad
+removed unneeded code,neutral
+fixed bug in dialog closing logic,good
+fixed bug in dialog closing logic,good
+cleanup forms,good
+added event framework for handling application changes,neutral
+fixed broken notification test,good
+additional ui work including partially working drag & drop on table view,bad
+added command processor framework with undo redo,neutral
+improvements towards sorting without comparitors and their autoboxing,bad
+tests for command processor framework for the ui,bad
+a fledgling attempt to do ui skinning and runtime userdirected changes in chart display without hacking css strings,bad
+misc cleanup hangs head in shame,bad
+more cleanuprationalization of the relation hierarchy,bad
+more cleanuprationalization of the relation hierarchy,bad
+test implementation of mapping logic,bad
+partial port of splitter logic from outlier,bad
+ported genericsplitter from outlier,good
+initial work porting reduction functions,bad
+improving date and date column functionality mostly,bad
+more enhancments to localdatecolumn functionality,bad
+more enhancments to localdatecolumn functionality,bad
+added timing to test,good
+added support for additional map operations,neutral
+added inquartern filters to localdate,good
+date filter functions added,bad
+added date filtering to datetime column,good
+cleaned up parameter types and names,neutral
+added filters to time and datetime,neutral
+added filters to category columns,good
+deleted unused class,good
+more work on string filters and map functions,bad
+added int column filters,good
+agpl license added,bad
+cleaned up unused imports,good
+updated readme,neutral
+updated readme,neutral
+updated readme,neutral
+more work in filters,bad
+more work on filters,bad
+adding more filter functions,bad
+adding more filter functions,bad
+adding more filter functions,bad
+added equality filter for datetime col,good
+removed unneeded nashorn experiment class,good
+added aggregation functions for float,good
+adding resets to new reduce functions,good
+partial implementation of packedperiod and implementation of periodcolumn,bad
+partial implementation of packedperiod,bad
+added a csvcombiner utility that appends all files in a folder into a single csv file they should all have the same structure,bad
+cleanup and comments on csvcombiner,bad
+additional work on column io,bad
+additional work on column io,bad
+added todos for improving on disk compression,good
+refactored columnmetadata and tablemetadata moving them to storage package,bad
+removed all languagerelated code for smalltalklike analysis language may readd later after core is finished,bad
+updated guava library to version 19,good
+whitespace fix and readme update,neutral
+bug fixes in column io,neutral
+readme update,neutral
+cleaned up test,bad
+removed machine learning library until i have time to do proper analysis and design,bad
+added summary and uniquecount methods to several classes and repaired broken head method in table and view,bad
+updates to minimize autoboxing not entirely successful yet,bad
+continued work on primitivebased sorts incomplete and implementation of dummy variable functions for category columns,bad
+continued work on primitivebased sorts incomplete and implementation of dummy variable functions for category columns,bad
+added categorycolumn tests,good
+added tostrings for the columns,bad
+add readme,good
+add common collectors,good
+add events and make it actually work,good
+add viewcollector,good
+add count,neutral
+add phpdocstypehinting,good
+"add route information
+
+just for 40 currently not the rewritten router",good
+"add readme and switch to devmaster
+
+because of little bug until new tag is released",good
+make event logging optional,good
+update readme,good
+update composerjson,good
+"add laravel info
+
+version and environment",good
+add facade for messages,good
+update readme,good
+add time facade calls,good
+add exceptions and docs for messages,neutral
+"update config
+
+explain about vendors",good
+remove mailer and check for db connection,neutral
+update readme,good
+fix nonobject,good
+update readme,good
+add current route to top of debugbar,good
+rename monolog to log,good
+"fix $this for 53
+
+fix for #1",good
+prepare for 41,bad
+resolve router,good
+only for 40,bad
+add router for 41,neutral
+rewrite logic based of webprofiler,good
+replace request with symfonyrequest,good
+switch some to default debugbar,good
+dont include response content,good
+update readme,good
+fix locale,good
+"merge messages and monolog
+
+cleaner for much the same output",good
+add config for collectors,good
+"dont restrict responserequest
+
+fixes #2",neutral
+"remove $this from closure for php53
+
+for #1",good
+"add twig collector
+
+currently just for httpsgithubcombarryvdhlaraveltwigbridge",good
+tweak log collector,good
+skip twig header when view is enabled,good
+update readme,good
+remove view badge,good
+update facadephp,good
+show db by default,good
+add db to config,good
+check if collectors are available,good
+only add collectors when enabled,good
+cleanup request a bit,bad
+in variablelistwidget check if v variable is not null,bad
+"format vars recursively
+
+fix blank screens with administrator",good
+black text,bad
+"revert changes
+
+is fixed in master",good
+fixed a typo,good
+tweak view displaying,good
+add some safety checks,good
+update public files,good
+add note about vendors,good
+"change asset publishing
+
+use the upstream assets so they are always uptodate",good
+add note about routecollector on 406,good
+add headers in response for ajax requests etc,neutral
+refactor a bit,bad
+move some functions around,neutral
+use close event instead of after router,good
+stack data in session after redirect,neutral
+double name,bad
+update readme,good
+add mail logger,good
+refactor a bit,bad
+update readme,good
+update screenshot,good
+clarify vendors,good
+"fix commit
+
+to prepare for breaking changes",neutral
+update for driver driven http session,bad
+tweak a bit,bad
+cleanup,bad
+move logic from facade to laraveldebugbar,good
+update readme,good
+"fix session store
+
+update for changes in httpsgithubcomlaravelframeworkcommit3816e425ae3fdaa69474763737d5e906e073c9a9",good
+make sessionstore work on old+new version,good
+"allow debugbar to be disabled during runtime
+
+fixes #9
+just call `configsetlaraveldebugbarconfigenabled false `
+anywhere before the response is sent and the debugbar wont be added to
+the response",good
+"add check for route
+
+check if the route is the correct type otherwise return empty array
+prevents error for empty routes or perhaps changeswrong route
+collector fixes #11",good
+add addmeasure to debugbarfacade,good
+add timing for bootingapplication,good
+check for laravelstart,neutral
+"make ajax capturing configurable
+
+should fix #14",good
+"add option for sql param binding
+
+fixes #21",good
+"allow multiple connections
+
+add option to set extra connections fixes #22",good
+move mail config,good
+"escape view data
+
+fixes #23",bad
+"tweak escaping
+
+again for #23 to make it the same as proposed in the upstream package",bad
+"leave escaping upstream
+
+this is fixed upstream so no need for this anymore",neutral
+"remove typehinting in construct
+
+l41 changes stuff this fixes #24",good
+"remove old session var
+
+not needed anymore",good
+update readme,good
+make inject configurable,good
+update readme,good
+make quotation char configurable,good
+"fix readme
+
+doesnt belong here fixes #29",neutral
+"append on appclose insteaf of after router
+
+later is better right fixes #33",neutral
+move code from svn,bad
+move code from svn,bad
+readme,bad
+update folder structure,good
+delete the example c code so that this project is can be recognized as a python project rather than a c project,bad
+make compatible with python 30,bad
+fix the bugs introduced by 2to3,good
+fuck the chinese gov,bad
+fix commented comment,good
+fix map in python 2x,good
+"option to print warnings in clangs format
+
+this makes it easier to integrate hfccapy into an existing build that already knows
+how to parse and display warnings from clanggcc
+
+for example xcode add a run script build phase that runs hfccapy and any methods that
+exceed the complexity will be flagged",neutral
+add ignores,good
+add travisyml,good
+run ci,bad
+run ci,bad
+beautify readme,good
+beautify readme,good
+in xml format output function line not 0,bad
+make xml format obey verbose mode,good
+remove extra  from verbose xml format,good
+"make them executable from beginning
+
+sets executable flags on all the appropriate places and adds # line to extratestsexternaltestspy",bad
+create setup file and separate the tests,neutral
+update readmemd,good
+fix for python3,neutral
+fix for different python versions,neutral
+fix for python 3 and 25,bad
+try again,bad
+stop supporting 25 did i,neutral
+fix python26 multiple threading problem by disabling it,good
+update version number,good
+test token count,neutral
+add version,bad
+add version,bad
+use fnmatch instead of re to match exluded files,neutral
+python 26 doesnt have assertlistequal,bad
+fix for operator,bad
+fix void funtint &&p,good
+fix exlucde pattern,good
+fix explicit filenames,good
+add  for print,neutral
+some refactoring,bad
+reduce is not in 30,bad
+#NAME,bad
+#NAME,bad
+add examples,good
+temporarily remove tnsdl support from hfcca until i know somebody is using it,bad
+adjustment to the nloc,bad
+adjustment to the nloc,bad
+pylint fix,bad
+fix #else problem,good
+change unit test running,bad
+fix python3 test,good
+delete main from test,good
+java,bad
+fix the windows bin,good
+fix for windows,neutral
+update version,good
+update setup information,good
+remove the wrong eq overriding,good
+small refactoring,bad
+fileinformation isnt a list any more,bad
+refactoring,bad
+move function,bad
+fix a xml output bug,good
+refactoring,bad
+refactoring,bad
+fix for python3,neutral
+refactoring,bad
+interface as a module,bad
+rename hfcca to lizard,good
+github name hasnt changed yet,bad
+try renamed github repo,neutral
+refactoring tokenizer,neutral
+include header files,good
+fix for cpp constructor initialization list and preprocess problem,neutral
+add support for xsl,good
+fix for #elif,neutral
+handle exception,good
+change the xsl location,good
+add test for xml output,good
+handle exception,good
+bug reporting,bad
+output none result,bad
+bug in file summary,bad
+test new computer,bad
+added checking for file duplicates,neutral
+fixed python3 issues with hashlib changed from mock import to from testmock import,bad
+remove debug code,good
+test github,bad
+rename,bad
+fixed random fails of unit tests for duplicates check,good
+add function end line number,good
+refactoring file filters,neutral
+specific filename should not be excluded,bad
+specific filename should not be excluded,bad
+refactoring,bad
+prepare to add word count,good
+try the world counter feature,good
+fix for python 33,neutral
+count token,bad
+"minimal patches to make uemacs compile in a modern environment
+
+make sure to include errnoh and allow for the fact that newer
+gccs dont allow function declarations in function scope dont
+ask me why but there you have it",neutral
+"up the limit on maximum lines
+
+hey get with the bloated new world",neutral
+"run indent kr i8 on the sources
+
+lets see how nasty it is to clean things up for real",good
+"very optimistically add a sparse makefile target
+
+since sparse really wants clean ansi c were not even remotely close
+to being sparseclean  but maybe some day",neutral
+"fix up headers and bogus redefinitions to use stdlibh and stringh
+
+hey its already compiling cleaner getting proper function declarations
+will be a bitch though",bad
+"first cut at turning things into proper modern ansi c
+
+hey real declarations",neutral
+"more function declarations regionc
+
+hey wordc is now sparseclean",bad
+"more ansification of the sources
+
+ugh  some of this is ugly  we should really include cursesh etc
+but there are too many name clashes for that right now",bad
+move inputc towards ansi function declarations,good
+"yet more ansification
+
+bored me why do you ask",bad
+"more ansification
+
+next up enabling wall in the makefile not because its ready
+but because it gets easier to track where we are in the process",bad
+"start using wall when compiling
+
+oh and change the o4 to a saner o2 while at it",neutral
+"lots of ansification and cleanups
+
+still tons of warnings with wall but now its actually getting closer
+
+it even compiles again",bad
+"fix up some trivial gcc wall warnings
+
+lots more to go",neutral
+more warning avoidance and code cleanup,bad
+fix up unused variable and ambiguous else in randomc,good
+"replace window type with windowt
+
+starting to try to avoid name clashes with curses and friends",good
+"avoid various name clashes with curses and termcap headers
+
+this allows us to include the proper headers instead of declaring
+things badly by hand",neutral
+"fix ugly definitions in header file crud
+
+move various initializations into new globalsc file
+
+also mark some variables static and fix up some trivial compiler and
+sparse warnings",good
+"fix more compiler warnings
+
+better initializers and more proper function types",good
+"make sources mostly sparseclean
+
+mainly an issue of taking care of a few remaining k&r function
+declarations",neutral
+"handle 8bit characters better in display
+
+this code still assumes a latin1 kind of one byte one character setup
+
+utf8 inputoutput even if the data is encoded in latin1 is a separate
+issue",good
+"patch fix use of mktemp in uemacs
+
+after your last round of changes it compiles without warnings here fedora
+rawhide gcc402 but the link complains
+
+mktemp3 isnt always secure the problem is fixed in mkstemp3
+
+signedoffby horst h von brand vonbrand@infutfsmcl
+signedoffby linus torvalds torvalds@osdlorg",neutral
+"add support for a utf8 mode
+
+note microemacs is very much a bytebased editor and the new utf8
+support is purely an issue of terminal input and output  the file
+contents themselves are in the 8bit space  in that space unicode is
+the same as latin1
+
+the new mode is called utf8 and is enabled automatically by the
+new emacsrc when $lang contains the substring utf8
+
+im sure people would like to some day also edit real utf8 contents
+rather than just edit old 8bit latin1 contents in a utf8 terminal
+however thats an independent and much bigger and thornier issue
+
+signedoffby linus torvalds torvalds@osdlorg",good
+"add a true utf8 demonstration file
+
+we obviously dont handle it but its a wonderful example if we ever do
+
+demo by markus kuhn from
+
+	httpwwwclcamacuk~mgk25ucsexamplesutf8demotxt
+
+signedoffby linus torvalds torvalds@osdlorg",good
+"make sparse check target do a global sparse
+
+instead of iterating over all the source files just check them all
+together since it works these days and could potentially find
+crossfile issues",good
+"mark functions and variables local to displayc static
+
+waste a few minutes occasionally on cleanup and maybe we can make this
+thing look ok in a decade or two
+
+signedoffby linus torvalds torvalds@osdlorg",neutral
+"make the sparse setup default to x8664 rather than ppc
+
+hey what can i say without apple ppc on the desktop not very likely
+
+signedoffby linus torvalds torvalds@osdlorg",good
+"clean up various compile warnings
+
+most of them were harmless gcc not being smart enough to realize that
+an uninitialized variable was never used if it wasnt initialized etc
+
+some of them were name clashes crypt is a standard library
+function so rename it to myencrypt etc
+
+signedoffby linus torvalds torvalds@osdlorg",good
+"turn esc+ into a csi character
+
+this avoids the annoying behavior where were on the command line
+waiting for an esc and any control character sequence ends up finishing
+the command line and eating the first esc
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"add libcurses remove ltermcap
+
+thats how modern distributions roll and have for a long time  i just
+havent committed this
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"add ignore file for generated files
+
+at least the most obvious ones
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs fix sparse warnings making filelocal symbols static
+
+ansic2556 warning symbol ansihello was not declared should it be static
+epathh116 warning symbol pathname was not declared should it be static
+displayc367 warning symbol vscreen was not declared should it be static
+displayc387 warning symbol pscreen was not declared should it be static
+displayc9275 warning symbol updateline was not declared should it be static
+evarh206 warning symbol uv was not declared should it be static
+evarh246 warning symbol envars was not declared should it be static
+evarh1287 warning symbol funcs was not declared should it be static
+fileioc146 warning symbol ffp was not declared should it be static
+fileioc155 warning symbol eofflag was not declared should it be static
+ibmpcc5056 warning symbol ibmhello was not declared should it be static
+isearchc365 warning symbol savedgetchar was not declared should it be static
+isearchc375 warning symbol eatenchar was not declared should it be static
+isearchc415 warning symbol cmdbuff was not declared should it be static
+isearchc425 warning symbol cmdoffset was not declared should it be static
+isearchc435 warning symbol cmdreexecute was not declared should it be static
+linec216 warning symbol ykbuf was not declared should it be static
+linec225 warning symbol ykboff was not declared should it be static
+lockc176 warning symbol lname was not declared should it be static
+lockc185 warning symbol numlocks was not declared should it be static
+vmsvtc5216 warning symbol hellovms was not declared should it be static
+vt52c1816 warning symbol vt52hello was not declared should it be static
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs remove typdef struct buffer  struct buffer
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacslinec remove two unused variables
+
+linec21 warning �ykbuf� defined but not used
+linec22 warning �ykboff� defined but not used
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs make build output more readable
+
+this patch makes the build output look like what we have in the linux kernel so
+that warnings stand out better
+
+  cc       ansio
+  cc       basico
+  cc       bindo
+  cc       buffero
+bufferc in function �nextbuffer�
+bufferc43 warning �bp� may be used uninitialized in this function
+  cc       crypto
+  cc       displayo
+  
+
+cc thiago farina tfransosi@gmailcom
+signedoffby pekka enberg penberg@cshelsinkifi
+signedoffby linus torvalds torvalds@linuxfoundationorg",bad
+"uemacs remove unused functions
+
+commit 8fc7449 uemacs fix sparse warnings making filelocal symbols
+static made some functions that are not used anywhere static this patch
+removes them to kill the following compilation warnings
+
+  ansic255 warning �ansihello� defined but not used
+  ibmpcc505 warning �ibmhello� defined but not used
+  vmsvtc521 warning �hellovms� defined but not used
+  vt52c181 warning �vt52hello� defined but not used
+
+cc thiago farina tfransosi@gmailcom
+signedoffby pekka enberg penberg@cshelsinkifi
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs remove use of register keyword
+
+lets welcome uemacspk to the year 2010 as expected the patch has no effect
+on the generated code
+
+   text	   data	    bss	    dec	    hex	filename
+ 106002	   8864	  18616	 133482	  2096a	em
+ 106002	   8864	  18616	 133482	  2096a	emnew
+
+cc thiago farina tfransosi@gmailcom
+signedoffby pekka enberg penberg@cshelsinkifi
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs rename makefile to makefile
+
+i keep typoing makefile instead of makefile  i guess its hardwired to
+the brain by now so just rename the damn thing
+
+cc thiago farina tfransosi@gmailcom
+signedoffby pekka enberg penberg@cshelsinkifi
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs enable wstrictprototypes
+
+this patch enables the gcc wstrictprototypes switch and fixes up broken
+prototypes
+
+cc thiago farina tfransosi@gmailcom
+signedoffby pekka enberg penberg@cshelsinkifi
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs convert typdef struct line to struct line
+
+cc pekka enberg penberg@cshelsinkifi
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs rename readme to readme
+
+also removes some tabs and whitespaces
+
+cc pekka enberg penberg@cshelsinkifi
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs convert typdef struct video to struct video
+
+signedoffby thiago farina thiagofarina@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs add arraysize macro so we can get rid of some hard coded calculations
+
+signedoffby thiago farina thiagofarina@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",bad
+"uemacs use arraysize in more places
+
+signedoffby thiago farina thiagofarina@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs convert typedef struct ufunc to struct userfunction
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs convert typedef struct uvar to struct uservariable
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacsansic convert the old functions style declarations to the new one
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",bad
+"uemacs convert typedef struct keytab to struct keytab
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs convert typedef struct nbind to struct namebind
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs convert typedef struct region to struct region
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs convert typedef struct term to struct terminal
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs convert typedef struct windowt to struct window
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs ibmpcc move the functions to the ansi style declaration
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs evarh add enum functiontype
+
+replace four macros used to define integer constants with a enum
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs convert typedef struct kill to struct kill
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs add version option
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs add help option
+
+add a basic usage function to support the help option
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs basicc add support to go to the end of the buffer
+
+there is a case when the user can type something like this
+
+    em filename +
+
+or even
+
+    em +
+
+instead of saying bogus argument when the uemacs start just go to the end of
+the buffer like we can do in vim for example
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs compiles on mac os x
+
+compiles on mac os x 1064
+
+setmode is renamed to setemode to avoid conflict with os xs unistdhs
+setmode
+
+modify makefile to enable the appropriate defines to compile on mac os x
+
+signedoffby yong luk stanley elijah goh stan@t0xtcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs fix outofbox build on mac os x
+
+this patch fixes outofbox build on mac os x by using uname s to detect the
+underlying os and fixing up defines accordingly
+
+cc yong luk stanley elijah goh stan@t0xtcom
+signedoffby pekka enberg penberg@kernelorg
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs make getgoal function private to basicc
+
+this functions is only used internally by basicc so marking it static
+to make it private
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs add more two options to the usage output
+
+added + and +n to the usage output
+
+also fixed the following warning
+
+  mainc in function �main�
+  mainc121 warning �gline� may be used uninitialized in this function
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacsefunch get rid of a duplicated exported type called names
+
+this type is already exported in edefh
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs kill unused lckhello function
+
+this patch kills an unused lckhello function and gets rid of the following
+gcc warning
+
+    cc       locko
+  lockc160 warning �lckhello� defined but not used
+
+signedoffby pekka enberg penberg@kernelorg
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs fix return statements
+
+return statement is not a function so remove superfluous use of parenthesis
+
+cc thiago farina tfransosi@gmailcom
+signedoffby pekka enberg penberg@kernelorg
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs clean up program executable
+
+this patch fixes makefile clean target to clean up program executable em
+
+signedoffby pekka enberg penberg@kernelorg
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs remove garbage from the tree
+
+this patch removes bunch of ancient makefiles and vms scripts from
+uemacs source tree  if somebody really needs them they can always look
+them up from git repository history
+
+signedoffby pekka enberg penberg@kernelorg
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs remove two completly unused functions fnclabel and spal
+
+the implementation of these functions are doing anything at all at this moment
+so cleanup a bit the code by removing fnclabel and spal functions completly
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs remove more garbage emacs files from the tree
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs get rid of the called macro
+
+uemacs is not a subprogram and doesnt seem it will be so there is no reason
+to leave this macro and this macro is defined to 0 so we never reach the path
+where we test for this macro
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacsversionc add version function to output the version string information
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",bad
+"fix a tiny typo
+
+signedoffby christian faulhammer christian@faulhammerorg
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs move function declarations from edefh to efunch
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs convert typedef struct whblock to struct whileblock
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs get rid of bitmap typedef
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs remove forward declaration of struct video from edefh
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs convert typedef struct vdesc to struct variabledescription
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs kill dead code
+
+this patch kills #ifdefd code from displayc and filec
+
+signedoffby pekka enberg penberg@kernelorg
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs move structure line and its functions to its own header file
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs move nblock constant into linec
+
+this constant is only used in linec so just keep it there
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs add lineh in namesc to fix compiling error
+
+i got following errors while compiling uemacs
+
+namesc132 error �insspace� undeclared here not in a function
+namesc217 error �yank� undeclared here not in a function
+make  nameso error 1
+
+it looks like namesc needs lineh for function declarations
+
+signedoffby li jie eltshanli@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs move uv variable into the evalc source file
+
+its used only there
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs convert typedef struct mc to struct magic
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs bufferc fix uninitialized struct warning
+
+this fix the following warning
+
+  bufferc in function �nextbuffer�
+  bufferc45 warning �bp� may be used uninitialized in this function
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs move some constants from estructh to posixc
+
+these two constants are only neededused by the posixc file
+so just define them there
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs move maxnline constant from estructh to filec
+
+this constant is used only there so there is no reason for it to be
+in estructh
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs convert typedef struct rmc to struct magicreplacement
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs inputc fix mkstemp warning
+
+fix the following warning
+
+inputc in function �getstring�
+inputc590 warning ignoring return value of �mkstemp� declared with attribute warnunusedresult
+
+this add usagec module for die function
+this also add wrapperc module for the xmkstemp that is wrapper function
+around the original mkstemp function
+
+both module codes was largelly based on git linux and sparse codes
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"uemacs make some magic variables private to searchc module
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs add xmalloc as a wrapper function for malloc
+
+xmalloc checks the returned pointer and dies if it failed to allocate
+the memory
+
+use this new function in windowc
+more places will be converted to use xmalloc latter
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"uemacs displayc use the newly introduced xmalloc function
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"show xa0 nbsp as a nonprintable character
+
+i want to see the difference between space and nbsp and i consider nbsp
+to be a control character so show it as such  even if it is
+technically printable
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"respect ldflags when linking
+
+signedoffby ulrich m�ller ulm@gentooorg
+signedoffby linus torvalds torvalds@linuxfoundationorg",bad
+"uemacs add g options to the output usage
+
+while im here improve the word of the above two options
+
+signedoffby thiago farina tfransosi@gmailcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"force a screen redraw after tcap ti on terminal open
+
+the tcapkopen function reinitializes the terminal with the ti
+sequence which for most sane termcap entries is just empty  but for
+xterm that seems to actually be a real control sequence clear and
+reset and wed better tell displayc that the screen is now garbage
+and needs to be redrawn
+
+also make tcapkclose match the ti terminal init with a te
+terminal exit
+
+maybe we should just stop playing games with tite but this at least
+improves the situation a bit
+
+reportedby bijan soleymani bijan@psqcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"filec remove crazy keyboard openclose calls
+
+it seems to have something to do with some old dos mode and not having
+keyboard translation on insert floppy a questions while opening
+files whatever  but this is while doing normal file opens and it is
+just insane to openclose a tty across a file open
+
+the possible tty initexit sequence would mess up some of the file
+readwrite messages
+
+reportedby bijan soleymani bijan@psqcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",good
+"spawnc do the keyboard openclose around shell invocations
+
+im not 100% sure we really should even be doing this whole keyboard
+openclose for termcap but even if the right thing to do ends up being
+to just do everything in the ttopenttclose and make ttkopenttkclose
+noops it does seem to be the right thing to do
+
+reportedby bijan soleymani bijan@psqcom
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"make uemacs build on freebsd
+
+see httpsbugsgentooorgshowbugcgiid=387135
+
+signedoffby ulrich m�ller ulm@gentooorg
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+"show lines with a single helper function not one byte at a time
+
+lets see how hard it is to show utf8 characters properly
+
+signedoffby linus torvalds torvalds@linuxfoundationorg",neutral
+add gitignore file,good
+add some stub code using llbuild as the internal name for now,neutral
+add a cmake based build system,neutral
+ninja start sketching a ninja manifest lexer,bad
+"llbuildtool hack up to dump ninja input file tokens for bringing up more infrastructure
+
+  this will get ripped out and moved elsewhere soon",bad
+cmake change binaries and libraries to end up in a consistent location,bad
+cmake add �lit� based testing support under �test� target,bad
+ninja tidy up lexer token printing and add a basic test,neutral
+"unittests import googletest a la llvm
+
+  i removed the rawostream support since we don�t have it available
+   yet but otherwise this is just a copy from llvm",neutral
+unittests add c++ unittests using googletest,good
+tests integrate unit tests with �lit� config,neutral
+ninja finish basic ninjalexer unites,bad
+ninja add support for lexing newline token,good
+"ninja add support for lexing indentation tokens
+
+  ninja manifests use indentation to manage scopes yuck so we model this by
+   an explicit token",good
+"ninja add lexing support for identifiers and keywords
+
+  sadly although ninja does have an actual lexer it uses it in a context
+   dependent way so we will eventually need some context switching mechanism to
+   be properly lex the strings that are present in the rhs of variable
+   assignments which are not token based ill bring that up once parsing
+   needs it",neutral
+fixup operatoro,bad
+commands split out a commands library command line tool implementations,bad
+ninjacommand move lexer to �ninja lex�,good
+ninja stub out basic structure for a callback based ninja parser,neutral
+ninja hide the parser implementation,good
+ninjaparser stub out some parsing infrastructure,neutral
+ninjalexer fix up command line test,good
+ninjacommand add simple caret style diagnostics,good
+"ninjaparser parse includesubninja decls
+
+  also hide parserimpl more fully in an anon namespace as i�d like to
+   guarantee compiler can rewrite it",neutral
+ninjaparser parse default decl,good
+"ninjaparser parse variable binding decls
+
+  this is incomplete as we will actually need to put the lexer into
+   another mode where it preserves whitespace but this is a start",good
+ninjaparser start parsing parameterized decls,bad
+ninjalexer improve lexing of  and = in identifier strings,neutral
+ninjaparser add support for parsing build decl specifier,neutral
+"ninjaparser tidy up parseparameterizeddecl
+
+  also fixes a bug where we didnt set the result for build decls",good
+"ninjaparser add support for parsing variable bindings in param decls
+
+  for now we split these out into separate perdecltype actions but we
+   might want to relax that once we have an actual client for the parser",bad
+ninjacommand add a parseonly action for perf timing,neutral
+ninjacommand add a lexonly action for perf timing,neutral
+ninjaparser simplify parser logic,good
+"ninjalexer add support for lexing strings
+
+  sadly the ninja manifest language is context sensitive and doesn�t
+   have a real string token type so we support this by giving the lexer
+   a stringmode that can be set by the client
+
+  once the parser has moved over to using these tokens fully then we
+   can clean up the identifier token to really truly only be identifiers",neutral
+ninjaparser factor out common binding parsing code,neutral
+ninjaparser use variable string mode parsing where appropriate,neutral
+ninjalexer fix lexing of special characters in string mode,neutral
+ninjaparser fix parsing of empty assignments,good
+ninjaparser use path string mode parsing where appropriate,neutral
+"ninjaparser tidy up some diagnostic strings
+
+  also add more testing coverage for these",good
+ninjalexer fix identifier lexing now that parsing has moved to strings,bad
+ninjaparser fix pool and rule name parsing they are identifiers not path strings,bad
+ninjaparser parse the rule name in build decls as an identifier,neutral
+ninja start sketching manifest loader implementation,neutral
+"ninjamanifestloader add basic parse actions structure
+
+  for now just blend this with the manifest loader impl",neutral
+ninjamanifestloader sketch toplevel bindings loading,neutral
+"ninjacommand sort bindings for manifest dump
+
+  also write to stderr for consistency with other commands for now",good
+ninjalexer fix range in isidentifierchar,good
+"ninjamanifestloader add initial cut at expr string expansion
+
+  more testing to come and we will want this to be factored differently soon
+
+  also no real attempt has been made to make this performant",neutral
+ninjacommand factor out emiterror,good
+ninjamanifestloader wire up error diagnostic machinery,neutral
+ninjamanifestloader diagnose invalid variable names in $ exprs,neutral
+manifest hide data members,good
+"ninjacommand write output bindings in quotes to make syntax obvious
+
+  we are trying to write out bindings in cstyle syntax not ninja style",neutral
+ninjacommand fix a thinko in hexdigit,good
+ninjamanifestloader add initial rule loading,good
+"ninjaparser propagate start token to enddecl actions
+
+  this is for use in postprocessing diagnostics it is cheaper
+   to pass it in than force the client to track it",neutral
+ninjamanifestloader diagnose missing �command� assignment,bad
+fix up some clang diagnostics not present by default,neutral
+cmake add header files to xcode project,good
+cmake also add internal header files,good
+"ninjamanifestparser add support for remaining rule parameters
+
+  ninja unfortunately lazily expands all of these so we just build up another
+   parameters dictionary i was hoping we could eagerly parse them but it
+   would get a little more tricky",neutral
+ninjamanifest ensure bindings overwrite prior entries,neutral
+ninjamanifestloader add support for loading pools,neutral
+"ninjamanifest add structure for node set and default target list
+
+  not used yet by the loader",bad
+"ninjamanifest add command structure to manifest
+
+  also not used by the loader yet",neutral
+ninjamanifest add a builtin phony rule,good
+ninjamanifestloader add support for build decl loading,neutral
+ninjacommand add a maximum errors count,good
+"lexer fix bug where we allowed $ in identifiers
+
+  this was part of the old identifier handling before we moved over to context
+   sensitive string lexing",neutral
+lexer fix handling of $ at the start of strings,good
+lexer skip spaces following $\n in path strings,good
+lexer change stringmode to lexingmode in prep for a new nonstring specific one,bad
+"lexer fix improve $\n handling which is honored in many more places
+
+  i am ambivalent about the implementation it might be better to move to one
+   where we have two phase consumption and the lowest level handles $\n
+   sequences",bad
+add missing test case for previous commit,good
+"lexer add identifier specific lexing mode which ignores keywords
+
+  gah what a poorly designed language ",neutral
+ninjaparser allow blank lines in parameterized decl bindings,neutral
+ninjaparser use identifierspecific parsing where appropriate,neutral
+ninjaloader add support for default decl,good
+ninjacommand escape  in output strings,good
+ninjamanifestloader immediately evaluate bindings in build decls,neutral
+"testsninjaloader remove a fixme that doesnt need fixing
+
+  it isnt actually possible end up with a variable or path string with a
+   trailing $ currently because we delay escape handling and so we always
+   consume the subsequent character",neutral
+ninjamanifestloader add initial support for an include stack not used yet,bad
+ninjamanifestloader change loader to provide current filename on file reads,bad
+ninjacommand refactor readfilecontents to return errors,neutral
+"ninjacommand change loadmanifest to chdir to containing directory for input
+
+  this is just a hack for now so that include statements can use relative paths
+   sadly ninja does not seem to specify that include statements are relative to
+   the including file which is terribly broken",bad
+"ninjamanifestloader add initial support for includesubninja decls
+
+  no handling of the proper binding scoping yet",neutral
+added core library with rudimentary dependency graph node and command classes  no connections yet but ability to look up and create nodes and commands  commands have lambdas as actions  clearly these are early days but this is a start of a skeletal structure,bad
+node and command numbers are onebased not zerobased,bad
+ninjacommand fix a bug in my chdir logic that didnt update the input path,bad
+ninjamanifestloader diagnose missing depth assignment,neutral
+"unittests remove redundant maincpp files
+
+  i guess i forgot to remove these originally i was going to skip having the
+   gtestmain library which makes this common code but then i went with it
+   following llvmclangswift style so we dont need these",good
+ninjacommand include errno on file open errors and make sure to close files,bad
+ninjamanifestloader update include stack to also track active binding set,bad
+ninjamanifestloader add support for subninja decls entering a new binding scope,bad
+"core add buildengine implementation
+
+  this is just the initial import of my prototype engine code but it needs
+   cleaning up and abstraction",good
+testscore add a simple test for the buildengine,good
+"commands add an ackermann computation implemented as a build
+
+  this is a silly way to compute ackermann but a great way to test the build
+   engine  it uses dynamic input dependencies and builds of wide ranging sides
+   just by changing the parameters",neutral
+ninjaloader diagnose empty inputoutput paths,good
+add updatesh add partial files for generating the apache dockerfile,neutral
+add stackbrew generator,good
+match multiple keys in updatesh since we have 2+ here,neutral
+update to 5516,neutral
+remove duplicated try try in updatesh,good
+missed an extraneous gz,neutral
+add php 53 54 and 56 fixing the update script,bad
+add cmd php a replace awk with magic bash,good
+change default command to httpd,good
+add license expat,good
+"use phpnet as host to allow mirror redirects
+
+prevents us2phpnet from getting all of the traffic",good
+added compile option withmysqli in versions with apache,neutral
+added mysql pdo support to compile flags in versions with apache,neutral
+simplify apache images by using the debian apache2 packages,neutral
+update versions,good
+"update 56 version  fix #11
+
+signedoffby rogerio prado de jesus rogeriopradoj@gmailcom",good
+add more tags thanks to j�r�me,good
+"remove the `volume` definition from the apache variants since it doesnt make sense in the general case
+
+this is another one thanks to j�r�me",bad
+add openssl option,good
+add option ssl on apache,good
+add openssl,neutral
+add openssl,neutral
+add openssl,neutral
+add openssl,neutral
+add openssl,neutral
+add openssl,neutral
+"drop older php 53
+
+it fails when trying to build with ssl",good
+"bump 562  fix #21
+
+fix #21
+
+signedoffby rogerio prado de jesus rogeriopradoj@gmailcom",good
+"bump 5434  fix dockerlibrary#23
+
+fix dockerlibrary#23
+
+signedoffby rogerio prado de jesus rogeriopradoj@gmailcom",good
+"bump 5518  fix dockerlibrary#22
+
+fix dockerlibrary#22
+
+signedoffby rogerio prado de jesus rogeriopradoj@gmailcom",good
+minor version bumps,neutral
+add additional modules to include,good
+add additional modules to versions 54 and 55,good
+update apache versions,good
+gzip does not exist as a flag use zlib,good
+remove buildconf from our dockerfiles since we use the release tarballs which have pregenerated configure scripts,bad
+"refactor dockerfile switching the base from `buildpackdeps` over to `debian` directly
+
+this results in a dramatic reduction of image size
+
+```console
+$ docker images php
+repository          tag                 image id            created              virtual size
+php                 54                 6b03f428509e        3 hours ago          3543 mb
+php                 54apache          2bd126f2c469        2 minutes ago        3948 mb
+php                 55                 19a5113df69a        9 minutes ago        3564 mb
+php                 55apache          6c892721307f        2 minutes ago        3969 mb
+php                 56                 69aead156fe7        10 minutes ago       3568 mb
+php                 56apache          2d0bae628aaf        about an hour ago    3973 mb
+```
+
+vs the old
+
+```console
+$ docker images php
+repository          tag                 image id            created             virtual size
+php                 54                 e760b9bd2c6c        2 days ago          7369 mb
+php                 54apache          62c23e8f1704        2 days ago          8118 mb
+php                 55                 156d2a323bc0        2 days ago          7398 mb
+php                 55apache          3014d0f81b29        2 days ago          8147 mb
+php                 56                 dab86418397c        2 days ago          7402 mb
+php                 56apache          b3c4a0633954        2 days ago          8151 mb
+```",bad
+add cacertificates which was in buildpackdeps,good
+add enablesoap,good
+keep the source and instead just make clean,neutral
+"add new `dockerphpext` scripts for magic
+
+for example the following makes wordpress work
+
+```dockerfile
+run aptget update && aptget install y libpng12dev && rm rf varlibaptlists \
+	&& dockerphpextinstall gd \
+	&& aptget purge autoremove y libpng12dev
+
+run dockerphpextinstall mysqli
+```",bad
+make the root more obvious fix directoryindex to php first,neutral
+add back make which we somehow missed,good
+add fpm variant,good
+"update to 5519 and 563 for cves
+
+fixes #45 thanks @thajeztah",neutral
+failure yeah my bad,bad
+moaar,bad
+add readme stub,good
+fix phpfpm listen directive,good
+load opcache as a zendextension,good
+54fpmphpfpmconf impossible to listen on 9000 replace by 9000,bad
+run updatesh,neutral
+run update again to fix apache and fpm versions,good
+bump to 564 and 5436,bad
+update variants too,neutral
+add a pid cleaner in case container was killed unexpectedly,neutral
+switch from pgpmitedu to poolskskeyserversnet,good
+run updatesh php 55 and 56 version bumped,neutral
+run updatesh to bump 54,good
+remove indexes option from varwww,good
+update to 5438 5522 566,bad
+unindent license,bad
+2015,bad
+"make autoremove remove more packages
+
+by default aptget autoremove wont remove packages that are recommended or
+suggested by any installed packages not just the packages that
+autoinstalled them",good
+add libcdev as an explicit phpize dependency,good
+update to 5439 5523 and 567,bad
+empty config and sites folders include them #76,neutral
+use && instead of  for consistency,good
+removed bashism in dockerfile,neutral
+run updatesh,neutral
+add initial travisyml,good
+prevent tar preserving file ownership,good
+"install file and re2c as required by dockerphpextinstall
+
+fix #86",neutral
+"remove file from builddeps
+
+file is still needed for dockerphpinstallext",good
+"preinstall more extensions which cannot be installed later
+
+extensions added pcre recode sqlite3",neutral
+update to 568 5524 5440,bad
+more resilient gpg getting,bad
+"tells fpm not to clear the environment in workers
+
+allows php scripts executed with fpm to access env vars such as env vars
+from linked containers
+
+see #74",good
+"update to php 5441 5525 and 569
+
+as per latest security updates from phpnet",bad
+add g++,neutral
+whoops use $ini consistently o,neutral
+run updatesh for dockerphpextinstall fixes,good
+update to 5442 5526 and 5610,bad
+switch from bz2 to xz for 55 and 56 several megabytes smaller download,bad
+"add php700alpha2 issue #108
+
+adding 70 to travis
+
+fixes for the reviewed code
+
+fixes to have the directory as 70
+
+change version on travis
+
+remove gpg from dockerfile on 70",bad
+"swap updatesh to still generate for unknown versions and bump to 700beta1
+
+also update generatestackbrewlibrarysh appropriately",bad
+"update to 5443 5527 and 5611
+
+as announced here
+
+php 5443 httpphpnetarchive2015php#id201507091
+php 5527 httpphpnetarchive2015php#id201507102
+php 5611 httpphpnetarchive2015php#id201507103
+
+signedoffby sebastiaan van stijn github@gonenl",bad
+upgrade php7 version,good
+update travisyml to use sudo 9000 instead of dist trusty,neutral
+"add new dockerphpextenable script for more intelligent module enabling
+
+this also updates `dockerphpextinstall` to invoke this script properly after successful extension compilation
+
+if modules are determined to already be enabled itll skip them appropriately
+
+this removes simple warnings like `php warning  module curl already loaded in unknown on line 0` and enables things like `pecl install mongo && dockerphpextenable mongo`",bad
+run updatesh,neutral
+full path for loading zend extensions,neutral
+get rid of unneeded variable,good
+"update php 5612 5528 and 5444
+
+update announcement
+httpphpnetarchive2015php#id201508061
+
+signedoffby sebastiaan van stijn github@gonenl",neutral
+"update to php 700 beta 3
+
+as announced here
+httpphpnetarchive2015php#id201508061
+
+signedoffby sebastiaan van stijn github@gonenl",neutral
+fix 55 key httpsgithubcomdockerlibraryphppull124#issuecomment128795274,bad
+add back the 55 keys that are officially listed and sort all the key lists,bad
+put docker images in travisyml afterscript section,neutral
+enhance generatestackbrewlibrarysh to only take into account changes to the dockerfile or files from copy in the dockerfile for choosing the commit hash for a particular directory,bad
+"upgrade to php 7 rc1 release
+
+httpphpnetarchive2015php#id201508211
+
+rc1 for phpapache build
+
+forgot to upgrade the version in 70 folder",good

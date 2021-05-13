@@ -1,0 +1,986 @@
+message ,label
+add crazy bad xml parser thing work suunto xml file dive format one put many dive file way libxml2 handle concatenate xml file start error know need stinking drunk look more xml mess ,good
+make multidive file valid xml multiple root entry call dive make baby enclose root entry call dive turn parseable xml help make world well place ,good
+turn xml parseable problem different xml file different node name least turn sane format nice callback place value could use fill useful information ,good
+move parser usable dive split sample split could start fill datum ,good
+fill dummy parse target code parse tell many sample parse ,good
+start show unparse entry show type entry make clear screw sample match ,good
+fix stupid current sample nice compiler warning hide crazy gcc pointer sign warning want see want strlen unsigned string complain crazy bitch compiler make cflag set ,good
+move text hackery well caller debug user may want full ,good
+start parse dive date suunto xml format ,good
+start parse numeric field pressure sample time ,good
+add verbose flag parse dive spam stdout list stuff parse default add verbose flag enable output set ,good
+start report number parse show sampletime thing get bit much copypaste temperature parsing ,good
+fix temperature conversion water temperature degc ,good
+add datetime parsing libdivecomputer xml file think get date dive could start sort remove duplicate try remove dup guess should compare one suunto one bet various interesting issue use bar atm etc xml portable crazy people ,good
+report dive parse end report make easy see duplicate need save dive real work require verbosity level show sample show unparsed entry ,bad
+add more parsing function fix duration parse can second format float point make sense ,good
+clean dive reporting show date max depth time default stuff matter should exist ,good
+split dive data structure declaration diveh dive parser should part program whole thing start prepare ,good
+start move nonparsing stuff create mainc main routine argument parsing etc ,good
+add gitignore file current state ,good
+create gtk window day will ,good
+generate default name dive name string containint date time depth length useful go ,neutral
+show dive gtk listtree widget good ill need enclose thing scrollable window make scrollable thing part whole window pixel screen pixel show name dive parse least many will fit screen time ,good
+make dive list scrollable put vbox mean can see walk make useful ,good
+fix depth parsing decimal meter integer foot logic work meter xml end have whole meter ,good
+draw kind profile first dive kind break follow select dive profile scale etc show new text ,good
+split profile frame generation own file ,neutral
+rid unused showdive function ,good
+split scroll window generation own file ,good
+newlineterminate dive name result ugly list wrong begin ,good
+redo tree selection code selection callback look way ,neutral
+teach thing track select dive repaint profile selection change ugly may useful need show other dive information allow user fill detail save end result useful ,neutral
+add repaintdive prototype fix dependency ,neutral
+use gtk table want add various dive statistic look same ,good
+add fake info frame content should depth time place etc information fake depth update show idea table usage ,good
+dive profile create bound box scale marker ,neutral
+plot fancy fill depth profile dicke ,good
+dive profile plot use sane minimum limit time minimum second minute want show least make shallow dive look shallow scale full depth ,good
+dive parsing enforce dive duration see sample dive duration update dive duration ,neutral
+add more dive info update ugly application least give basic dive info love add way edit dive add new datum name buddy location etc would require ability save end result day ,good
+use notebook info profile dunno seem well interface least get more info dive suspect want add basic info profile page make table approach layout pointless table become fancy vbox put core info use notebook info page extended information should bite bullet start save dive datum add editing function add information play random gtk widget ,good
+start clean dive accessor go add menu import export dive like able start dive croak happen code write actual end user mind start clean thing make currentdive macro work invalid dive ,good
+sane sigsegv dive leave blank area ,bad
+add top file menu new ,good
+boilerplate code openingsave file copy gtk doc actual loading saving take place ,good
+make main display sane tweak packing expect make summary info visible extended info notebook page own dive profile first notebook page summary information visible seem lot logical ,neutral
+add extended dive info field tweak basic info layout bit ,good
+rename file appropriate executable call get useful use guess come real name day add silly readme rename parse parsexml ,good
+xml parsing start traverse property require change way match thing can thing different thing sampleeventtime time property event go ambiguous linearize name xml care xml node child property care xml worth pain fact ambiguity can end good thing will parse different line xml same way attribute approach seem nice ill use output format ,neutral
+rid ignore rule ill start do kind save unparse thing extended item thing ignore rule rid noise early parsing ,good
+start parse gas mix suunto xml crazy helium percentage companion would hepct0 number first could see sane only mix value should exist start indexing multiple mix expect hepct1 right wrong xml people crazy second mix percentage o2pct2 percentage onebase implicit percentage zerobase explicit second mix o2pct2 hepct1 like ask drug suunto people finnish company need ask vodka explain lot lot vodka comparison output nice sane use many different xml nesting node check make array different noce allow mark suunto case check crazy alcoholic xml entry suunto file type file thing good idea decide default unit day ,good
+crazy gas mix say comparison output nice sane turn do drug come gas mix show percentage percentage use unsigned char oxygen percentage make undefined print nonexisting mix process math damn thing calculate nitrogen percentage make parser ignore craziness print strange percentage reading few time make well ,bad
+stop track nitrogen percentage only thing can thing screw thing value track filler gas can calculate gas track oxygen helium make sure sane value ,good
+add ability save dive generate xml file wrong xml way can save same format load thing saveformat lot clean abortion suunto libdivecomputer bother crazy xml library crap saving ,good
+fix small detail inputoutput careful conversion kelvinc offset make sure use same name save parse save set dive reload save second save image identical first save load lose information load save result least lose information save ,good
+save current dive sample xml file start parse more need add code save ,neutral
+teach date parser parse international standard date format standard way write date yyyymmdd unambiguous sort parse datetime case normal date case want use output format standard parse duration dive duration use save happen end parse pick sample ,bad
+use proper unit save see number see unit good practice add min duration use digit number second depth write date international standard format ,neutral
+clean savefile output bit use empty element form sample event associate none avoid annoying sample crud output unit output helper forget try ,good
+empty element xml let make goal xml output goal suunto xml can ohsomuchbett love xml let try make good bad situation take pride ,good
+save parse note location rough seem work ,neutral
+save escape character think should legal xml libxml2 unhappy complain load escape let replace low escape character only thing care testcase suspect ,neutral
+fix nest xml entry much cutandpaste ending tag say ,good
+generate field sample require sure redundant convenient general dive info ,good
+show temperature info summary exist help identify dive least local ,good
+hack rudimentary support uemis xml format think need reorganize handling performat code mix conversion questionable small part sound crazy wait send actual humanreadable output dive right rough guess ,neutral
+use unit value guess base end guess base magnitude value may bar mbar end pick other base big value should make look possible explicit unit least good xml exist course only good xml see one generate ,good
+ignore pressure complain miss value ,good
+improve xml parse bit look unitspressure setting unit thing show wrist computer unit file bar right thing mean should care parse unit set show parse true other unit let see more datum parse water temperature tank pressure ,good
+dive dedup pass give multiple dive same time dedup dive happen dump whole divecomputer several time dive show multiple dump dedupe try avoid drop datum dive note attach other one pick note dive obvious stuff sample merge write should possible merge dive ,good
+add location note top bar understand packing rule look intend ,good
+update bit may tell people need compile warn state project ,good
+add various dive fixup show pressure plot dive profile plot need unit pressure random line ,bad
+update depth compute one computer may track real max depth track sample trust noncomputed depth more compute one ,neutral
+add mean depth marker dive plot can ,good
+fix spelling ,good
+well cylinder information management track track size workng pressure cylinder use cylinder tank ,good
+use new gtkuimanager menu creation ,good
+improve layout text entry gtk2 could useful ,bad
+bother save percentage calculate same reason bother parse loading time should bother save only thing can value check percentage add ,good
+add quit menu item fix invisible file gtk2 notice file part file menu show keyboard accelerator work default label associate gtkstockfile gtk2 file text go conversion gtkuimanager commit use new gtkuimanager menu creation addition quit menu entry associated keyboard make work track dirty state etc could ask user want save famous gui chop ,neutral
+change location text entry text view ,neutral
+word wrap info textview show scrollbar necessary ,bad
+remove unused startemp calculation fix compiler warn ,bad
+forgot fclose file save xml trigger buffered datum might lose forceexit application save dive log explain corrupted truncated dive file report ,neutral
+update gitignore namechange executable call parse think should rename divelog unique work name convinced implementation part important make point subsurface know should follow name project mantra ,good
+use pane dive list can make wide small user wish ,bad
+remove redundant frame notebook close ,good
+fix typo makefile ldflag ,good
+beauty patch uppercase first letter label word tweak padding easy reading rename file menu log menu add separator quit log menu remove frame extended diving info add 6px padding ,bad
+split dive list column column sortable name date depth duration ,bad
+remove redundant temperature reading aim differentiate dive log software make xml export file clean dammit mean random name crazy random unit redundant information temperature change report sample mean clean thing ,good
+save cylinder work pressure mistake save other dive manager nonsensical measure care only thing matter size cylinder actual pressure give actual air consumption number meaningful unambiguous work pressure cylinder pointless thing know actual physical size need work pressure air size order compute physical size use work pressure input system report cylinder size way people may want know kind cylinder dive can make good guess work pressure save information hp100 cylinder would good thing notice case want save work pressure fact save make output format ambiguous give size working pressure size mean physical size liter air size save work pressure wrong rid go add kind cylinder description thing can save guess standard cylinder input work pressure dive log can tell ,good
+add placeholder cylinder type description want save working pressure cylinder type knowledge would lovely useful can make good initial guess least let people fill ,good
+generate date string dive list base timet value allow use compact date format need sort date base date can use year skip second keep column narrow sort depth nice header string wide column make whole column necessary put unit header string keep thing narrow ,good
+clean fixupdive bit want override exact value water temperature etc sample save interval may long keep state key perdive value ,good
+make guess cylinder description size pressure ill want add way overrideset cylinder type set size liter pick list standard cylinder size example look most dive mark have cylinder default suunto dive manager right know standard cylinder diver most warm water dive al72s air nitrox would 10l tank know tank would size come lp85 tank designation dive look more common size use local dive size thing correct ,neutral
+align number ,good
+parse cylinder datum crazy stuff make sense xml make more sense dive computer setting dump guess can see make parse annoying thing more configuration support dive computer thing tank dive ,good
+saverestore cylinder description string save wrong name restore fix ,good
+fix transaction unregistration finish ,bad
+implement ,bad
+fix exception message ,good
+make session collection private add pende session close connection ,bad
+fix timeout semantic ,good
+resource can roll timeout journal contain rolledback entry ,bad
+fix ,good
+improve warn log statement ,neutral
+fix bug connection lose track session ,neutral
+align timeout semantic ,neutral
+fix race condition clean session recycling code ,neutral
+fix potential race condition close pende session ,neutral
+improve log ,neutral
+improve ,neutral
+improve ,neutral
+implement filter ,neutral
+improve logging ,neutral
+fix shutdown race condition ,good
+make pooling object instanciatable need use bean object create resource backward compatibility maintain ,bad
+allow restart shutdown ,neutral
+fix management unregistration bug ,neutral
+clean shutdown code resource create resource loader will close ,bad
+refactore query expect resource register require update code ,bad
+refactore query expect resource register require update code ,bad
+more cleanup updating test ,neutral
+update ,neutral
+update ,neutral
+minor code cleanup ,bad
+improvement ,bad
+reafactored test rid deprecated class usage ,neutral
+improve recovery test work mock resource ,bad
+fix test move manual one new source folder ,bad
+add useful error check ,good
+improve exception type ,bad
+fix serialization small cleanup ,neutral
+improve ,neutral
+remove deprecated method usage ,bad
+refactore property reflection exception handle ,bad
+fix transaction integrity resource can recover present journal refuse run ,bad
+reorganize test allow run suite ,neutral
+reorganize test allow run suite ,neutral
+add test task build script ,neutral
+fix typo ,neutral
+fix more test ,neutral
+fix multienlisted connection veto close connection handle leave untouched veto happen ,bad
+add license ,bad
+add release note ,neutral
+late version project file ,bad
+make reconfigurable shutdown ,good
+make pool object unwrappable ,neutral
+improved test target build html report ,neutral
+implement resizable pooling ,neutral
+implement require support ,bad
+update ,neutral
+fix typo setmaxidletime property ,good
+fix deferred release synchronization cleanup connection get recycle ,bad
+fix miss statechange event propagation ,good
+improve getpropertie return property getter setter ,bad
+add resource password encryption capability ,neutral
+fix test ,neutral
+refactore task scheduler robust testable ,bad
+improve call error handling reporting ,bad
+fix bug relate property access use isxxx getter ,good
+add test getter ,good
+improve ,neutral
+refactoring ,neutral
+remove pooledconnection implementation ,good
+fix test ,neutral
+improve ,neutral
+refactore support class more naming ,neutral
+improve ,neutral
+improve management interface ,bad
+simplified shutdown method ,bad
+remove usage deprecate method ,bad
+improve ,neutral
+change warning debug log call cancelxxx task cancel ,bad
+allow disable registration shutdown hook ,neutral
+move head ,bad
+add test tostring method will useful catch propertyutils bug ,bad
+fix tostring test ,neutral
+fix bug btm2 recovery failure report ,neutral
+disallow savepoint relate method global mode jdbc3 spec ,neutral
+improve ,neutral
+fix bug connection could use close ,neutral
+add code ,good
+add public method wrap connection ,good
+fix btm6 support credential ,neutral
+upgraded late version ,good
+fix btm5 implement pooling prepared statement statement cache ,bad
+remove reference ,good
+add release note ,good
+upgrade project file ,bad
+fix bug encrypt password decrypt resourceloader api case ,bad
+fix lock semantic difference unix allow log file overwrite ,bad
+remove shutdown hook ,good
+fix btm8 durable subscriber can participate enlist resource transaction use proper producerconsumer caching scheme ,bad
+fix reference create getreference throw ,bad
+move class package ,bad
+add backward compatibility class ,good
+minor code cleanup ,neutral
+initial importing repository ,neutral
+initial importing repository ,neutral
+add scatter plot matrix add setpadde draw axie padding ,neutral
+add histogram ,good
+create well single variable statistic window ,neutral
+update countinous distribution able return current parameter value update countinous distribution set parameter base give datum update distritbuion selection qqplotdist menu item make use new feature ,bad
+add menu item data set make make quit drop ,bad
+add example data file can use test ,neutral
+make file parse ,bad
+add ability maximize switch ,neutral
+add regression modify scatter plot support draw regression function ,neutral
+add beta function ,good
+create integration method add trapezoidal integration ,neutral
+add default max iteration method ,neutral
+intial work incomplete regularized gamma function ,bad
+more work gamma function functional complete set accurate full precision most common value ,bad
+add doc ,neutral
+add square other may possible distirbution start need regularize beta function small change densevector vector simple little more should do add inverse function ,bad
+add regularized incomplete beta function ,good
+add root finding method accurate slow method obtain inverse function can make add bisection add secant ,bad
+root finding commit fix bug bisection add method add riddler method ,bad
+add inverse incomplete beta function use root finding method ,neutral
+implement student distribution ,neutral
+implement distribution miss part couldent find deduce way estimate parameter distribution data set ,good
+add distribtution expose lnbeta public ,bad
+add method special math ,neutral
+add kolmogorov distribution only pdf use confusing ,bad
+remove invpdf requirement add mean median mode variance standard deviation implement new add function continous distribution most current distribution ,bad
+fix vec modify dense vector create sparce counter part ,bad
+rename distribution consistency ,neutral
+clean kolmogorov remove unsupported operation exception ,bad
+add package stemming ,bad
+add void stemmer ,good
+add online statistic object mean variance skew ,neutral
+add skewness vector ,neutral
+update skewness calculation use unbiased estimate sample large enough ,bad
+minor bug fix satisfy compiler ,good
+intitial foundation implement classifier ,good
+add parameter approximation weilbull distribution commit file change method change forget add ,neutral
+add skewness ,good
+update skewness student add documentation skewness variance ,bad
+improved ridder method keep loop use root finding implement inverse cdf ,neutral
+add goodness fit testing ,neutral
+add goodness fit search maingui fix bug parameter set wrong order fix bug would respect minimum value distribution ,neutral
+remove debug print ,good
+fix bug test range check distribution ,neutral
+add beta distribution ,good
+update test display message distribution find suitable match ,bad
+add uniform distribution continuos ,good
+add failure rate reliability function ,bad
+miss folder last commit ,neutral
+range make scatter plot useless small value data set remove ,bad
+add lognormal distribution ,good
+add sample test class add sample test implement dynamic gui sample test need cleaning add greekletter class ,bad
+move sample test own folder add test add set function studentt distribution update new test ,neutral
+fix bug gamma distribution return bad value ,bad
+intial work classification datum set include naive bayes classifier ,bad
+fix initaliziation bug parameter constructor ,neutral
+update function series evaluation numerical fast ,bad
+update throw arithmetic exception infinite input many more eventualy need place many more method ,bad
+update vector implementation cache certain use value compute time ,bad
+update naive multi threaded traning method ,bad
+remove wall comment ,good
+add mutable method vector interface implement ,bad
+add distance vector implementation can improve case sparcevector input ,bad
+add normalization vector implemenation ,neutral
+add kernel function ,good
+near neighbor support class ,bad
+wrong polynomial kernel ,neutral
+add add update kernel function fix bug naive bayes make fail numerical variable variance ,neutral
+update stem own folder add implementation renaiming ,bad
+update loader load integer attribute real add indetable design value ,neutral
+add classifier other future binary classifier can use dataset predict more category ,bad
+add tree accelerate version impresive speed up datum set high dimesnionality variable ,bad
+add new distance metric ,good
+add vector main file distinguish time take training time take classification add cosine distance metric ,neutral
+add new continous distribution ,neutral
+rename name kernel fuction ,bad
+add underlie code weighted training ,good
+update load numeric real add method add implementation decision tree need add pruning add modifable count latch usefull multithreading number task will create know ,neutral
+move distribution search naive bayes own class ,neutral
+move class bit organization add nominaltonumeric transform ,neutral
+rename name function ,good
+add categorization numerical attribute ,bad
+add logistic distribution trig function lack ,bad
+add distribution ,good
+stupid vector length negative value err value allow ,bad
+add classifier make return new array list user can alter datum set can alter vector remove data point list effect other ,good
+update onlinestatistic keep track observe value ,neutral
+add pairwise multiplication division vector ,neutral
+add datatransform transform data set arbitrary range specify range value ,bad
+mess constructor fix ,neutral
+add convinence method categorical result ,good
+begining matrix ability add abstract matric class dense matrix implementation note will incomplete matrix base class real complex operation real matricie can produce complex result complex object complex matrix class will add future future sparce matrix implementation base sparcevector ,bad
+add quick comment may forget ,neutral
+add transpose matrix class add implemenation parallel one need add add single multi threaded block multiplication method dense matrix require exact cache size know hand use default block size cache size code ,neutral
+add shortcut getvector function add summary stat function ,neutral
+convience object return object ,good
+add neural net algo different training method multi method parallel batch implementation single threaded online version method different training behavior implementaition connect neural net train back propagation should parallizable get bad performance sure will look other time first classifier use new matrix class may need modify matrix class improve ,good
+delete accidental duplicate file different case should exist ,bad
+add initial vsix project ,good
+add githubui project style control ,good
+implement vspackage basic login dialog include menu launch login dialog testing purpose ,good
+add build script folder repo ,good
+update project ,good
+add custom fody package patch require patch work ,good
+update fix ,good
+rename folder build script integration exist script expect folder call script script reside consistencys sake desktop app rename build folder script ,good
+build command line fix build script add runner visual studio ,good
+bump fody submodule catch fix ,good
+update package late stable ,good
+navigation lifetime extract interface export separate dll decouple thing bit load reactive thing request dialog item should load reactive stuff introduce exportfactory dispose component start flesh team explorer implementation ,bad
+section home ,bad
+update style add image icon ,good
+fix namespace use statement ,bad
+flesh connect page set base class team explorer navigation page section item link home connect section underway ,bad
+fix typo ,neutral
+add navigation item icon ,neutral
+use png navigation icon ,neutral
+refactor thing add simple api fix copyright add simple api query info relate navigation item pull extra dependency bit ,bad
+ignore autogenerate akavache linker file ,good
+fix reference teamfoundation ,good
+fix repo url solution ,good
+please ,bad
+fix dll reference ,good
+show nav item depend repo url ,neutral
+implement item execute refactoring rid team explorer section connect nav item open browser navigate wiki issue exist ,bad
+hook nav item add color bar check existence wiki do get url enable create redirect repo add color nav bar ,neutral
+add license target install range vsix manifest unblock ability install vsix ,bad
+fix copy behavior ,good
+enable warning error code analysis fix ton stuff code analysis ,neutral
+item execution ,bad
+fix style ,neutral
+prowl ,bad
+fix browser ctor grab correct service provider ,good
+more null guard ,bad
+fix more code analysis issue ,good
+remove reactive usage make sure team explorer code general require reactive bit keep footprint small ,good
+fix nav item color priority ,good
+rename file match classinterface ,good
+hunting space ,bad
+align color definition cause ,good
+add home section show repo information ,good
+fix ,bad
+add empty app resource seem handle loading resource reference library actual app appxaml solution other hack fail bleh stuff ,good
+add separate lib hold interface reactive dependency ,neutral
+share resource dictionary ,bad
+add logger ,good
+manage loading logic little state machine manage logic login2fa create clone workflow ,neutral
+iserviceprovider implementation ,bad
+language prowl ,bad
+decouple logic backend ,good
+move interface separate assembly ,good
+kill unused usercontrol ,good
+temporary section trigger clonecreate definitive connect section team explorer use mock one trigger clonecreate dialog optional auth ,neutral
+add clone create dialog depend translation style control user error etc etc ,bad
+fix build ,neutral
+fix build ,neutral
+build fix ,bad
+move view model viewmodel ,good
+refactor view viewmodel export export view viewmodel metadata common interface can add more expose list view viewmodel can dispose add testing app iterate extension ,neutral
+reorganize file meaningful folder ,neutral
+fix namespace use statement ,bad
+viewmodel challenge handler ,good
+fix build code issue ,neutral
+fix code analysis ,good
+fix export view ,good
+add composition service testing ,good
+build ,bad
+add miss metadata attribute import work ,good
+share export pick exportfactory share challenge handler can instance need initialize exportfactory pick nonshare export ,bad
+fix launch create dialog ,good
+fix silly copy paste ,good
+fix build ,good
+disable do work designer trigger nullguard make hard prototype may useful library need evaluate ,good
+flesh ,good
+make test app work ,bad
+late want add setting ,neutral
+add unit test set test infrastructure view model start implement stuff ,good
+assert ,bad
+remove learn more section go login screen ,good
+set width height can fix ,neutral
+remove cancel command need ,good
+fix login button binding positioning ,good
+fix sign link section bind sign link work ,good
+bind text box enablement ,good
+move enterprise tab center ,good
+make login label persistent show make contextual ,good
+implement command ,good
+hook forget password button ,good
+change reference dev14 assembly require build machine dev14 instal ,bad
+reference version reference version add sspecificversion false ,bad
+update manifest target dev14 ,good
+add gunna need ,good
+add ,good
+add new validator ,good
+add ,neutral
+control asset folder ,good
+first approximate cleanup category column ,bad
+remove git status ,bad
+move utility remove println ,neutral
+move utility remove println ,neutral
+work boolean column ,bad
+boolean column ,bad
+enhancement extension column api ,bad
+enhancement support new column type support change column ,bad
+enhancement csvreader datetime column extend functionality ,bad
+new new test datum ,bad
+add basic functionality table ,neutral
+more test case support change table column ,bad
+more work csv reading related work time representation parse etc ,bad
+sort implement need more testing ,neutral
+initial implementation fluent api ,neutral
+extension equality testing ,bad
+extension equality testing ,bad
+extension equality testing ,bad
+reformatte code ,neutral
+rename ,bad
+extension equality testing ,bad
+extension row selection ,bad
+extension row selection ,bad
+extension row selection ,bad
+implementation basic functionality get start example partial ,bad
+implement basic booleanmaputil ,neutral
+add make basic example code work ,bad
+add integrate stringmaputil ,neutral
+add integrate stringmaputil ,neutral
+implement example functionality ,neutral
+parse variant interactive language ,neutral
+initial work ,neutral
+make own class remove unused file ,bad
+remove unneeded code ,neutral
+fix bug dialog closing logic ,good
+fix bug dialog closing logic ,good
+form ,good
+add event framework handle application change ,neutral
+fix break notification test ,good
+additional work include work drag drop table view ,bad
+add command processor framework undo redo ,neutral
+improvement sort comparitor autoboxing ,bad
+test command processor framework ,bad
+fledgling attempt skinning runtime userdirected change chart display hack css string ,bad
+cleanup hang head shame ,bad
+more relation hierarchy ,bad
+more relation hierarchy ,bad
+test implementation mapping logic ,bad
+partial port splitter logic outlier ,bad
+port outlier ,good
+initial work port reduction function ,bad
+improve date date column functionality ,bad
+more enhancment localdatecolumn functionality ,bad
+more enhancment localdatecolumn functionality ,bad
+add timing test ,good
+add support additional map operation ,neutral
+add filter localdate ,good
+date filter function add ,bad
+add date filter datetime column ,good
+clean parameter type name ,neutral
+add filter time datetime ,neutral
+add filter category column ,good
+delete unused class ,good
+more work string filter map function ,bad
+add int column filter ,good
+license add ,bad
+clean unused import ,good
+update ,neutral
+update ,neutral
+update ,neutral
+more work filter ,bad
+more work filter ,bad
+add more filter function ,bad
+add more filter function ,bad
+add more filter function ,bad
+add equality filter datetime col ,good
+remove unneeded nashorn experiment class ,good
+add aggregation function float ,good
+add reset new reduce function ,good
+partial implementation packedperiod implementation ,bad
+partial implementation ,bad
+add csvcombiner utility append file folder single csv file should same structure ,bad
+cleanup comment ,bad
+additional work column ,bad
+additional work column ,bad
+add todo improve disk compression ,good
+refactore tablemetadata move storage package ,bad
+remove languagerelate code analysis language may readd core finish ,bad
+update guava library version ,good
+whitespace fix readme update ,neutral
+bug fix column ,neutral
+readme update ,neutral
+clean test ,bad
+remove machine learning library time proper analysis design ,bad
+add summary uniquecount method several class repair broken head method table view ,bad
+update minimize autoboxing successful ,bad
+continue work primitivebased sort incomplete implementation dummy variable function category column ,bad
+continue work primitivebased sort incomplete implementation dummy variable function category column ,bad
+add categorycolumn test ,good
+add tostring column ,bad
+add ,good
+add common collector ,good
+add event make work ,good
+add ,good
+add count ,neutral
+add ,good
+add route information rewrite router ,good
+add switch little bug new tag release ,good
+make event log optional ,good
+update ,good
+update ,good
+add info version environment ,good
+add facade message ,good
+update ,good
+add time facade call ,good
+add exception doc message ,neutral
+update explain vendor ,good
+remove mailer check connection ,neutral
+update ,good
+fix ,good
+update ,good
+add current route top debugbar ,good
+rename log ,good
+fix fix ,good
+prepare ,bad
+resolve router ,good
+add router ,neutral
+rewrite logic base webprofiler ,good
+replace request ,good
+switch default debugbar ,good
+include response content ,good
+update ,good
+fix locale ,good
+merge message clean same output ,good
+add config collector ,good
+restrict responserequest fix ,neutral
+remove closure php53 ,good
+add twig collector ,good
+tweak log collector ,good
+skip twig header view enable ,good
+update ,good
+remove view badge ,good
+update ,good
+show default ,good
+add config ,good
+check collector available ,good
+add collector enable ,good
+request bit ,bad
+check variable null ,bad
+format var fix blank screen administrator ,good
+black ,bad
+revert change fix master ,good
+fix typo ,good
+tweak display ,good
+add safety check ,good
+update public file ,good
+add note vendor ,good
+publishing use upstream asset uptodate ,good
+add note routecollector ,good
+add header response request etc ,neutral
+refactor bit ,bad
+move function ,neutral
+use close event router ,good
+datum session redirect ,neutral
+double name ,bad
+update ,good
+add mail logger ,good
+refactor bit ,bad
+update ,good
+update ,good
+clarify vendor ,good
+fix commit prepare break change ,neutral
+update driver drive http session ,bad
+tweak bit ,bad
+move logic facade ,good
+update ,good
+fix session store update change ,good
+make sessionstore work version ,good
+allow disable runtime fix call false response send debugbar add response ,good
+add check route check route correct type return empty array prevent error empty route changeswrong route collector fix ,good
+add addmeasure ,good
+add timing ,good
+check ,neutral
+make capture configurable should fix ,good
+add option bind fix ,good
+allow multiple connection add option set extra connection fix ,good
+move mail config ,good
+escape datum fix ,bad
+tweak escape make same propose upstream package ,bad
+leave escape fix need ,neutral
+remove typehinting construct l41 change stuff fix ,good
+remove old session var need ,good
+update ,good
+make inject configurable ,good
+update ,good
+make quotation char configurable ,good
+fix belong fix ,neutral
+append appclose insteaf router well right fix ,neutral
+move code svn ,bad
+move code svn ,bad
+update folder structure ,good
+delete example code project can recognize python project project ,bad
+make compatible ,bad
+fix bug introduce ,good
+fuck chinese ,bad
+fix comment comment ,good
+fix map python ,good
+option print warning clang format make easy integrate exist build know parse display warning clanggcc example add run script build phase run method exceed complexity will flag ,neutral
+add ignore ,good
+add ,good
+beautify ,good
+beautify ,good
+xml format output function line ,bad
+make xml format obey verbose mode ,good
+remove extra verbose xml format ,good
+make executable begin set executable flag appropriate place add line ,bad
+create setup file separate test ,neutral
+update readmemd ,good
+fix python3 ,neutral
+fix different python version ,neutral
+fix ,bad
+try ,bad
+stop support ,neutral
+fix python26 multiple threading problem disable ,good
+update version number ,good
+test token count ,neutral
+add version ,bad
+add version ,bad
+use match exlude file ,neutral
+fix operator ,bad
+fix void ,good
+fix pattern ,good
+fix explicit filename ,good
+add print ,neutral
+refactoring ,bad
+reduce ,bad
+name ,bad
+name ,bad
+add example ,good
+remove tnsdl support know use ,bad
+adjustment ,bad
+adjustment ,bad
+pylint fix ,bad
+fix problem ,good
+unit test run ,bad
+fix python3 test ,good
+delete test ,good
+fix window ,good
+fix window ,neutral
+update version ,good
+update setup information ,good
+remove wrong override ,good
+small refactoring ,bad
+fileinformation list ,bad
+refactore ,bad
+move function ,bad
+fix xml output bug ,good
+refactore ,bad
+refactore ,bad
+fix python3 ,neutral
+refactore ,bad
+interface module ,bad
+rename lizard ,good
+name change ,bad
+try rename ,neutral
+refactore tokenizer ,neutral
+include header file ,good
+fix constructor initialization list preprocess problem ,neutral
+add support xsl ,good
+fix elif ,neutral
+handle exception ,good
+change location ,good
+add test xml output ,good
+handle exception ,good
+bug report ,bad
+output none result ,bad
+bug file summary ,bad
+test new computer ,bad
+add check file duplicate ,neutral
+fix python3 issue change mock import testmock import ,bad
+remove code ,good
+rename ,bad
+fix random fail unit test duplicate check ,good
+add function end line number ,good
+refactore file filter ,neutral
+specific filename should exclude ,bad
+specific filename should exclude ,bad
+refactore ,bad
+prepare add word count ,good
+try world counter feature ,good
+fix ,neutral
+minimal patch make uemac compile modern environment make sure include allow fact new allow function declaration function scope ask ,neutral
+limit maximum line get bloated new world ,neutral
+run source let see nasty clean thing real ,good
+add sparse makefile target sparse want clean close sparseclean day ,neutral
+fix header bogus redefinition use stdlibh stringh compile clean get proper function declaration will bitch ,bad
+cut turn thing proper modern ansi real declaration ,neutral
+more function declaration sparseclean ,bad
+more ansification source ugly should include cursesh etc many name clash ,bad
+function declaration ,good
+more ansification bore ask ,bad
+more ansification enable wall makefile ready get easy track process ,bad
+start use wall compile change sane ,neutral
+lot ansification cleanup ton warning wall get close compile ,bad
+fix trivial gcc wall warning lot more ,neutral
+more warning avoidance code cleanup ,bad
+fix unused variable ambiguous ,good
+replace window type windowt start try avoid name clash curse friend ,good
+avoid various name clash curse header allow include proper header declare thing hand ,neutral
+fix ugly definition header file crud move various initialization new file mark variable static fix trivial compiler sparse warning ,good
+fix more compiler warning well initializer more proper function type ,good
+make source sparseclean issue take care few remain function declaration ,neutral
+handle character display code assume latin1 kind byte character setup utf8 data encode latin1 separate issue ,good
+patch fix use last round change compile warning fedora link complain secure problem fix mkstemp3 brand ,neutral
+add support utf8 mode bytebased editor new utf8 support issue terminal input output file content 8bit space space unicode same latin1 new mode call utf8 enable contain substring utf8 sure people would like day edit real utf8 content edit old 8bit latin1 content utf8 terminal independent big thorny issue ,good
+add true utf8 demonstration file handle wonderful example demo ,good
+make sparse check target global sparse iterate source file check work day could find issue ,good
+function variable local static waste few minute cleanup can make thing look decade ,neutral
+make sparse setup default can say apple ppc desktop likely ,good
+clean various compile warning most harmless gcc smart realize uninitialized variable use initialize etc name clash crypt standard library function rename myencrypt etc ,good
+turn character avoid annoying behavior command line wait esc control character sequence end finish command line eat first esc ,good
+add libcurse remove modern distribution roll long time commit ,good
+add ignore file generate file least obvious one ,good
+fix sparse warning make filelocal symbol static ansic2556 warning symbol declare should static warn symbol pathname declare should static warn symbol declare should static displayc387 warn symbol declare should static warn symbol declare should static warn symbol declare should static warn symbol envar declare should static evarh1287 warn symbol func declare should static warn symbol declare should static warn symbol declare should static warn symbol declare should static warn symbol declare should static warn symbol declare should static warn symbol declare should static warning symbol declare should static warn symbol cmdreexecute declare should static declare should static warn symbol declare should static warn declare should static warn symbol declare should static vmsvtc5216 warning symbol declare should static vt52c1816 warn symbol declare should static ,neutral
+uemac remove struct buffer struct buffer ,neutral
+remove unused variable warn define use linec22 warn define use ,good
+make build output readable patch make build output look linux kernel warning stand function bufferc43 warn may use uninitialized function ,bad
+uemac remove unused function commit uemacs fix sparse warning make filelocal symbol make function use static patch remove kill follow compilation warning warn define use warn define use warn define use warn define use ,good
+uemac remove use register keyword uemacspk year expect patch effect generate code text hex filename ,good
+rename makefile makefile keep typoe makefile makefile guess hardwire brain rename damn thing ,good
+enable patch enable gcc switch fix broken prototype ,good
+convert struct line struct line ,good
+rename remove tab whitespace ,good
+convert struct video struct video ,neutral
+add can rid hard code calculation ,bad
+use more place ,good
+convert typedef struct ufunc struct userfunction ,neutral
+convert uvar struct uservariable ,neutral
+convert old function style declaration new ,bad
+convert typedef struct keytab struct ,neutral
+convert typedef struct nbind struct namebind ,neutral
+convert typedef struct region struct region ,neutral
+convert typedef struct term struct terminal ,neutral
+convert typedef struct windowt struct window ,neutral
+move function style ,neutral
+evarh add functiontype replace macro use define integer constant enum ,good
+convert typedef struct kill struct kill ,good
+add version option ,good
+add help option add basic usage function support help option ,neutral
+add support end buffer case user can type filename say bogus argument uemacs start end buffer can vim example ,neutral
+compile compile rename avoid conflict modify makefile enable appropriate define compile ,neutral
+fix build patch fix outofbox build use uname detect underlie fix define ,good
+make function private function use mark static make private ,good
+uemac add more option usage output add usage output fix following warning mainc function warn may use uninitialized function ,neutral
+get rid duplicate export type call name type export edefh ,neutral
+kill unused lckhello function patch kill unused lckhello function get rid follow warning lockc160 warn define use ,good
+fix return statement return statement function remove superfluous use parenthesis ,good
+clean program executable patch fix makefile clean target clean program executable ,good
+uemac remove garbage tree patch remove bunch ancient makefile script source tree need can look git repository history ,good
+uemac remove unused function fnclabel implementation function do moment cleanup bit code remove function ,neutral
+uemac remove more garbage emacs file tree ,neutral
+get rid call macro subprogram seem will reason leave macro macro define reach path test macro ,neutral
+add version function output version string information ,bad
+fix tiny typo ,good
+move function declaration edefh ,neutral
+convert struct whblock struct ,neutral
+get rid bitmap typedef ,good
+uemac remove declaration struct video ,neutral
+convert typedef struct vdesc struct ,neutral
+kill dead code patch kill code ,good
+move structure line function own header file ,neutral
+move constant constant use keep ,good
+add lineh namesc fix compiling error get follow error compile error undeclared function undeclared function make error look namesc need lineh function declaration ,good
+move variable source file use ,neutral
+convert struct magic ,good
+fix uninitialized struct warning fix following warning bufferc function bufferc45 warn �bp� may use uninitialized function ,neutral
+move constant constant neededuse file define ,neutral
+move constant constant use reason ,good
+convert struct rmc struct ,neutral
+fix warning fix following warning function warn ignore return value declare attribute add module die function add wrapperc module wrapper function original mkstemp function module code base git linux sparse code ,good
+make magic variable private module ,neutral
+add wrapper function malloc check return pointer die fail allocate memory use new function windowc more place will convert use latter ,neutral
+use introduce function ,neutral
+show nonprintable character want see difference space nbsp consider control character show such printable ,good
+respect ldflag link ulm@gentooorg ,bad
+add option output usage improve word above option ,good
+force screen redraw open function reinitialize terminal sequence most sane termcap entry empty seem real control sequence clear reset tell screen garbage need redrawn make tcapkclose match terminal exit should stop play game least improve situation bit ,good
+remove crazy keyboard openclose call seem old do mode have keyboard translation insert floppy question open file do normal file open insane openclose tty file open possible tty initexit sequence would mess file readwrite message ,good
+keyboard openclose shell invocation sure should do whole keyboard right thing end ttopenttclose make ttkopenttkclose seem right thing ,neutral
+make uemacs build see ulm@gentooorg ,neutral
+show line single helper function byte time let see hard show utf8 character ,neutral
+add gitignore file ,good
+add stub code use internal name ,neutral
+add cmake base build system ,neutral
+sketch ninja manifest lexer ,bad
+hack dump ninja input file token bring more infrastructure will rip move ,bad
+cmake change binary library end consistent location ,bad
+cmake add base testing support target ,bad
+lexer token printing add basic test ,neutral
+unittest import googlet llvm remove rawostream support available copy llvm ,neutral
+unittest add c++ unittest use ,good
+test integrate unit test config ,neutral
+basic ninjalexer unite ,bad
+add support lexe newline token ,good
+add support lexe indentation token manifest use indentation manage scope model explicit token ,good
+add lexe support identifier keyword actual lexer use context dependent way will need context switching mechanism string present rhs variable assignment token base ill bring parsing need ,neutral
+command split command library command line tool implementation ,bad
+move lexer �ninja lex� ,good
+basic structure callback base ninja parser ,neutral
+hide parser implementation ,good
+stub parsing infrastructure ,neutral
+fix command line test ,good
+add simple caret style diagnostic ,good
+hide parserimpl namespace guarantee compiler can rewrite ,neutral
+parse default decl ,good
+parse variable binding incomplete will need put lexer mode preserve whitespace start ,good
+start parse parameterize ,bad
+improve lexing identifier string ,neutral
+add support parse build decl specifier ,neutral
+tidy fix bug set result build decl ,good
+add support parse variable binding param split separate perdecltype action may want relax actual client parser ,bad
+add parseonly action perf timing ,neutral
+add lexonly action perf timing ,neutral
+simplify parser logic ,good
+add support lexe string ninja manifest language context sensitive real string token type support give lexer stringmode can set client parser move use token can clean identifier token identifier ,neutral
+factor common binding parsing code ,neutral
+use variable string mode parsing appropriate ,neutral
+fix lexing special character string mode ,neutral
+fix parsing empty assignment ,good
+use path string mode parsing appropriate ,neutral
+tidy diagnostic string add more testing coverage ,good
+fix identifier lexing parsing move string ,bad
+fix pool rule name parse identifier path string ,bad
+parse rule name build decl identifier ,neutral
+start sketch manifest loader implementation ,neutral
+add basic parse action structure blend manifest loader impl ,neutral
+toplevel binding load ,neutral
+ninjacommand sort binding manifest dump write stderr consistency other command ,good
+fix range ,good
+add initial cut expr string expansion more testing come will want factor real attempt make make performant ,neutral
+ninjacommand factor ,good
+error diagnostic machinery ,neutral
+diagnose invalid variable name expr ,neutral
+manifest hide datum member ,good
+write output binding quote make syntax obvious try write binding cstyle syntax ninja style ,neutral
+ninjacommand fix ,good
+add initial rule loading ,good
+propagate start token enddecl action use postprocessing diagnostic cheap pass force client track ,neutral
+diagnose miss assignment ,bad
+fix diagnostic present default ,neutral
+cmake add header file ,good
+add internal header file ,good
+add support remain rule parameter expand build parameter dictionary hope could parse would little tricky ,neutral
+ensure binding overwrite prior entry ,neutral
+add support loading pool ,neutral
+add structure node set default target list use loader ,bad
+add command structure manifest use loader ,neutral
+add builtin phony rule ,good
+add support build decl loading ,neutral
+add maximum error count ,good
+lexer fix bug allow identifier part old identifier handle move context sensitive string lexing ,neutral
+lexer fix handling start string ,good
+space follow path string ,good
+change prep new nonstre specific ,bad
+lexer fix improve handling honor many more place ambivalent implementation may well move phase consumption low level handle sequence ,bad
+add miss test case previous commit ,good
+add identifier specific lexing mode ignore keyword design language ,neutral
+allow blank line parameterize decl binding ,neutral
+use parsing appropriate ,neutral
+add support default decl ,good
+escape output string ,good
+evaluate binding build decl ,neutral
+remove fixme need fix possible end variable path string trail delay escape handling consume subsequent character ,neutral
+add initial support include stack use ,bad
+change loader provide current filename file read ,bad
+refactor readfilecontent return error ,neutral
+change loadmanif chdir contain directory input hack include statement can use relative path seem specify include statement relative include file broken ,bad
+add initial support handling proper binding scoping ,neutral
+add core library rudimentary dependency graph node command class connection ability look create node command command lambda action early day start skeletal structure ,bad
+node command number onebase zerobase ,bad
+ninjacommand fix bug chdir logic update input path ,bad
+diagnose miss depth assignment ,neutral
+unittest remove redundant maincpp file guess forgot remove go skip have library make common code go follow style need ,good
+include errno file open error make sure close file ,bad
+update include stack track active binding set ,bad
+add support enter new binding scope ,bad
+core add buildengine implementation initial importing prototype engine code need clean abstraction ,good
+add simple test buildengine ,good
+command add computation implement build silly way compute great way test build engine use dynamic input dependency build wide range side change parameter ,neutral
+diagnose empty inputoutput path ,good
+add add partial file generate ,neutral
+add generator ,good
+match multiple key updatesh ,neutral
+update ,neutral
+remove duplicate try try ,good
+miss extraneous ,neutral
+add fix updating script ,bad
+add php replace awk magic bash ,good
+change default command httpd ,good
+add license expat ,good
+use host allow mirror redirect prevent us2phpnet get traffic ,good
+add compile option withmysqli version ,neutral
+add support compile flag version ,neutral
+simplify apache image use package ,neutral
+update version ,good
+update version fix ,good
+add more tag thank ,good
+remove volume definition apache variant make sense general case thank ,bad
+add openssl option ,good
+add option ,good
+add ,neutral
+add ,neutral
+add ,neutral
+add ,neutral
+add ,neutral
+add ,neutral
+drop old php fail try build ,good
+bump fix fix ,good
+bump fix dockerlibrary#23 fix dockerlibrary#23 ,good
+bump fix fix ,good
+minor version bump ,neutral
+add additional module include ,good
+add additional module version ,good
+update version ,good
+gzip exist flag use zlib ,good
+remove buildconf dockerfile use release tarball pregenerate configure script ,bad
+refactor switch base result dramatic reduction image size console docker image php repository image create virtual size hour minute 19a5113df69a minute minute minute hour old console docker image php repository image create virtual size e760b9bd2c6c day day day day dab86418397c day day ,bad
+add cacertificate ,good
+add ,good
+keep source make clean ,neutral
+add new script magic example follow make wordpress work run ,bad
+make root obvious fix directoryindex php ,neutral
+add making miss ,good
+add fpm variant ,good
+update cf fix thank @thajeztah ,neutral
+failure bad ,bad
+add stub ,good
+fix listen directive ,good
+load opcache zendextension ,good
+impossible listen replace ,bad
+run updatesh ,neutral
+run update fix fpm version ,good
+bump ,bad
+update variant ,neutral
+add pid cleaner case container kill ,neutral
+switch pgpmitedu ,good
+run version bump ,neutral
+run updatesh bump ,good
+remove index option ,good
+update ,bad
+make remove more package default remove package recommend suggest instal package package autoinstalle ,good
+add libcdev explicit phpize dependency ,good
+update ,bad
+empty config site folder include ,neutral
+consistency ,good
+remove ,neutral
+run updatesh ,neutral
+add initial travisyml ,good
+prevent tar preserve file ownership ,good
+install file re2c require fix ,neutral
+remove file builddep file need ,good
+preinstall more extension can instal extension add sqlite3 ,neutral
+update ,bad
+resilient gpg get ,bad
+tell clear environment worker allow php script execute access env var such env var link container see ,good
+update php late security update ,bad
+add g++ ,neutral
+use ini ,neutral
+run updatesh fix ,good
+update ,bad
+switch bz2 several megabyte small download ,bad
+add issue add fix review code fix directory version remove gpg ,bad
+generate unknown version bump update ,bad
+update announce ,bad
+upgrade version ,good
+update use sudo dist trusty ,neutral
+add new script intelligent module enable update invoke script successful extension compilation module determined enable skip remove simple warning php warn module curl load unknown line enable thing ,bad
+run updatesh ,neutral
+full path load extension ,neutral
+rid unneeded variable ,good
+update update announcement ,neutral
+update php beta announce ,neutral
+fix key ,bad
+add key list key list ,bad
+put docker image section ,neutral
+enhance take account change dockerfile file copy dockerfile choose commit hash particular directory ,bad
+upgrade php rc1 release phpapache build forget upgrade version folder ,good
